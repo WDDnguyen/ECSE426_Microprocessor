@@ -21,25 +21,33 @@ Target DLL:      UL2CM3.DLL V1.159.0.0
 Dialog DLL:      TCM.DLL V1.21.0.0
  
 <h2>Project:</h2>
-C:\Users\William Nguyen\Desktop\Lab1_STM32F4Cube_Base_project\Lab1_STM32F4Cube_Base_project\Base_Project.uvprojx
+C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426\lab1\Lab1_STM32F4Cube_Base_project\Base_Project.uvprojx
 Project File Date:  01/31/2017
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 4 (build 422)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Lab 1'
+assembling Assembly.s...
+assembling startup_stm32f407xx.s...
 compiling main.c...
-Sources\main.c(36): warning:  #177-D: variable "N"  was declared but never referenced
-  int N = Length - Order;
-Sources\main.c(42): warning:  #550-D: variable "result"  was set but never used
+Sources\main.c(43): warning:  #550-D: variable "result"  was set but never used
   int result;
-Sources\main.c(117): warning:  #177-D: variable "LengthOfSubArr"  was declared but never referenced
+Sources\main.c(119): warning:  #177-D: variable "LengthOfSubArr"  was declared but never referenced
   	int LengthOfSubArr = sizeof(subArrInC)/sizeof(subArrInC[0]);
-Sources\main.c(214): warning:  #1-D: last line of file ends without a newline
+Sources\main.c(215): warning:  #1-D: last line of file ends without a newline
   }
-Sources\main.c: 4 warnings, 0 errors
+Sources\main.c: 3 warnings, 0 errors
+compiling fput_debug.c...
+C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h(70): warning:  #47-D: incompatible redefinition of macro "__FPU_PRESENT" 
+  #define __FPU_PRESENT             1U       /*!< FPU present                                   */
+Sources\fput_debug.c: 1 warning, 0 errors
+compiling system_stm32f4xx.c...
+C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h(70): warning:  #47-D: incompatible redefinition of macro "__FPU_PRESENT" 
+  #define __FPU_PRESENT             1U       /*!< FPU present                                   */
+RTE\Device\STM32F407VGTx\system_stm32f4xx.c: 1 warning, 0 errors
 linking...
 Program Size: Code=23752 RO-data=852 RW-data=16 ZI-data=1888  
-".\Objects\Base_Project.axf" - 0 Error(s), 4 Warning(s).
+".\Objects\Base_Project.axf" - 0 Error(s), 5 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -57,7 +65,7 @@ Package Vendor: Keil
    * Component: Startup Version: 2.6.0
 
 <h2>Collection of Component include folders:</h2>
-  C:\Users\William Nguyen\Desktop\Lab1_STM32F4Cube_Base_project\Lab1_STM32F4Cube_Base_project\RTE\_Lab_1
+  C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426\lab1\Lab1_STM32F4Cube_Base_project\RTE\_Lab_1
   C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include
   C:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
@@ -66,16 +74,16 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.0.0
 
    * Component: ARM::CMSIS:DSP:1.4.6
-      Include file:  CMSIS\Include\arm_math.h
       Library file:  CMSIS\Lib\ARM\arm_cortexM4lf_math.lib
+      Include file:  CMSIS\Include\arm_math.h
 
    * Component: Keil::Device:Startup:2.6.0
-      Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
-      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
-      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s
       Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+      Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s
+      Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
+      Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
-Build Time Elapsed:  00:00:01
+Build Time Elapsed:  00:00:05
 </pre>
 </body>
 </html>

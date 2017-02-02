@@ -3,12 +3,12 @@
 FIR_asm
 	
 	PUSH{R4-R12}
-	
+	;initialize value
 	SUB R2,R2, #4
 	MOV R5, #0  ;j
 	
 loop
-	VLDR.f32 S4, =0.0
+	VLDR.f32 S4, =0.0  ;y =0;
 	MOV R4, #0  ;i
 	
 loop2

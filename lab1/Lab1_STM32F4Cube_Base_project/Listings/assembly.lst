@@ -9,12 +9,12 @@ ARM Macro Assembler    Page 1
     3 00000000         FIR_asm
     4 00000000         
     5 00000000 E92D 1FF0       PUSH{R4-R12}
-    6 00000004         
+    6 00000004         ;initialize value
     7 00000004 F1A2 0204       SUB              R2,R2, #4
     8 00000008 F04F 0500       MOV              R5, #0      ;j
     9 0000000C         
    10 0000000C         loop
-   11 0000000C ED9F 2A0F       VLDR.f32         S4, =0.0
+   11 0000000C ED9F 2A0F       VLDR.f32         S4, =0.0    ;y =0;
    12 00000010 F04F 0400       MOV              R4, #0      ;i
    13 00000014         
    14 00000014         loop2
@@ -49,7 +49,7 @@ ARM Macro Assembler    Page 1
               00000000 
 Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
 erwork --depend=.\objects\assembly.d -o.\objects\assembly.o -I"C:\Users\William
- Nguyen\Desktop\Lab1_STM32F4Cube_Base_project\Lab1_STM32F4Cube_Base_project\RTE
+ Nguyen\Desktop\Git Repositories\ECSE426\lab1\Lab1_STM32F4Cube_Base_project\RTE
 \_Lab_1" -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include -IC:\Keil_v5\ARM\P
 ACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --prede
 fine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 522" --predefine="_RTE
