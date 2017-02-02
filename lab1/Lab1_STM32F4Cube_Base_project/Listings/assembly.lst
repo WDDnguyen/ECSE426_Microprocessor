@@ -1,0 +1,97 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             text, CODE, READONLY
+    2 00000000                 EXPORT           FIR_asm
+    3 00000000         FIR_asm
+    4 00000000         
+    5 00000000 E92D 1FF0       PUSH{R4-R12}
+    6 00000004         
+    7 00000004 F1A2 0204       SUB              R2,R2, #4
+    8 00000008 F04F 0500       MOV              R5, #0      ;j
+    9 0000000C         
+   10 0000000C         loop
+   11 0000000C ED9F 2A0F       VLDR.f32         S4, =0.0
+   12 00000010 F04F 0400       MOV              R4, #0      ;i
+   13 00000014         
+   14 00000014         loop2
+   15 00000014         ;k = j + i
+   16 00000014 EB05 0604       ADD              R6,R5,R4
+   17 00000018         
+   18 00000018         ;inputArray[k]
+   19 00000018 EB00 0786       ADD              R7, R0, R6, LSL #2
+   20 0000001C ED97 3A00       VLDR.f32         S6, [R7]    ;x4
+   21 00000020         
+   22 00000020         ;coeffArray[i]
+   23 00000020 EB03 0884       ADD              R8,R3,R4,LSL #2
+   24 00000024 ED98 4A00       VLDR.f32         S8,[R8]
+   25 00000028         
+   26 00000028         ;y += inputArray[k] * coeffArray[i]
+   27 00000028 EE64 0A03       VMUL.f32         S1, S8,S6
+   28 0000002C EE30 2A82       VADD.f32         S4, S1,S4
+   29 00000030 3401            ADDS             R4,#1
+   30 00000032 2C05            CMP              R4,#5
+   31 00000034 D1EE            BNE              loop2
+   32 00000036         
+   33 00000036         ;OutputArray[j] = y;
+   34 00000036 EB01 0785       ADD              R7,R1,R5, LSL #2
+   35 0000003A ED87 2A00       VSTR.f32         S4,[R7]
+   36 0000003E         
+   37 0000003E F105 0501       ADD              R5,#1
+   38 00000042 4295            CMP              R5,R2
+   39 00000044 DBE2            BLT              loop
+   40 00000046 E8BD 1FF0       POP{R4-R12}
+   41 0000004A 4770            BX               LR
+   42 0000004C                 END
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M4.fp --apcs=int
+erwork --depend=.\objects\assembly.d -o.\objects\assembly.o -I"C:\Users\William
+ Nguyen\Desktop\Lab1_STM32F4Cube_Base_project\Lab1_STM32F4Cube_Base_project\RTE
+\_Lab_1" -IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include -IC:\Keil_v5\ARM\P
+ACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include --prede
+fine="__EVAL SETA 1" --predefine="__UVISION_VERSION SETA 522" --predefine="_RTE
+_ SETA 1" --predefine="STM32F407xx SETA 1" --list=.\listings\assembly.lst Sourc
+es\Assembly.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+FIR_asm 00000000
+
+Symbol: FIR_asm
+   Definitions
+      At line 3 in file Sources\Assembly.s
+   Uses
+      At line 2 in file Sources\Assembly.s
+Comment: FIR_asm used once
+loop 0000000C
+
+Symbol: loop
+   Definitions
+      At line 10 in file Sources\Assembly.s
+   Uses
+      At line 39 in file Sources\Assembly.s
+Comment: loop used once
+loop2 00000014
+
+Symbol: loop2
+   Definitions
+      At line 14 in file Sources\Assembly.s
+   Uses
+      At line 31 in file Sources\Assembly.s
+Comment: loop2 used once
+text 00000000
+
+Symbol: text
+   Definitions
+      At line 1 in file Sources\Assembly.s
+   Uses
+      None
+Comment: text unused
+4 symbols
+341 symbols in table
