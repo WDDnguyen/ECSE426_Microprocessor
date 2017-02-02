@@ -1,5 +1,5 @@
 Dependencies for Project 'Base_Project', Target 'Lab 1': (DO NOT MODIFY !)
-F (.\Sources\main.c)(0x5892B704)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I"C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426\lab1\Lab1_STM32F4Cube_Base_project\RTE\_Lab_1"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F407xx -DHSE_VALUE="8000000" -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_PRESENT="1" --C99-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (.\Sources\main.c)(0x58939994)(-c --cpu Cortex-M4.fp -D__EVAL -g -O0 --apcs=interwork -I"C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426\lab1\Lab1_STM32F4Cube_Base_project\RTE\_Lab_1"-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include-IC:\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.11.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F407xx -DHSE_VALUE="8000000" -DSTM32F407xx -DARM_MATH_CM4 -D__FPU_PRESENT="1" --C99-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x57F6BD88)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\arm_math.h)(0x5825F0AE)
 I (C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\core_cm4.h)(0x5825F0AE)

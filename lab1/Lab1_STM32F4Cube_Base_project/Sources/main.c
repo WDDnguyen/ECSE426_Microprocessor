@@ -55,7 +55,7 @@ for (int i =0; i<sizeof(OutputArrayASM)/sizeof(OutputArrayASM[0]) ; i++){
 printf("-----------------------\n");
 
 // FIR filter using CMSIS-DSP
-// Might check for length of OUtput
+// Might check for length of Output
 float32_t OutputArrayDSP[Length];
 uint32_t blockSize = 1;
 float32_t firStateF32[10 + 5 - 1];
@@ -127,10 +127,11 @@ void FIR_C_Operations(float32_t* inputArray, float32_t* OutputArray,int Length,i
 	
 	//AVERAGE IN C
 	FIR_C_Average(subArrInC,N,averageInC);
+	printf("AVERAGE IN C : %f\n", *averageInC);
 	
 	//STANDARD DEVIATION IN C 
 	FIR_C_STD(subArrInC,N,averageInC,stdInC);
-	
+	printf("STANDARD DEVIATION IN C : %f\n",*stdInC);
 	// CORRELATION IN C
 	
 	//ASSUMING Average all input (20) and average all output (16),
@@ -164,20 +165,22 @@ uint32_t N = Length - Order;
 
 arm_sub_f32(OutputArray,inputArray,subArrInDSP,N);
 for (int i = 0 ; i < N ; i++){
-printf("THIS IS THE VALUE IN DSP LIBRARY : %f\n", subArrInDSP[i]);
+printf("SUB ARRAY IN DSP LIBRARY : %f\n", subArrInDSP[i]);
 }
 
 
 //Average in DSP
 arm_mean_f32(subArrInDSP,N,averageInDSP);
-printf("VALUE OF AVERAGE IN DSP : %f\n",*averageInDSP);
+printf("VALUE OF AVERAGE IN DSP : %f\n", *averageInDSP);
 
 //Standard deviation in DSP
 arm_std_f32(subArrInDSP,N,stdInDSP);
 printf("STD OF DSP IS : %f\n", *stdInDSP);
 
-arm_correlate_f32(inputArray,Length,OutputArray,N,correlation);
-	
+//might need to change
+arm_correlate_f32(inputArray,N,OutputArray,N,correlation);
+
+/*	
 float32_t inputSum;
 float32_t outputSum;
 for (int i = 0; i<Length;i++){
@@ -189,6 +192,7 @@ for (int k =0; k<N ;k++){
 
 float32_t value = sqrt(inputSum * outputSum);
 correlation[Length-1] = correlation[Length-1]/value;
+*/
 
 //Correlation NEED TO FIX
 printf("CORRELATION VALUE IN DSP IS : %f\n",correlation[Length-1]);
@@ -196,12 +200,12 @@ printf("CORRELATION VALUE IN DSP IS : %f\n",correlation[Length-1]);
 }
 void FIR_C_Average(float32_t *Array, int length,float32_t *average){
 	float32_t avg = 0;
-	printf("THIS IS THE LENGTH OF SUB ARRAY : %d\n", length);
+	//printf("THIS IS THE LENGTH OF SUB ARRAY : %d\n", length);
 	for (int i = 0; i< length; i++){
 	avg += Array[i];
 	}
 	avg = avg / length;
-	printf("AVERAGE IN C IS : %f\n\n",avg);
+	//printf("AVERAGE IN C IS : %f\n\n",avg);
 	*average = avg;
 }
 
@@ -211,5 +215,5 @@ void FIR_C_STD(float32_t *Array, int length, float32_t *averageInC, float32_t * 
 	}
 	*stdInC = *(stdInC)/(length-1);
 	*stdInC = sqrt(*stdInC);
-	printf("THIS IS THE STANDARD DEVIATION IN C : %f\n\n",*stdInC);
+	//printf("THIS IS THE STANDARD DEVIATION IN C : %f\n\n",*stdInC);
 }
