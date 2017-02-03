@@ -21,7 +21,7 @@ void FIR_C_STD(float32_t *Array, int length, float32_t *averageInC, float32_t * 
 int main(){
 
 //Input Array to test
-float32_t inputArray[15] = {11.63,22.532,3.132,785.2,52.123,52.829,77.21,7.21,9.98,10,105.12,12.21,13.2536,14.87653,14.5432};
+float32_t testArray[15] = {11.63,22.532,3.132,785.2,52.123,52.829,77.21,7.21,9.98,10,105.12,12.21,13.2536,14.87653,14.5432};
 
 // Initializing values of coefficient,Order,Length
 struct FIR_coeff coeff;
@@ -31,7 +31,7 @@ coeff.coeffArray[2] = 0.5;
 coeff.coeffArray[3] = 0.15;
 coeff.coeffArray[4] = 0.1;
 
-int Length = sizeof(inputArray)/sizeof(inputArray[0]);
+int Length = sizeof(testArray)/sizeof(testArray[0]);
 printf("Length of input array is %d\n", Length);
 int Order = 4;
 
@@ -41,7 +41,7 @@ int outputLength = sizeof(OutputArray)/sizeof(OutputArray[0]);
 printf("Length of output array is %d\n", outputLength);
 
 int result;
-result = FIR_C(inputArray, OutputArray, &coeff, Length, Order);
+result = FIR_C(testArray, OutputArray, &coeff, Length, Order);
 
 for (int i = 0; i < Length - Order; i++){
 printf("C Output AT INDEX %d is : %f\n", i, OutputArray[i]);
@@ -50,7 +50,7 @@ printf("-----------------------\n");
 
 // FIR Filter using ASM
 float32_t OutputArrayASM[Length - Order];
-FIR_asm(inputArray,OutputArrayASM,Length, &coeff); 
+FIR_asm(testArray,OutputArrayASM,Length, &coeff); 
 
 for (int i =0; i<sizeof(OutputArrayASM)/sizeof(OutputArrayASM[0]) ; i++){
 	printf("Value in ASM at %i : %f\n",i,OutputArrayASM[i]);	
@@ -70,7 +70,7 @@ arm_fir_init_f32(&s, 5,(float32_t *)&coefficients[0],&firStateF32[0],blockSize);
 // Changed from Length - Order
 for(int k = 0; k < Length; k++)
 {
-	arm_fir_f32(&s, &inputArray[k], &OutputArrayDSP[k],blockSize);
+	arm_fir_f32(&s, &testArray[k], &OutputArrayDSP[k],blockSize);
 	printf("THIS IS THE CMSIS DSP VALUE : %f\n",OutputArrayDSP[k]);
 }
 
@@ -84,7 +84,7 @@ float32_t subArrInC[Length - Order];
 float32_t stdInC;
 float32_t averageOfSub;
 float32_t correlationInC;
-FIR_C_Operations(inputArray,OutputArray,Length,Order,subArrInC,&stdInC,&averageOfSub,&correlationInC);
+FIR_C_Operations(testArray,OutputArray,Length,Order,subArrInC,&stdInC,&averageOfSub,&correlationInC);
 
 printf("-----------------------\n");
 
@@ -96,7 +96,7 @@ float32_t stdInDSP;
 float32_t averageInDSP;
 float32_t correlation[2*Length - 1];
 
-FIR_DSP_Operations(inputArray,OutputArray,Length,Order,subArrInDSP,&stdInDSP,&averageInDSP,correlation);
+FIR_DSP_Operations(testArray,OutputArray,Length,Order,subArrInDSP,&stdInDSP,&averageInDSP,correlation);
 	
 	return 0;
 }
