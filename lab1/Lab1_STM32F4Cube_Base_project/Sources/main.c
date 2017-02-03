@@ -21,7 +21,7 @@ void FIR_C_STD(float32_t *Array, int length, float32_t *averageInC, float32_t * 
 int main(){
 
 //Input Array to test
-float32_t inputArray[15] = {1,2,3,4,5,6,7,7,9,10,10,12,13,14,14};
+float32_t inputArray[15] = {11.63,22.532,3.132,785.2,52.123,52.829,77.21,7.21,9.98,10,105.12,12.21,13.2536,14.87653,14.5432};
 
 // Initializing values of coefficient,Order,Length
 struct FIR_coeff coeff;
@@ -43,6 +43,9 @@ printf("Length of output array is %d\n", outputLength);
 int result;
 result = FIR_C(inputArray, OutputArray, &coeff, Length, Order);
 
+for (int i = 0; i < Length - Order; i++){
+printf("C Output AT INDEX %d is : %f\n", i, OutputArray[i]);
+}
 printf("-----------------------\n");
 
 // FIR Filter using ASM
@@ -110,7 +113,7 @@ int FIR_C(float* inputArray, float* OutputArray, FIR_coeff* coeff, int Length,in
         }
 
                 OutputArray[j] = y;
-                printf("C Output AT INDEX %d is : %f\n", j, OutputArray[j]);
+                
         }
         return 0;
 }

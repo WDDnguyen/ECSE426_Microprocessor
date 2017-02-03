@@ -27,10 +27,17 @@ Project File Date:  01/31/2017
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 4 (build 422)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Lab 1'
-assembling Assembly.s...
+compiling main.c...
+Sources\main.c(43): warning:  #550-D: variable "result"  was set but never used
+  int result;
+Sources\main.c(122): warning:  #177-D: variable "LengthOfSubArr"  was declared but never referenced
+  	int LengthOfSubArr = sizeof(subArrInC)/sizeof(subArrInC[0]);
+Sources\main.c(222): warning:  #1-D: last line of file ends without a newline
+  }
+Sources\main.c: 3 warnings, 0 errors
 linking...
 Program Size: Code=23528 RO-data=852 RW-data=16 ZI-data=1888  
-".\Objects\Base_Project.axf" - 0 Error(s), 0 Warning(s).
+".\Objects\Base_Project.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -57,14 +64,14 @@ Package Vendor: Keil
    * Component: ARM::CMSIS:CORE:5.0.0
 
    * Component: ARM::CMSIS:DSP:1.4.6
-      Library file:  CMSIS\Lib\ARM\arm_cortexM4lf_math.lib
       Include file:  CMSIS\Include\arm_math.h
+      Library file:  CMSIS\Lib\ARM\arm_cortexM4lf_math.lib
 
    * Component: Keil::Device:Startup:2.6.0
-      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
+      Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
       Source file:   MDK\Device\Source\ARM\STM32F4xx_OTP.s
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\arm\startup_stm32f407xx.s
-      Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
+      Include file:  Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h
       Source file:   Drivers\CMSIS\Device\ST\STM32F4xx\Source\Templates\system_stm32f4xx.c
 Build Time Elapsed:  00:00:01
 </pre>
