@@ -21,7 +21,7 @@ void FIR_C_STD(float32_t *Array, int length, float32_t *averageInC, float32_t * 
 int main(){
 
 //Input Array to test
-float32_t testArray[15] = {11.63,22.532,3.132,785.2,52.123,52.829,77.21,7.21,9.98,10,105.12,12.21,13.2536,14.87653,14.5432};
+float32_t testArray[20] = {1.0,1.07,1.15,1.2,1.25,1.3,1.358,1.39,1.15,1.2,1.15,1.1,1.05,1.0,0.8,0.6,0.4,0.0,-0.3,-0.8};
 
 // Initializing values of coefficient,Order,Length
 struct FIR_coeff coeff;
@@ -71,7 +71,7 @@ arm_fir_init_f32(&s, 5,(float32_t *)&coefficients[0],&firStateF32[0],blockSize);
 for(int k = 0; k < Length; k++)
 {
 	arm_fir_f32(&s, &testArray[k], &OutputArrayDSP[k],blockSize);
-	printf("THIS IS THE CMSIS DSP VALUE : %f\n",OutputArrayDSP[k]);
+//	printf("THIS IS THE CMSIS DSP VALUE : %f\n",OutputArrayDSP[k]);
 }
 
 printf("-----------------------\n");
@@ -94,7 +94,7 @@ printf("-----------------------\n");
 float32_t subArrInDSP[Length - Order];
 float32_t stdInDSP;
 float32_t averageInDSP;
-float32_t correlation[2*Length - 1];
+float32_t correlation[2*20 - 1];
 
 FIR_DSP_Operations(testArray,OutputArray,Length,Order,subArrInDSP,&stdInDSP,&averageInDSP,correlation);
 	
@@ -125,7 +125,7 @@ void FIR_C_Operations(float32_t* inputArray, float32_t* OutputArray,int Length,i
 	// SUBTRACTION
 	for (int i =0; i <N; i++){
 	subArrInC[i] = OutputArray[i] - inputArray[i];
-	printf("SUB ARRAY IN C  : %f\n",subArrInC[i]);	
+	//printf("SUB ARRAY IN C  : %f\n",subArrInC[i]);	
 	}
 	
 	//AVERAGE IN C
@@ -198,8 +198,9 @@ correlation[Length-1] = correlation[Length-1]/value;
 */
 
 //Correlation NEED TO FIX
-printf("CORRELATION VALUE IN DSP IS : %f\n",correlation[Length-1]);
-
+for (int i =0; i < 20; i++){
+printf("CORRELATION VALUE IN DSP IS : %f\n",correlation[i]);
+}
 }
 void FIR_C_Average(float32_t *Array, int length,float32_t *average){
 	float32_t avg = 0;
