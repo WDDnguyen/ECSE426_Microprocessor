@@ -98,7 +98,8 @@ int main(void)
 
 	//7 segment display 
 	int position = 3;
-	int toggle =0;
+	int toggle =0; 
+	int sampleTime = 0;
 	
 /* USER CODE END 1 */
 
@@ -123,6 +124,9 @@ int main(void)
 				sysTickFlag = 0;
 				
 				//acquire value from ADC in celsius 
+				
+				if (sampleTime++ == 100){
+					sampleTime = 0;
 				float celsius = ADC_getValue();
 				int FIROutput;
 				
@@ -145,13 +149,13 @@ int main(void)
 					invalidCount -= 1;
 					printf("FIRST 4 POLL DOESNT GIVE VALUE : %d \n", invalidCount);
 				}
-					
-				//lower frequency of alarm clock to make it loop in circle.
-				if (clockTimer++ == 25){
+			}
+				//lower frequency of alarm clock to make it loop in a circle.
+				if (clockTimer++ == 100){
 					clockTimer = 0;
 				
 					//Overheating Alarm when threshold is passed
-					if (OutputArray[0]  > 30){
+					if (OutputArray[0]  > 33){
 						overHeatAlarm(overHeatCounter);
 						overHeatCounter++;
 						// loop between 0-3 if stay too long
@@ -195,7 +199,7 @@ int main(void)
 				position = 3;
 				}
 		
-			
+
 			}
 			
   /* USER CODE END WHILE */
@@ -237,7 +241,7 @@ void SystemClock_Config(void)
   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
   HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5);
 
-  HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/170); // modified
+  HAL_SYSTICK_Config(HAL_RCC_GetHCLKFreq()/1000);
 
   HAL_SYSTICK_CLKSourceConfig(SYSTICK_CLKSOURCE_HCLK);
 

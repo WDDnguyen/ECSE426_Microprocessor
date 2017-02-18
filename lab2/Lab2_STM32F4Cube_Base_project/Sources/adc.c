@@ -43,8 +43,7 @@ void ADC_Init(void){
 	ADC_ChannelConfTypeDef ADC1_Channel; //ADC1 channel struct
 	
 	// initialize ADC init struct 
-	//ADC1_Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4; // ADC Clock frequency 42Mz (168Mhz/4)
-	ADC1_Init.ClockPrescaler = 49200;
+	ADC1_Init.ClockPrescaler = ADC_CLOCK_SYNC_PCLK_DIV4; // ADC Clock frequency 42Mz (168Mhz/4)
 	ADC1_Init.Resolution = ADC_RESOLUTION_12B; // 12 bit resolution 
 	ADC1_Init.DataAlign = ADC_DATAALIGN_RIGHT; // align the 12 bits data at the right of the 32 bits words
 	ADC1_Init.ScanConvMode = DISABLE; // Only use a single channel
@@ -59,7 +58,7 @@ void ADC_Init(void){
 	// initialize ADC channel struct 
 	ADC1_Channel.Channel = ADC_CHANNEL_16; // Channel for temperature sensor
 	ADC1_Channel.Rank = 1; //determine the rank in which this channel is sampled
-	ADC1_Channel.SamplingTime = ADC_SAMPLETIME_480CYCLES;	// time for the internal capacitor to charge.
+	ADC1_Channel.SamplingTime = ADC_SAMPLETIME_480CYCLES;	// 480 clock cycles for a sample.
 	ADC1_Channel.Offset = 0;
 	
 	
