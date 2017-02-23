@@ -1,29 +1,27 @@
-/**
-  ******************************************************************************
-  * File Name          : supporting_functions.h
-  * Description        : User defined common functions that can be used across projects
-	* Author						 : Ashraf Suyyagh
-	* Version            : 1.0.0
-	* Date							 : January 14th, 2016
-  ******************************************************************************
-  */
-#ifndef SUPPORTING_FUNCTIONS_H
-#define SUPPORTING_FUNCTIONS_H
+#define KeyPad_Port GPIOD
+#define KeyPad_Column1 GPIO_PIN_1
+#define KeyPad_Column2 GPIO_PIN_2
+#define KeyPad_Column3 GPIO_PIN_3
+#define KeyPad_Column4 GPIO_PIN_6
+#define KeyPad_Row1 GPIO_PIN_7
+#define KeyPad_Row2 GPIO_PIN_8
+#define KeyPad_Row3 GPIO_PIN_9
+#define KeyPad_Row4 GPIO_PIN_10
+#define KeyPad_GPIO_PORT_CLK_EN __HAL_RCC_GPIOD_CLK_ENABLE();
 
-#include "stdint.h"
-#include <stdio.h>
-
-//Add as many definitions as you see necessary. 
-
-//NO TWO DEFINITIONS SHOULD HAVE THE SAME ERROR CODE
-
-#define RCC_CONFIG_FAIL       ((uint16_t) 0)
-#define TIM_INIT_FAIL					((uint16_t) 1)
-#define ADC_INIT_FAIL 				((uint16_t) 2)
-#define ADC_CH_CONFIG_FAIL		((uint16_t) 3)
-#define ADC_MULTIMODE_FAIL		((uint16_t) 4)
-#define EXTI_SPI1_FAIL				((uint16_t) 5)
-
-void Error_Handler						(uint16_t error_code);
-
-#endif
+#define Key_0 0
+#define Key_1 1
+#define Key_2 2
+#define Key_3 3
+#define Key_4 4
+#define Key_5 5
+#define Key_6 6
+#define Key_7 7
+#define Key_8 8
+#define Key_9 9
+#define Key_star 10
+#define Key_hash 11
+#define Key_A 12
+#define Key_B 13
+#define Key_C 14
+#define Key_D 15

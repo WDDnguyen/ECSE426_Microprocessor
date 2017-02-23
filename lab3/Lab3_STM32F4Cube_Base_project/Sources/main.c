@@ -13,6 +13,7 @@
 #include "supporting_functions.h"
 #include "lis3dsh.h"
 
+
 /* Private variables ---------------------------------------------------------*/
 
 /* Private function prototypes -----------------------------------------------*/
