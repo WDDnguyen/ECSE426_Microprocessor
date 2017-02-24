@@ -161,12 +161,7 @@ void SysTick_Handler(void)
 	HAL_IncTick();
 }
 
-// created
 
-void EXTI0_IRQHandler(void)
-{
-	HAL_GPIO_EXTI_Callback(LIS3DSH_SPI_INT1_PIN);
-}
 
 /******************************************************************************/
 /*                 STM32F4xx Peripherals Interrupt Handlers                   */
@@ -183,6 +178,12 @@ void EXTI0_IRQHandler(void)
 {
 }*/
 
+// created
+
+void EXTI0_IRQHandler(void)
+{
+	HAL_GPIO_EXTI_Callback(LIS3DSH_SPI_INT1_PIN);
+}
 /**
   * @}
   */ 

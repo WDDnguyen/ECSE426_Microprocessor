@@ -9,19 +9,56 @@
   */
 	
 /* Includes ------------------------------------------------------------------*/
+
 #include "stm32f4xx_hal.h"
 #include "supporting_functions.h"
 #include "lis3dsh.h"
+#include "core_cm4.h"
+#include <stdio.h>
 
+
+#include <math.h>
 
 /* Private variables ---------------------------------------------------------*/
+
+typedef struct FIR_coeff{
+float coeffArray[5];
+}FIR_coeff;
+
+
+int FIR_C(float* inputArray, float* OutputArray, FIR_coeff* coeff, int Length, int Order);
+
+void initializeAccelerometer();
+void initializeAccelerometerPin();
+void initializeAccelerometerInterrupt();
+void initializeTimer();
+
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config	(void);
 
 
 TIM_HandleTypeDef HWTimer;
-	
+
+float xArray[5];
+float yArray[5];
+float zArray[5];
+
+float xOutputArray[1];
+float yOutputArray[1];
+float zOutputArray[1];
+
+int Length = 5;
+int Order = 4;
+int invalidCount = 4;
+
+FIR_coeff coeff;	
+
+float gravity = 9.81;
+
+
+int interruptCounter = 0;
+
 int main(void)
 {	
   /* MCU Configuration----------------------------------------------------------*/
@@ -31,8 +68,36 @@ int main(void)
   /* Configure the system clock */
   SystemClock_Config();
 	
-  /* Initialize all configured peripherals */
+	//Set up accelerometer 
+	initializeAccelerometer();	
 	
+	//Set up  accelerometer pin 
+	initializeAccelerometerPin();
+		
+	// initialize interrupt for accelerometer 
+	initializeAccelerometerInterrupt();
+	
+	//Timer
+	initializeTimer();
+	
+	// Set up Moving average filter 
+	
+	
+	// Initializing coefficients,Order,Length,Arrays for FIR filter
+	
+	coeff.coeffArray[0] = 0.1;
+	coeff.coeffArray[1] = 0.15;
+	coeff.coeffArray[2] = 0.5;
+	coeff.coeffArray[3] = 0.15;
+	coeff.coeffArray[4] = 0.1;
+
+	while (1){
+	}
+}
+
+
+void initializeAccelerometer(){
+ 	
 	LIS3DSH_InitTypeDef accelerometer_Init;
 	accelerometer_Init.AA_Filter_BW = LIS3DSH_AA_BW_800;
 	accelerometer_Init.Power_Mode_Output_DataRate = LIS3DSH_DATARATE_25;
@@ -41,22 +106,23 @@ int main(void)
 	accelerometer_Init.Full_Scale = LIS3DSH_FULLSCALE_2;
 	accelerometer_Init.Self_Test = LIS3DSH_SELFTEST_NORMAL;
 	LIS3DSH_Init(&accelerometer_Init);
-	
-	//Set up pin 
-	
+}
+
+void initializeAccelerometerPin(){
+
 	__HAL_RCC_GPIOE_CLK_ENABLE();
 	
 	GPIO_InitTypeDef GPIO_INIT;
-	GPIO_INIT.Pin = LIS3DSH_SPI_INT1_PIN; // initialize the pins for the LEDs pin
-	GPIO_INIT.Mode = GPIO_MODE_IT_FALLING; // Set pins to output push pull mode 
-	GPIO_INIT.Pull = GPIO_NOPULL; // No pull for LEDs pins
-	GPIO_INIT.Speed = GPIO_SPEED_FREQ_MEDIUM;	//Speed of pin
-
+	GPIO_INIT.Pin = LIS3DSH_SPI_INT1_PIN; 
+	GPIO_INIT.Mode = GPIO_MODE_IT_FALLING;  
+	//GPIO_INIT.Pull = GPIO_NOPULL; 
+	GPIO_INIT.Pull = GPIO_PULLDOWN;
+	GPIO_INIT.Speed = GPIO_SPEED_FREQ_MEDIUM;
 	HAL_GPIO_Init(GPIOE, &GPIO_INIT);
 	
-	
-	
-	// Turn on the interrupt 
+}
+
+void initializeAccelerometerInterrupt(){
 	
 	LIS3DSH_DRYInterruptConfigTypeDef accelerometer_Interrupt_Init;
 	accelerometer_Interrupt_Init.Dataready_Interrupt = LIS3DSH_DATA_READY_INTERRUPT_ENABLED;
@@ -68,7 +134,10 @@ int main(void)
 	HAL_NVIC_SetPriority(EXTI0_IRQn,1,0);
 	HAL_NVIC_EnableIRQ(EXTI0_IRQn);
 	
-	//Timer
+}
+
+void initializeTimer(){
+
 	__TIM4_CLK_ENABLE();
 	
 	HWTimer.Instance = TIM4;
@@ -80,27 +149,78 @@ int main(void)
 	HAL_TIM_Base_Init(&HWTimer);
 	HAL_TIM_Base_Start_IT(&HWTimer);
 
-
-
-	while (1){
-	}
 }
 
 
 void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 	if(Pin == LIS3DSH_SPI_INT1_PIN){
 		float coordinate[3];
+		
 		LIS3DSH_ReadACC(coordinate);
-		printf("X value : %f ,",coordinate[0]/9.81);
-		printf("Y value : %f ,",coordinate[1]/9.81);
-		printf("Z value : %f\n",coordinate[2]/9.81);
-	}		
+	
+		int xFIROutput;
+		int yFIROutput;
+		int zFIROutput;
+		
+		/*if (interruptCounter++ == 5000){
+		interruptCounter = 0;
+		printf("X value : %f ,",coordinate[0]/gravity);
+		printf("Y value : %f ,",coordinate[1]/gravity);
+		printf("Z value : %f\n",coordinate[2]/gravity);
+		}*/
+		
+		if (invalidCount == 0){
+			
+		
+		for (int i = 5; i < 5; i++){ 
+		xArray[5-i] = xArray[4-i];
+		yArray[5-i] = yArray[4-i];
+		zArray[5-i] = zArray[4-i];	
+		}
+		
+		xArray[0] = coordinate[0];
+		yArray[0] = coordinate[1];
+		zArray[0] = coordinate[2];
+		
+		xFIROutput = FIR_C(xArray, xOutputArray, &coeff, Length, Order);
+		yFIROutput = FIR_C(yArray, yOutputArray, &coeff, Length, Order);
+		zFIROutput = FIR_C(zArray, zOutputArray, &coeff, Length, Order);
+		
+		
+		printf("X value : %f ,",xOutputArray[0]/gravity);
+		printf("Y value : %f ,",yOutputArray[0]/gravity);
+		printf("Z value : %f\n",zOutputArray[0]/gravity);
+	
+}
+		
+		
+		// If there is less than 4 input at the start then add into the array and wait till there is 5 value 
+		else {
+			xArray[invalidCount] = coordinate[0];
+			yArray[invalidCount] = coordinate[1];
+			zArray[invalidCount] = coordinate[2];
+			invalidCount -= 1;
+			printf("FIRST 4 POLL DOESNT GIVE VALUE : %d \n", invalidCount);
+	}
+		
+	}
+	
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* Timer){
 	if (Timer->Instance == TIM4){
 	
 	}
+}
+
+int FIR_C(float* inputArray, float* OutputArray, FIR_coeff* coeff, int Length, int Order){
+	int i,j,k;
+        float y;
+
+        for (j = 0 ; j < Length - Order; j++){
+							OutputArray[j] = inputArray[0] * coeff->coeffArray[0] + inputArray[1] * coeff->coeffArray[1] + inputArray[2] * coeff->coeffArray[2] + inputArray[3] * coeff->coeffArray[3] + inputArray[4] * coeff->coeffArray[4];
+        }
+        return 0;
 }
 
 
