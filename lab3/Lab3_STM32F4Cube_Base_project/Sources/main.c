@@ -13,8 +13,9 @@
 #include "stm32f4xx_hal.h"
 #include "supporting_functions.h"
 #include "lis3dsh.h"
-#include "core_cm4.h"
-#include <stdio.h>
+#include "KeyPad.h"
+
+//#include "arm_math.h"
 
 
 #include <math.h>
@@ -76,14 +77,17 @@ int main(void)
 		
 	// initialize interrupt for accelerometer 
 	initializeAccelerometerInterrupt();
+
+	HAL_NVIC_SetPriority(EXTI0_IRQn, 1, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_IRQn);	
 	
-	//Timer
+	//initialize Timer
 	initializeTimer();
-	
-	// Set up Moving average filter 
-	
-	
-	// Initializing coefficients,Order,Length,Arrays for FIR filter
+
+	HAL_NVIC_SetPriority(TIM4_IRQn,0,0);
+	HAL_NVIC_EnableIRQ(TIM4_IRQn);	
+	//initialize KeyPad
+	initializeKeyPad();
 	
 	coeff.coeffArray[0] = 0.1;
 	coeff.coeffArray[1] = 0.15;
@@ -131,8 +135,6 @@ void initializeAccelerometerInterrupt(){
 	
 	LIS3DSH_DataReadyInterruptConfig(&accelerometer_Interrupt_Init);
 	
-	HAL_NVIC_SetPriority(EXTI0_IRQn,1,0);
-	HAL_NVIC_EnableIRQ(EXTI0_IRQn);
 	
 }
 
@@ -141,14 +143,14 @@ void initializeTimer(){
 	__TIM4_CLK_ENABLE();
 	
 	HWTimer.Instance = TIM4;
-	HWTimer.Init.Prescaler = 84000 - 1;
-	HWTimer.Init.Period = 0;
-	HWTimer.Init.CounterMode = TIM_COUNTERMODE_DOWN;
+	HWTimer.Init.Prescaler = 42000 - 1;
+	HWTimer.Init.Period = 2;
+	HWTimer.Init.CounterMode = TIM_COUNTERMODE_UP;
 	HWTimer.Init.RepetitionCounter = 0;
 	
 	HAL_TIM_Base_Init(&HWTimer);
 	HAL_TIM_Base_Start_IT(&HWTimer);
-
+	
 }
 
 
@@ -185,14 +187,12 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 		xFIROutput = FIR_C(xArray, xOutputArray, &coeff, Length, Order);
 		yFIROutput = FIR_C(yArray, yOutputArray, &coeff, Length, Order);
 		zFIROutput = FIR_C(zArray, zOutputArray, &coeff, Length, Order);
-		
-		
-		printf("X value : %f ,",xOutputArray[0]/gravity);
+			
+		/*printf("X value : %f ,",xOutputArray[0]/gravity);
 		printf("Y value : %f ,",yOutputArray[0]/gravity);
 		printf("Z value : %f\n",zOutputArray[0]/gravity);
-	
+	 */
 }
-		
 		
 		// If there is less than 4 input at the start then add into the array and wait till there is 5 value 
 		else {
@@ -207,10 +207,14 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 	
 }
 
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef* Timer){
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 	if (Timer->Instance == TIM4){
-	
-	}
+		int input = KeyPadGetValue();
+			if (input != -1){
+			printf("Value Of KeyPad is : %d\n", input);
+			}
+		//	printf("Value Of KeyPad is : %d\n", input);
+		}
 }
 
 int FIR_C(float* inputArray, float* OutputArray, FIR_coeff* coeff, int Length, int Order){
@@ -266,6 +270,7 @@ void SystemClock_Config(void){
 //Modified
 void TIM4_IRQHandler(void){
 HAL_TIM_IRQHandler(&HWTimer);
+	
 }
 
 

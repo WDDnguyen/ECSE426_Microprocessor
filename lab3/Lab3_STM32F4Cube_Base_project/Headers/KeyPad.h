@@ -2,7 +2,6 @@
 #define KeyPad_Column1 GPIO_PIN_1
 #define KeyPad_Column2 GPIO_PIN_2
 #define KeyPad_Column3 GPIO_PIN_3
-#define KeyPad_Column4 GPIO_PIN_6
 #define KeyPad_Row1 GPIO_PIN_7
 #define KeyPad_Row2 GPIO_PIN_8
 #define KeyPad_Row3 GPIO_PIN_9
@@ -21,7 +20,8 @@
 #define Key_9 9
 #define Key_star 10
 #define Key_hash 11
-#define Key_A 12
-#define Key_B 13
-#define Key_C 14
-#define Key_D 15
+
+
+
+void initializeKeyPad();
+int KeyPadGetValue();
