@@ -165,12 +165,15 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 		int yFIROutput;
 		int zFIROutput;
 		
-		if (interruptCounter++ == 5000){
-		interruptCounter = 0;
-		printf("X value : %f ,",coordinate[0]);
-		printf("Y value : %f ,",coordinate[1]);
-		printf("Z value : %f\n",coordinate[2]);
-		}
+		float xCalibrated = coordinate[0]* 0.981 + 0.372;
+		float yCalibrated = coordinate[1]* 0.972	+ 0.38;
+		
+		printf("X value : %f , ",coordinate[0]/gravity);
+		printf("Y value : %f , ",coordinate[1]/gravity);
+		printf("Z value : %f\n\n",coordinate[2]/gravity);
+		
+		printf("calibrated X value : %f , ", xCalibrated/gravity);
+		printf("calibrated X value : %f\n\n", yCalibrated/gravity);
 		
 		/*
 		if (interruptCounter++ == 5000){
