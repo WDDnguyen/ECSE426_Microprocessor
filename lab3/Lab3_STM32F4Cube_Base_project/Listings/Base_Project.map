@@ -2116,7 +2116,7 @@ Image Symbol Table
     HAL_TIM_PeriodElapsedCallback            0x080017c1   Thumb Code   196  main.o(i.HAL_TIM_PeriodElapsedCallback)
     HAL_TIM_TriggerCallback                  0x08001919   Thumb Code     2  stm32f4xx_hal_tim.o(i.HAL_TIM_TriggerCallback)
     HardFault_Handler                        0x0800191b   Thumb Code     4  stm32f4xx_it.o(i.HardFault_Handler)
-    KeyPadGetValue                           0x08001921   Thumb Code   498  keypad.o(i.KeyPadGetValue)
+    KeyPadGetValue                           0x08001921   Thumb Code   500  keypad.o(i.KeyPadGetValue)
     LIS3DSH_DataReadyInterruptConfig         0x08001b1d   Thumb Code    42  lis3dsh.o(i.LIS3DSH_DataReadyInterruptConfig)
     LIS3DSH_Init                             0x08001b49   Thumb Code   170  lis3dsh.o(i.LIS3DSH_Init)
     LIS3DSH_Read                             0x08001c25   Thumb Code    70  lis3dsh.o(i.LIS3DSH_Read)
@@ -2331,7 +2331,7 @@ Image component sizes
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
         56          4          0          0          0      30363   fput_debug.o
-       596         20          0          4          0       2170   keypad.o
+       596         18          0          4          0       2114   keypad.o
       1358        136          0          4         88       8036   lis3dsh.o
       1128        252          0         88        196     391543   main.o
         36          8        392          0       1024        904   startup_stm32f407xx.o
@@ -2347,7 +2347,7 @@ Image component sizes
        100         18          0          4          0       1373   system_stm32f4xx.o
 
     ----------------------------------------------------------------------
-      7612        930        440        104       1308     498663   Object Totals
+      7612        928        440        104       1308     498607   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         10          0          0          0          0          0   (incl. Padding)
 
@@ -2403,9 +2403,9 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-      9232        960        440        108       1308     510978   Grand Totals
-      9232        960        440        108       1308     510978   ELF Image Totals
-      9232        960        440        108          0          0   ROM Totals
+      9232        958        440        108       1308     510922   Grand Totals
+      9232        958        440        108       1308     510922   ELF Image Totals
+      9232        958        440        108          0          0   ROM Totals
 
 ==============================================================================
 

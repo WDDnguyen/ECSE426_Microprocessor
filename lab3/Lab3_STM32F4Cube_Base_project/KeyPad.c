@@ -25,16 +25,17 @@ void initializeKeyPad(){
 int KeyPadGetValue(){
 	
 	int valueReturned = -1;
-	counter = 3;
-	
+	counter = 0;
+
+	while(counter != 4){
 	if (counter == 0){
 		
 		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Row1 | KeyPad_Row2 | KeyPad_Row3 | KeyPad_Row4, GPIO_PIN_RESET );
 		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Row1, GPIO_PIN_SET );
 		
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){}return Key_1;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){}return Key_2;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){}return Key_3;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){}valueReturned = Key_1;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){}valueReturned = Key_2;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){}valueReturned = Key_3;}
 	}
 	
 	else if (counter == 1) {
@@ -42,9 +43,9 @@ int KeyPadGetValue(){
 		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Row1 | KeyPad_Row2 | KeyPad_Row3 | KeyPad_Row4, GPIO_PIN_RESET );
 		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Row2, GPIO_PIN_SET );
 		
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){}return Key_4;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){}return Key_5;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){}return Key_6;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){}valueReturned =  Key_4;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){}valueReturned =  Key_5;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){}valueReturned =  Key_6;}
 		
 	}
 	
@@ -53,9 +54,9 @@ int KeyPadGetValue(){
 		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Row1 | KeyPad_Row2 | KeyPad_Row3 | KeyPad_Row4, GPIO_PIN_RESET );
 		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Row3, GPIO_PIN_SET );
 		
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){}return Key_7;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){}return Key_8;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){}return Key_9;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){}valueReturned =  Key_7;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){}valueReturned =  Key_8;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){}valueReturned = Key_9;}
 	
 	}
 		
@@ -63,11 +64,16 @@ int KeyPadGetValue(){
 		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Row1 | KeyPad_Row2 | KeyPad_Row3 | KeyPad_Row4, GPIO_PIN_RESET );
 		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Row4, GPIO_PIN_SET );
 		
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){}return Key_star;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){}return Key_0;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){}return Key_hash;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){}valueReturned = Key_star;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){}valueReturned = Key_0;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){while (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){}valueReturned = Key_hash;}
 		
 	}
+		counter++;
+	
+	}
+	
+	//counter = counter % 4;
 	
 	return valueReturned;
 	
