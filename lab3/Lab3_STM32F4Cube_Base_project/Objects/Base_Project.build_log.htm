@@ -27,6 +27,20 @@ Project File Date:  02/24/2017
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 4 (build 422)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Lab 3'
+compiling KeyPad.c...
+.\Headers\KeyPad.h(26): warning:  #1295-D: Deprecated declaration initializeKeyPad - give arg types
+  void initializeKeyPad();
+.\Headers\KeyPad.h(27): warning:  #1-D: last line of file ends without a newline
+  int KeyPadGetValue();
+.\Headers\KeyPad.h(27): warning:  #1295-D: Deprecated declaration KeyPadGetValue - give arg types
+  int KeyPadGetValue();
+.\Headers\KeyPad.h(26): warning:  #1295-D: Deprecated declaration initializeKeyPad - give arg types
+  void initializeKeyPad();
+.\Headers\KeyPad.h(27): warning:  #1-D: last line of file ends without a newline
+  int KeyPadGetValue();
+.\Headers\KeyPad.h(27): warning:  #1295-D: Deprecated declaration KeyPadGetValue - give arg types
+  int KeyPadGetValue();
+KeyPad.c: 6 warnings, 0 errors
 compiling main.c...
 .\Headers\KeyPad.h(26): warning:  #1295-D: Deprecated declaration initializeKeyPad - give arg types
   void initializeKeyPad();
@@ -42,20 +56,18 @@ Sources\main.c(34): warning:  #1295-D: Deprecated declaration initializeAccelero
   void initializeAccelerometerInterrupt();
 Sources\main.c(35): warning:  #1295-D: Deprecated declaration initializeTimer - give arg types
   void initializeTimer();
-Sources\main.c(182): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+Sources\main.c(190): warning:  #1035-D: single-precision operand implicitly converted to double-precision
   		float xCalibrated = coordinate[0]* 0.981 + 0.372;
-Sources\main.c(183): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		float yCalibrated = coordinate[1]* 0.972	+ 0.38;
-Sources\main.c(178): warning:  #177-D: variable "xFIROutput"  was declared but never referenced
+Sources\main.c(186): warning:  #177-D: variable "xFIROutput"  was declared but never referenced
   		int xFIROutput;
-Sources\main.c(179): warning:  #177-D: variable "yFIROutput"  was declared but never referenced
+Sources\main.c(187): warning:  #177-D: variable "yFIROutput"  was declared but never referenced
   		int yFIROutput;
-Sources\main.c(180): warning:  #177-D: variable "zFIROutput"  was declared but never referenced
+Sources\main.c(188): warning:  #177-D: variable "zFIROutput"  was declared but never referenced
   		int zFIROutput;
 Sources\main.c: 12 warnings, 0 errors
 linking...
-Program Size: Code=11380 RO-data=440 RW-data=88 ZI-data=1312  
-".\Objects\Base_Project.axf" - 0 Error(s), 12 Warning(s).
+Program Size: Code=9232 RO-data=440 RW-data=108 ZI-data=1308  
+".\Objects\Base_Project.axf" - 0 Error(s), 17 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -180,7 +192,7 @@ Package Vendor: Keil
    * Component: Keil::Device:STM32Cube HAL:TIM:1.4.2
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c
-Build Time Elapsed:  00:00:02
+Build Time Elapsed:  00:00:03
 </pre>
 </body>
 </html>

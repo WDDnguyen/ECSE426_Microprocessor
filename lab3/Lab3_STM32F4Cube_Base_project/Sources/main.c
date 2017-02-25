@@ -69,6 +69,14 @@ int interruptCounter = 0;
 
 arm_fir_instance_f32 s = {5, firStateF32,coefficients};
 
+int multiplier  = 100 ;
+int roll = 0;
+
+int current = 0;
+int pitch = 0;
+
+
+int state = 0;
 
 
 int main(void)
@@ -260,9 +268,39 @@ for(int k = 0; k < Length; k++)
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 	if (Timer->Instance == TIM4){
 		int input = KeyPadGetValue();
-			if (input != -1){
-			printf("Value Of KeyPad is : %d\n", input);
+			
+			if (input != -1 && input != Key_star && input != Key_hash && state == 0 ){
+				printf("Value Of KeyPad is : %d\n", input);
+				roll = roll + input * multiplier;
+				multiplier = multiplier / 10;
+				current = input * multiplier;
 			}
+			
+			else if (input == Key_hash && state == 0){
+				if (roll > 180){
+				state = 0;
+				printf("Roll value is higher than possible, retype roll value");
+				
+				}
+				else {
+				state = 1; 
+				printf("Roll value is : %d\n", roll);
+				// set value of Roll 
+				}
+				
+				multiplier = 100;
+				roll = 0;
+				
+			}
+			
+			else if (input == Key_star && state == 0){
+				roll = roll - current;
+				multiplier = multiplier * 10;
+				printf("Deleted current value\n");
+				
+			}
+			
+			
 		//	printf("Value Of KeyPad is : %d\n", input);
 		}
 }
