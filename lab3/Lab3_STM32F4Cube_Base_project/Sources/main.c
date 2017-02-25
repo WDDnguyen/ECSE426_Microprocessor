@@ -23,11 +23,11 @@
 /* Private variables ---------------------------------------------------------*/
 
 typedef struct FIR_coeff{
-float coeffArray[5];
+float32_t coeffArray[5];
 }FIR_coeff;
 
 
-int FIR_C(float* inputArray, float* OutputArray, FIR_coeff* coeff, int Length, int Order);
+int FIR_C(float32_t* inputArray, float32_t* OutputArray, FIR_coeff* coeff, int Length, int Order);
 
 void initializeAccelerometer();
 void initializeAccelerometerPin();
@@ -41,13 +41,13 @@ void SystemClock_Config	(void);
 
 TIM_HandleTypeDef HWTimer;
 
-float xArray[5];
-float yArray[5];
-float zArray[5];
+float32_t xArray[5];
+float32_t yArray[5];
+float32_t zArray[5];
 
-float xOutputArray[1];
-float yOutputArray[1];
-float zOutputArray[1];
+float32_t xOutputArray[1];
+float32_t yOutputArray[1];
+float32_t zOutputArray[1];
 
 int Length = 5;
 int Order = 4;
@@ -157,7 +157,7 @@ void initializeTimer(){
 
 void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 	if(Pin == LIS3DSH_SPI_INT1_PIN){
-		float coordinate[3];
+		float32_t coordinate[3];
 		
 		LIS3DSH_ReadACC(coordinate);
 	
@@ -215,6 +215,23 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 			invalidCount -= 1;
 			printf("FIRST 4 POLL DOESNT GIVE VALUE : %d \n", invalidCount);
 	}
+		//potential use DSP FIR
+	 /*
+	float32_t OutputArrayDSP[Length];
+uint32_t blockSize = 1;
+float32_t firStateF32[10 + 5 - 1];
+float32_t coefficients[5] = {0.1,0.15,0.5,0.15,0.1};
+
+arm_fir_instance_f32 s = {Order+1, firStateF32,coefficients};
+arm_fir_init_f32(&s, 5,(float32_t *)&coefficients[0],&firStateF32[0],blockSize);
+
+// Changed from Length - Order
+for(int k = 0; k < Length; k++)
+{
+	arm_fir_f32(&s, &testArray[k], &OutputArrayDSP[k],blockSize);
+//	printf("THIS IS THE CMSIS DSP VALUE : %f\n",OutputArrayDSP[k]);
+}
+	*/
 		
 	}
 	
@@ -230,9 +247,9 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 		}
 }
 
-int FIR_C(float* inputArray, float* OutputArray, FIR_coeff* coeff, int Length, int Order){
+int FIR_C(float32_t* inputArray, float32_t* OutputArray, FIR_coeff* coeff, int Length, int Order){
 	int i,j,k;
-        float y;
+        float32_t y;
 
         for (j = 0 ; j < Length - Order; j++){
 							OutputArray[j] = inputArray[0] * coeff->coeffArray[0] + inputArray[1] * coeff->coeffArray[1] + inputArray[2] * coeff->coeffArray[2] + inputArray[3] * coeff->coeffArray[3] + inputArray[4] * coeff->coeffArray[4];
