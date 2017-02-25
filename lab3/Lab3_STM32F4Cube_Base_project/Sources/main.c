@@ -41,6 +41,10 @@ void SystemClock_Config	(void);
 
 TIM_HandleTypeDef HWTimer;
 
+
+
+
+
 float32_t xArray[5];
 float32_t yArray[5];
 float32_t zArray[5];
@@ -57,8 +61,15 @@ FIR_coeff coeff;
 
 float gravity = 9.81;
 
+uint32_t blockSize = 1;
+float32_t firStateF32[10 + 5 - 1];
+float32_t coefficients[5] = {0.1,0.15,0.5,0.15,0.1};
 
 int interruptCounter = 0;
+
+arm_fir_instance_f32 s = {5, firStateF32,coefficients};
+
+
 
 int main(void)
 {	
@@ -68,6 +79,8 @@ int main(void)
 
   /* Configure the system clock */
   SystemClock_Config();
+	
+	arm_fir_init_f32(&s, 5,(float32_t *)&coefficients[0],&firStateF32[0],blockSize);
 	
 	//Set up accelerometer 
 	initializeAccelerometer();	
@@ -157,6 +170,7 @@ void initializeTimer(){
 
 void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 	if(Pin == LIS3DSH_SPI_INT1_PIN){
+		
 		float32_t coordinate[3];
 		
 		LIS3DSH_ReadACC(coordinate);
@@ -168,12 +182,15 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 		float xCalibrated = coordinate[0]* 0.981 + 0.372;
 		float yCalibrated = coordinate[1]* 0.972	+ 0.38;
 		
-		printf("X value : %f , ",coordinate[0]/gravity);
+		//arm_fir_f32(&s, &xArray[0], &OutputArrayDSP[0],blockSize);
+		
+		/*printf("X value : %f , ",coordinate[0]/gravity);
 		printf("Y value : %f , ",coordinate[1]/gravity);
 		printf("Z value : %f\n\n",coordinate[2]/gravity);
 		
 		printf("calibrated X value : %f , ", xCalibrated/gravity);
 		printf("calibrated X value : %f\n\n", yCalibrated/gravity);
+		*/
 		
 		/*
 		if (interruptCounter++ == 5000){
@@ -181,10 +198,14 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 		printf("X value : %f ,",coordinate[0]/gravity);
 		printf("Y value : %f ,",coordinate[1]/gravity);
 		printf("Z value : %f\n",coordinate[2]/gravity);
+		
+		printf("calibrated X value : %f , ", xCalibrated/gravity);
+		printf("calibrated X value : %f\n\n", yCalibrated/gravity);
+		
 		}
 		*/
 		
-		if (invalidCount == 0){
+		/*if (invalidCount == 0){
 			
 		
 		for (int i = 5; i < 5; i++){ 
@@ -197,14 +218,18 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 		yArray[0] = coordinate[1];
 		zArray[0] = coordinate[2];
 		
-		xFIROutput = FIR_C(xArray, xOutputArray, &coeff, Length, Order);
-		yFIROutput = FIR_C(yArray, yOutputArray, &coeff, Length, Order);
-		zFIROutput = FIR_C(zArray, zOutputArray, &coeff, Length, Order);
+		arm_fir_f32(&s, &xArray[0], &xOutputArray[0],blockSize);
+		arm_fir_f32(&s, &yArray[0], &yOutputArray[0],blockSize);
+		arm_fir_f32(&s, &zArray[0], &zOutputArray[0],blockSize);
+		
+		//xFIROutput = FIR_C(xArray, xOutputArray, &coeff, Length, Order);
+		//yFIROutput = FIR_C(yArray, yOutputArray, &coeff, Length, Order);
+		//zFIROutput = FIR_C(zArray, zOutputArray, &coeff, Length, Order);
 			
-		/*printf("X value : %f ,",xOutputArray[0]/gravity);
-		printf("Y value : %f ,",yOutputArray[0]/gravity);
-		printf("Z value : %f\n",zOutputArray[0]/gravity);
-	 */
+		printf("X value : %f ,",(xOutputArray[0] - 63)/gravity);
+		printf("Y value : %f ,",(yOutputArray[0] - 83)/gravity);
+		printf("Z value : %f\n",(zOutputArray[0] - 63)/gravity);
+	 
 }
 		
 		// If there is less than 4 input at the start then add into the array and wait till there is 5 value 
@@ -215,15 +240,10 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 			invalidCount -= 1;
 			printf("FIRST 4 POLL DOESNT GIVE VALUE : %d \n", invalidCount);
 	}
+	*/
+
 		//potential use DSP FIR
 	 /*
-	float32_t OutputArrayDSP[Length];
-uint32_t blockSize = 1;
-float32_t firStateF32[10 + 5 - 1];
-float32_t coefficients[5] = {0.1,0.15,0.5,0.15,0.1};
-
-arm_fir_instance_f32 s = {Order+1, firStateF32,coefficients};
-arm_fir_init_f32(&s, 5,(float32_t *)&coefficients[0],&firStateF32[0],blockSize);
 
 // Changed from Length - Order
 for(int k = 0; k < Length; k++)
@@ -248,13 +268,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 }
 
 int FIR_C(float32_t* inputArray, float32_t* OutputArray, FIR_coeff* coeff, int Length, int Order){
-	int i,j,k;
-        float32_t y;
-
-        for (j = 0 ; j < Length - Order; j++){
-							OutputArray[j] = inputArray[0] * coeff->coeffArray[0] + inputArray[1] * coeff->coeffArray[1] + inputArray[2] * coeff->coeffArray[2] + inputArray[3] * coeff->coeffArray[3] + inputArray[4] * coeff->coeffArray[4];
-        }
-        return 0;
+	OutputArray[0] = inputArray[0] * coeff->coeffArray[0] + inputArray[1] * coeff->coeffArray[1] + inputArray[2] * coeff->coeffArray[2] + inputArray[3] * coeff->coeffArray[3] + inputArray[4] * coeff->coeffArray[4];
+   return 0;
 }
 
 

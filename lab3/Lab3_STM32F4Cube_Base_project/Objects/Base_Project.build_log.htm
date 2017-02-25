@@ -42,26 +42,20 @@ Sources\main.c(34): warning:  #1295-D: Deprecated declaration initializeAccelero
   void initializeAccelerometerInterrupt();
 Sources\main.c(35): warning:  #1295-D: Deprecated declaration initializeTimer - give arg types
   void initializeTimer();
-Sources\main.c(168): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+Sources\main.c(182): warning:  #1035-D: single-precision operand implicitly converted to double-precision
   		float xCalibrated = coordinate[0]* 0.981 + 0.372;
-Sources\main.c(169): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+Sources\main.c(183): warning:  #1035-D: single-precision operand implicitly converted to double-precision
   		float yCalibrated = coordinate[1]* 0.972	+ 0.38;
-Sources\main.c(164): warning:  #550-D: variable "xFIROutput"  was set but never used
+Sources\main.c(178): warning:  #177-D: variable "xFIROutput"  was declared but never referenced
   		int xFIROutput;
-Sources\main.c(165): warning:  #550-D: variable "yFIROutput"  was set but never used
+Sources\main.c(179): warning:  #177-D: variable "yFIROutput"  was declared but never referenced
   		int yFIROutput;
-Sources\main.c(166): warning:  #550-D: variable "zFIROutput"  was set but never used
+Sources\main.c(180): warning:  #177-D: variable "zFIROutput"  was declared but never referenced
   		int zFIROutput;
-Sources\main.c(251): warning:  #177-D: variable "i"  was declared but never referenced
-  	int i,j,k;
-Sources\main.c(251): warning:  #177-D: variable "k"  was declared but never referenced
-  	int i,j,k;
-Sources\main.c(252): warning:  #177-D: variable "y"  was declared but never referenced
-          float32_t y;
-Sources\main.c: 15 warnings, 0 errors
+Sources\main.c: 12 warnings, 0 errors
 linking...
-Program Size: Code=11724 RO-data=440 RW-data=52 ZI-data=1252  
-".\Objects\Base_Project.axf" - 0 Error(s), 15 Warning(s).
+Program Size: Code=11380 RO-data=440 RW-data=88 ZI-data=1312  
+".\Objects\Base_Project.axf" - 0 Error(s), 12 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -186,7 +180,7 @@ Package Vendor: Keil
    * Component: Keil::Device:STM32Cube HAL:TIM:1.4.2
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:02
 </pre>
 </body>
 </html>
