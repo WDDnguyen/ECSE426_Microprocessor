@@ -4,8 +4,8 @@
 #define KeyPad_Column3 GPIO_PIN_3
 #define KeyPad_Row1 GPIO_PIN_7
 #define KeyPad_Row2 GPIO_PIN_8
-#define KeyPad_Row3 GPIO_PIN_9
-#define KeyPad_Row4 GPIO_PIN_10
+#define KeyPad_Row3 GPIO_PIN_10
+#define KeyPad_Row4 GPIO_PIN_11
 #define KeyPad_GPIO_PORT_CLK_EN __HAL_RCC_GPIOD_CLK_ENABLE();
 
 #define Key_0 0

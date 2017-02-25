@@ -43,4 +43,7 @@
 .\objects\main.o: .\Headers\supporting_functions.h
 .\objects\main.o: .\Accelerometer\inc\lis3dsh.h
 .\objects\main.o: .\Headers\KeyPad.h
+.\objects\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\arm_math.h
+.\objects\main.o: C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\core_cm4.h
+.\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 .\objects\main.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\math.h

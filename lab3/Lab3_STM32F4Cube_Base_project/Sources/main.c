@@ -15,7 +15,7 @@
 #include "lis3dsh.h"
 #include "KeyPad.h"
 
-//#include "arm_math.h"
+#include "arm_math.h"
 
 
 #include <math.h>
@@ -86,6 +86,7 @@ int main(void)
 
 	HAL_NVIC_SetPriority(TIM4_IRQn,0,0);
 	HAL_NVIC_EnableIRQ(TIM4_IRQn);	
+	
 	//initialize KeyPad
 	initializeKeyPad();
 	
@@ -164,12 +165,21 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 		int yFIROutput;
 		int zFIROutput;
 		
-		/*if (interruptCounter++ == 5000){
+		if (interruptCounter++ == 5000){
+		interruptCounter = 0;
+		printf("X value : %f ,",coordinate[0]);
+		printf("Y value : %f ,",coordinate[1]);
+		printf("Z value : %f\n",coordinate[2]);
+		}
+		
+		/*
+		if (interruptCounter++ == 5000){
 		interruptCounter = 0;
 		printf("X value : %f ,",coordinate[0]/gravity);
 		printf("Y value : %f ,",coordinate[1]/gravity);
 		printf("Z value : %f\n",coordinate[2]/gravity);
-		}*/
+		}
+		*/
 		
 		if (invalidCount == 0){
 			

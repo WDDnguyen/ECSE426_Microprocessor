@@ -25,41 +25,49 @@ void initializeKeyPad(){
 int KeyPadGetValue(){
 	
 	int valueReturned = -1;
-	counter = 2;
+	counter = 0;
 	
 	if (counter == 0){
-		//printf("WHEN INTO COLUMN1");
-		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Column1 | KeyPad_Column2 | KeyPad_Column3, GPIO_PIN_RESET );
-		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Column1, GPIO_PIN_SET );
 		
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Row1) > 0){valueReturned = Key_1;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Row2) > 0){valueReturned = Key_4;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Row3) > 0){valueReturned = Key_7;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Row4) > 0){valueReturned = Key_star;}
+		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Row1 | KeyPad_Row2 | KeyPad_Row3 | KeyPad_Row4, GPIO_PIN_RESET );
+		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Row1, GPIO_PIN_SET );
+		
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){return Key_1;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){return Key_2;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){return Key_3;}
+		
 	}
 	
 	else if (counter == 1) {
-		//printf("WHEN INTO COLUMN2");
 		
-		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Column1 | KeyPad_Column2 | KeyPad_Column3, GPIO_PIN_RESET );
-		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Column2, GPIO_PIN_SET );
+		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Row1 | KeyPad_Row2 | KeyPad_Row3 | KeyPad_Row4, GPIO_PIN_RESET );
+		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Row2, GPIO_PIN_SET );
 		
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Row1) > 0){valueReturned = Key_2;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Row2) > 0){valueReturned = Key_5;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Row3) > 0){valueReturned = Key_8;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Row4) > 0){valueReturned = Key_0;}
-	
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){return Key_4;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){return Key_5;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){return Key_6;}
+		
 	}
 	
-	else if (counter == 2){
-		//printf("WHEN INTO COLUMN3");
-		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Column1 | KeyPad_Column2 | KeyPad_Column3, GPIO_PIN_RESET );
-		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Column3, GPIO_PIN_SET );
+		else if (counter == 2){
 		
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Row1) > 0){valueReturned = Key_3;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Row2) > 0){valueReturned = Key_6;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Row3) > 0){valueReturned = Key_9;}
-		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Row4) > 0){valueReturned = Key_hash;}
+		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Row1 | KeyPad_Row2 | KeyPad_Row3 | KeyPad_Row4, GPIO_PIN_RESET );
+		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Row3, GPIO_PIN_SET );
+		
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){return Key_7;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){return Key_8;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){return Key_9;}
+	
+	}
+		
+		else if (counter == 3){
+		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Row1 | KeyPad_Row2 | KeyPad_Row3 | KeyPad_Row4, GPIO_PIN_RESET );
+		HAL_GPIO_WritePin(KeyPad_Port, KeyPad_Row4, GPIO_PIN_SET );
+		
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column1) > 0){return Key_star;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column2) > 0){return Key_0;}
+		if (HAL_GPIO_ReadPin(KeyPad_Port, KeyPad_Column3) > 0){return Key_hash;}
+		
 	}
 	
 	return valueReturned;
