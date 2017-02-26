@@ -4,6 +4,7 @@
 ".\objects\supporting_functions.o"
 ".\objects\stm32f4xx_it.o"
 ".\objects\keypad.o"
+".\objects\gpio.o"
 ".\objects\lis3dsh.o"
 "C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Lib\ARM\arm_cortexM4lf_math.lib"
 ".\objects\stm32f4xx_hal.o"

@@ -16,6 +16,7 @@
 #include "KeyPad.h"
 
 #include "arm_math.h"
+#include "gpio.h"
 
 
 #include <math.h>
@@ -40,10 +41,6 @@ void SystemClock_Config	(void);
 
 
 TIM_HandleTypeDef HWTimer;
-
-
-
-
 
 float32_t xArray[5];
 float32_t yArray[5];
@@ -75,7 +72,7 @@ int roll = 0;
 int current = 0;
 int pitch = 0;
 
-
+int position = 3;
 int state = 0;
 
 
@@ -117,6 +114,10 @@ int main(void)
 	coeff.coeffArray[3] = 0.15;
 	coeff.coeffArray[4] = 0.1;
 
+	// initialize GPIO
+	GPIO_Init();
+	
+	
 	while (1){
 	}
 }
@@ -174,7 +175,6 @@ void initializeTimer(){
 	HAL_TIM_Base_Start_IT(&HWTimer);
 	
 }
-
 
 void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 	if(Pin == LIS3DSH_SPI_INT1_PIN){
@@ -265,45 +265,109 @@ for(int k = 0; k < Length; k++)
 	
 }
 
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
-	if (Timer->Instance == TIM4){
-		int input = KeyPadGetValue();
-			
-			if (input != -1 && input != Key_star && input != Key_hash && state == 0 ){
-				printf("Value Of KeyPad is : %d\n", input);
-				roll = roll + input * multiplier;
-				multiplier = multiplier / 10;
-				current = input * multiplier;
-			}
-			
-			else if (input == Key_hash && state == 0){
+void rollInput(int input){
+
+			if (input == Key_hash){
 				if (roll > 180){
+				printf("Retype roll value : %d \n", roll);
 				state = 0;
-				printf("Roll value is higher than possible, retype roll value");
-				
+					
+				//resetDisplay();
 				}
 				else {
-				state = 1; 
 				printf("Roll value is : %d\n", roll);
-				// set value of Roll 
-				}
 				
-				multiplier = 100;
+				state = 1; 
+				rollLED(roll); // test
+				
+					// set value of Roll 
+				}
+				position = 3;
+				multiplier = 1;
 				roll = 0;
 				
 			}
 			
-			else if (input == Key_star && state == 0){
-				roll = roll - current;
-				multiplier = multiplier * 10;
+			else if (input == Key_star){
 				printf("Deleted current value\n");
+				roll = roll - current;
+				multiplier = multiplier / 10;
+				
+				position++;
+				displayValue(-1,position);
+				
+			}
+			else{
+				printf("Value Of KeyPad is : %d\n", input);
+				roll = roll + input * multiplier;
+				multiplier = multiplier * 10;
+				current = input * multiplier;
+			
+				displayValue(input,position);
+				position--;
+			}
+}
+
+void pitchInput(int input){
+
+			if (input == Key_hash){
+				
+				if (pitch > 180){
+					printf("Retype pitch value : %d \n", pitch);
+					resetDisplay();
+					state = 1;
+					
+				}
+				else {
+				printf("Pitch value is : %d\n", roll);
+				
+				state = 0; 
+				pitchLED(pitch);
+					//resetDisplay();
+				}
+				
+				position = 3;
+				multiplier = 1;
+				pitch = 0;
 				
 			}
 			
+			else if (input == Key_star){
+				printf("Deleted current value\n");
+				
+				pitch = pitch - current; // might have error
+				multiplier = multiplier / 10;
+				
+				position++;
+				displayValue(-1,position);
+			}
 			
-		//	printf("Value Of KeyPad is : %d\n", input);
+			else{
+				printf("Value Of KeyPad is : %d\n", input);
+				pitch = pitch + input * multiplier;
+				multiplier = multiplier * 10;
+				current = input * multiplier;
+				
+				displayValue(input,position);
+				position--;
+			}
+}
+
+
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
+	if (Timer->Instance == TIM4){
+		int input = KeyPadGetValue();
+		if (state == 0 && input != -1){
+		rollInput(input); 
+		}
+		
+		else if (state == 1 && input != -1){
+	  pitchInput(input);
+		}
 		}
 }
+
 
 int FIR_C(float32_t* inputArray, float32_t* OutputArray, FIR_coeff* coeff, int Length, int Order){
 	OutputArray[0] = inputArray[0] * coeff->coeffArray[0] + inputArray[1] * coeff->coeffArray[1] + inputArray[2] * coeff->coeffArray[2] + inputArray[3] * coeff->coeffArray[3] + inputArray[4] * coeff->coeffArray[4];
