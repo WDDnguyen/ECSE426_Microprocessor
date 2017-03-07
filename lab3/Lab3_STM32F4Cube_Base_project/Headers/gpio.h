@@ -41,7 +41,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "stm32f4xx_hal.h"
-
+#include "arm_math.h"
+	 
 /* USER CODE BEGIN Includes */
 #define SEG7_A GPIO_PIN_7			//Pin PE7  brown cable
 #define SEG7_B GPIO_PIN_8			//Pin PE8  brown cable
@@ -74,8 +75,8 @@ void MX_GPIO_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 void GPIO_Init(void);
-void rollLED(int rollDifference);
-void pitchLED(int pitchDifference);
+int rollLED(float32_t rollDifference);
+int pitchLED(float32_t pitchDifference);
 void displayValue();
 void resetDisplay();
 

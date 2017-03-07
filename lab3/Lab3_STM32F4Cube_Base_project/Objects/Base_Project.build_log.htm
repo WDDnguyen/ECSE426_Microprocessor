@@ -34,9 +34,9 @@ compiling main.c...
   int KeyPadGetValue();
 .\Headers\KeyPad.h(27): warning:  #1295-D: Deprecated declaration KeyPadGetValue - give arg types
   int KeyPadGetValue();
-.\Headers\gpio.h(79): warning:  #1295-D: Deprecated declaration displayValue - give arg types
+.\Headers\gpio.h(80): warning:  #1295-D: Deprecated declaration displayValue - give arg types
   void displayValue();
-.\Headers\gpio.h(80): warning:  #1295-D: Deprecated declaration resetDisplay - give arg types
+.\Headers\gpio.h(81): warning:  #1295-D: Deprecated declaration resetDisplay - give arg types
   void resetDisplay();
 Sources\main.c(33): warning:  #1295-D: Deprecated declaration initializeAccelerometer - give arg types
   void initializeAccelerometer();
@@ -46,29 +46,23 @@ Sources\main.c(35): warning:  #1295-D: Deprecated declaration initializeAccelero
   void initializeAccelerometerInterrupt();
 Sources\main.c(36): warning:  #1295-D: Deprecated declaration initializeTimer - give arg types
   void initializeTimer();
-Sources\main.c(190): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		float xCalibrated = coordinate[0]* 0.981 + 0.372;
-Sources\main.c(191): warning:  #1035-D: single-precision operand implicitly converted to double-precision
-  		float yCalibrated = coordinate[1]* 0.972	+ 0.38;
-Sources\main.c(186): warning:  #177-D: variable "xFIROutput"  was declared but never referenced
-  		int xFIROutput;
-Sources\main.c(187): warning:  #177-D: variable "yFIROutput"  was declared but never referenced
-  		int yFIROutput;
-Sources\main.c(188): warning:  #177-D: variable "zFIROutput"  was declared but never referenced
-  		int zFIROutput;
-Sources\main.c: 14 warnings, 0 errors
+Sources\main.c(209): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		 xCalibrated = coordinate[0]* 0.846 + 0.372;
+Sources\main.c(210): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		 yCalibrated = coordinate[1]* 0.846	+ 0.38;
+Sources\main.c: 11 warnings, 0 errors
 linking...
-Program Size: Code=11108 RO-data=440 RW-data=112 ZI-data=1312  
-".\Objects\Base_Project.axf" - 0 Error(s), 14 Warning(s).
+Program Size: Code=15852 RO-data=440 RW-data=164 ZI-data=1364  
+".\Objects\Base_Project.axf" - 0 Error(s), 11 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
                 http://www.keil.com/pack/ARM.CMSIS.5.0.0.pack
-                ARM::CMSIS:CORE:5.0.0
+                ARM::CMSIS:DSP:1.4.6
                 CMSIS (Cortex Microcontroller Software Interface Standard)
-   * Component: CORE Version: 5.0.0
    * Component: DSP Version: 1.4.6
+   * Component: CORE Version: 5.0.0
 
 Package Vendor: Keil
                 http://www.keil.com/pack/Keil.STM32F4xx_DFP.2.7.0.pack
@@ -76,21 +70,21 @@ Package Vendor: Keil
                 STMicroelectronics STM32F4 Series Device Support, Drivers and Examples
    * Component: Startup Version: 2.4.2
    * Component: STM32Cube Framework Version: 
-   * Component: Common Version: 1.4.2
+   * Component: Cortex Version: 1.4.2
+   * Component: Classic Version: 1.4.2
    * Component: Flash Version: 1.4.2
    * Component: DMA Version: 1.4.2
    * Component: I2S Version: 1.4.2
-   * Component: GPIO Version: 1.4.2
-   * Component: Cortex Version: 1.4.2
-   * Component: Classic Version: 1.4.2
+   * Component: Common Version: 1.4.2
    * Component: I2C Version: 1.4.2
+   * Component: GPIO Version: 1.4.2
    * Component: ADC Version: 1.4.2
-   * Component: SPI Version: 1.4.2
-   * Component: RTC Version: 1.4.2
-   * Component: RCC Version: 1.4.2
    * Component: SRAM Version: 1.4.2
+   * Component: RCC Version: 1.4.2
    * Component: TIM Version: 1.4.2
    * Component: PWR Version: 1.4.2
+   * Component: RTC Version: 1.4.2
+   * Component: SPI Version: 1.4.2
    * Component: UART Version: 1.4.2
    * Component: USART Version: 1.4.2
 
@@ -103,11 +97,11 @@ Package Vendor: Keil
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ARM::CMSIS:CORE:5.0.0
-
    * Component: ARM::CMSIS:DSP:1.4.6
-      Library file:  CMSIS\Lib\ARM\arm_cortexM4lf_math.lib
       Include file:  CMSIS\Include\arm_math.h
+      Library file:  CMSIS\Lib\ARM\arm_cortexM4lf_math.lib
+
+   * Component: ARM::CMSIS:CORE:5.0.0
 
    * Component: Keil::Device:Startup:2.4.2
       Source file:   MDK\Device\Source\ARM\STM32F40xxx_41xxx_OPT.s
@@ -118,9 +112,17 @@ Package Vendor: Keil
 
    * Component: ::Device:STM32Cube Framework (API)
 
-   * Component: Keil::Device:STM32Cube HAL:Common:1.4.2
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
-      Include file:  Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
+   * Component: Keil::Device:STM32Cube HAL:Cortex:1.4.2
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
+
+   * Component: Keil::Device:STM32Cube Framework:Classic:1.4.2
+      Source file:   MDK\Templates\Src\stm32f4xx_hal_msp.c
+      Source file:   MDK\Templates\Src\stm32f4xx_it.c
+      Include file:  MDK\Templates\Inc\main.h
+      Source file:   MDK\Templates\Src\main.c
+      Include file:  MDK\Templates\Inc\stm32f4xx_hal_conf.h
+      Include file:  MDK\Templates\Inc\stm32f4xx_it.h
+      Include file:  CMSIS\Driver\Config\RTE_Device.h
 
    * Component: Keil::Device:STM32Cube HAL:Flash:1.4.2
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_flash_ex.c
@@ -131,53 +133,45 @@ Package Vendor: Keil
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_dma_ex.c
 
    * Component: Keil::Device:STM32Cube HAL:I2S:1.4.2
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s_ex.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2s.c
 
-   * Component: Keil::Device:STM32Cube HAL:GPIO:1.4.2
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c
-
-   * Component: Keil::Device:STM32Cube HAL:Cortex:1.4.2
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_cortex.c
-
-   * Component: Keil::Device:STM32Cube Framework:Classic:1.4.2
-      Include file:  MDK\Templates\Inc\stm32f4xx_hal_conf.h
-      Source file:   MDK\Templates\Src\stm32f4xx_hal_msp.c
-      Include file:  MDK\Templates\Inc\stm32f4xx_it.h
-      Include file:  MDK\Templates\Inc\main.h
-      Include file:  CMSIS\Driver\Config\RTE_Device.h
-      Source file:   MDK\Templates\Src\stm32f4xx_it.c
-      Source file:   MDK\Templates\Src\main.c
+   * Component: Keil::Device:STM32Cube HAL:Common:1.4.2
+      Include file:  Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal.c
 
    * Component: Keil::Device:STM32Cube HAL:I2C:1.4.2
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_i2c.c
+
+   * Component: Keil::Device:STM32Cube HAL:GPIO:1.4.2
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_gpio.c
 
    * Component: Keil::Device:STM32Cube HAL:ADC:1.4.2
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_adc_ex.c
 
-   * Component: Keil::Device:STM32Cube HAL:SPI:1.4.2
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c
-
-   * Component: Keil::Device:STM32Cube HAL:RTC:1.4.2
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc.c
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc_ex.c
-
-   * Component: Keil::Device:STM32Cube HAL:RCC:1.4.2
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
-
    * Component: Keil::Device:STM32Cube HAL:SRAM:1.4.2
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_sram.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_fsmc.c
+
+   * Component: Keil::Device:STM32Cube HAL:RCC:1.4.2
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc_ex.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rcc.c
 
    * Component: Keil::Device:STM32Cube HAL:TIM:1.4.2
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_tim_ex.c
 
    * Component: Keil::Device:STM32Cube HAL:PWR:1.4.2
-      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr_ex.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_pwr.c
+
+   * Component: Keil::Device:STM32Cube HAL:RTC:1.4.2
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc.c
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_rtc_ex.c
+
+   * Component: Keil::Device:STM32Cube HAL:SPI:1.4.2
+      Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c
 
    * Component: Keil::Device:STM32Cube HAL:UART:1.4.2
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_uart.c

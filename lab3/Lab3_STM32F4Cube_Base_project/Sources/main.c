@@ -60,11 +60,14 @@ float gravity = 9.81;
 
 uint32_t blockSize = 1;
 float32_t firStateF32[10 + 5 - 1];
+float32_t firStateF32y[10 + 5 - 1];
 float32_t coefficients[5] = {0.1,0.15,0.5,0.15,0.1};
+float32_t coefficientsy[5] = {0.1,0.15,0.5,0.15,0.1};
 
 int interruptCounter = 0;
 
 arm_fir_instance_f32 s = {5, firStateF32,coefficients};
+arm_fir_instance_f32 sy = {5, firStateF32y,coefficientsy};
 
 int multiplier  = 100 ;
 int roll = 0;
@@ -76,6 +79,17 @@ int position = 3;
 int state = 0;
 
 
+// ROLL AND PITCH VALUE
+volatile int rollValue = 0;
+volatile int pitchValue = 0;
+int keypadValuesSet = 0;
+
+
+//CALIBRATED VALUE VARIABLES
+
+float32_t xCalibrated = 0;
+float32_t yCalibrated = 0;
+
 int main(void)
 {	
   /* MCU Configuration----------------------------------------------------------*/
@@ -86,6 +100,7 @@ int main(void)
   SystemClock_Config();
 	
 	arm_fir_init_f32(&s, 5,(float32_t *)&coefficients[0],&firStateF32[0],blockSize);
+	arm_fir_init_f32(&sy, 5,(float32_t *)&coefficientsy[0],&firStateF32y[0],blockSize);
 	
 	//Set up accelerometer 
 	initializeAccelerometer();	
@@ -157,8 +172,7 @@ void initializeAccelerometerInterrupt(){
 	accelerometer_Interrupt_Init.Interrupt_type = LIS3DSH_INTERRUPT_REQUEST_PULSED;
 	
 	LIS3DSH_DataReadyInterruptConfig(&accelerometer_Interrupt_Init);
-	
-	
+		
 }
 
 void initializeTimer(){
@@ -167,7 +181,7 @@ void initializeTimer(){
 	
 	HWTimer.Instance = TIM4;
 	HWTimer.Init.Prescaler = 42000 - 1;
-	HWTimer.Init.Period = 2;
+	HWTimer.Init.Period = 1;
 	HWTimer.Init.CounterMode = TIM_COUNTERMODE_UP;
 	HWTimer.Init.RepetitionCounter = 0;
 	
@@ -183,12 +197,17 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 		
 		LIS3DSH_ReadACC(coordinate);
 	
+		
+		/*
 		int xFIROutput;
 		int yFIROutput;
 		int zFIROutput;
 		
-		float xCalibrated = coordinate[0]* 0.981 + 0.372;
-		float yCalibrated = coordinate[1]* 0.972	+ 0.38;
+		*/
+		// .387)*.846
+		//0.981, 0.972
+		 xCalibrated = coordinate[0]* 0.846 + 0.372;
+		 yCalibrated = coordinate[1]* 0.846	+ 0.38;
 		
 		//arm_fir_f32(&s, &xArray[0], &OutputArrayDSP[0],blockSize);
 		
@@ -213,31 +232,30 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 		}
 		*/
 		
-		/*if (invalidCount == 0){
+		if (invalidCount == 0){
 			
-		
 		for (int i = 5; i < 5; i++){ 
 		xArray[5-i] = xArray[4-i];
 		yArray[5-i] = yArray[4-i];
-		zArray[5-i] = zArray[4-i];	
+		//zArray[5-i] = zArray[4-i];	
 		}
 		
-		xArray[0] = coordinate[0];
-		yArray[0] = coordinate[1];
-		zArray[0] = coordinate[2];
+		xArray[0] = xCalibrated;
+		yArray[0] = yCalibrated;
+		//zArray[0] = coordinate[2];
 		
 		arm_fir_f32(&s, &xArray[0], &xOutputArray[0],blockSize);
-		arm_fir_f32(&s, &yArray[0], &yOutputArray[0],blockSize);
-		arm_fir_f32(&s, &zArray[0], &zOutputArray[0],blockSize);
+		arm_fir_f32(&sy, &yArray[0], &yOutputArray[0],blockSize);
+		//arm_fir_f32(&s, &zArray[0], &zOutputArray[0],blockSize);
 		
 		//xFIROutput = FIR_C(xArray, xOutputArray, &coeff, Length, Order);
 		//yFIROutput = FIR_C(yArray, yOutputArray, &coeff, Length, Order);
 		//zFIROutput = FIR_C(zArray, zOutputArray, &coeff, Length, Order);
 			
-		printf("X value : %f ,",(xOutputArray[0] - 63)/gravity);
-		printf("Y value : %f ,",(yOutputArray[0] - 83)/gravity);
-		printf("Z value : %f\n",(zOutputArray[0] - 63)/gravity);
-	 
+		printf("X value : %f ,",(xOutputArray[0]/gravity));
+		printf("Y value : %f \n",(yOutputArray[0]/gravity));
+		//printf("Z value : %f\n",(zOutputArray[0])/gravity);
+	
 }
 		
 		// If there is less than 4 input at the start then add into the array and wait till there is 5 value 
@@ -248,7 +266,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 			invalidCount -= 1;
 			printf("FIRST 4 POLL DOESNT GIVE VALUE : %d \n", invalidCount);
 	}
-	*/
+	
 
 		//potential use DSP FIR
 	 /*
@@ -265,6 +283,16 @@ for(int k = 0; k < Length; k++)
 	
 }
 
+void setRollInput(int roll){
+printf("SET VALUE FOR ROLL INPUT IS : %d\n", roll);
+rollValue = roll;
+}
+
+void setPitchInput(int pitch){
+printf("SET VALUE FOR PITCH INPUT IS : %d\n", pitch);
+pitchValue = pitch;
+}	
+
 void rollInput(int input){
 
 			if (input == Key_hash){
@@ -278,9 +306,12 @@ void rollInput(int input){
 				printf("Roll value is : %d\n", roll);
 				
 				state = 1; 
+				
+				setRollInput(roll);
 				rollLED(roll); // test
 				
-					// set value of Roll 
+				// set value of Roll 
+				
 				}
 				position = 3;
 				multiplier = 1;
@@ -295,6 +326,7 @@ void rollInput(int input){
 				
 				position++;
 				displayValue(-1,position);
+				
 				
 			}
 			else{
@@ -322,8 +354,10 @@ void pitchInput(int input){
 				printf("Pitch value is : %d\n", roll);
 				
 				state = 0; 
+				setPitchInput(roll);
 				pitchLED(pitch);
-					//resetDisplay();
+				keypadValuesSet = 1;
+	
 				}
 				
 				position = 3;
@@ -353,19 +387,55 @@ void pitchInput(int input){
 			}
 }
 
-
-
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 	if (Timer->Instance == TIM4){
 		int input = KeyPadGetValue();
-		if (state == 0 && input != -1){
+		if (state == 0 && input != -1 && keypadValuesSet < 1){
 		rollInput(input); 
 		}
 		
-		else if (state == 1 && input != -1){
+		else if (state == 1 && input != -1 && keypadValuesSet < 1){
 	  pitchInput(input);
 		}
 		}
+		
+		//printf("VALUES ARE SET ON THE KEYPAD NOW TRYING VALUES\n");
+		
+		if(rollValue > 0) {
+			float32_t rollDifference = xCalibrated - rollValue;
+			int rollDC = rollLED(rollDifference);
+			float pulse_length = (41999+1) * rollDC - 1;
+				
+			
+			/*
+				HWTimer.Instance = TIM4;
+				HWTimer.Init.Prescaler = 42000 - 1;
+				HWTimer.Init.Period = 1;
+				HWTimer.Init.CounterMode = TIM_COUNTERMODE_UP;
+				HWTimer.Init.RepetitionCounter = 0;
+				
+				HAL_TIM_Base_Init(&HWTimer);
+				HAL_TIM_Base_Start_IT(&HWTimer);
+			*/
+			
+			HWTimer.Init.Prescaler = pulse_length;
+			HAL_TIM_Base_Init(&HWTimer);
+			//HAL_TIM_Base_Start_IT(&HWTimer);	
+		}
+		
+		if (pitchValue > 0 && rollValue != 0){
+			float32_t pitchDifference = yCalibrated - pitchValue;
+			int pitchDC = rollLED(pitchDifference);
+			float pulse_length = (41999+1) * pitchDC - 1;
+		  
+			HWTimer.Init.Prescaler = pulse_length;
+			HAL_TIM_Base_Init(&HWTimer);
+			
+				
+		}
+		
+		
+		
 }
 
 

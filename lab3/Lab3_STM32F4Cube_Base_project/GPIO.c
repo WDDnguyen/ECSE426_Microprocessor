@@ -34,6 +34,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "gpio.h"
+#include "arm_math.h"
 /* USER CODE BEGIN 0 */
 
 /* USER CODE END 0 */
@@ -42,6 +43,10 @@
 /* Configure GPIO                                                             */
 /*----------------------------------------------------------------------------*/
 /* USER CODE BEGIN 1 */
+
+extern volatile int rollValue;
+extern volatile int pitchValue;
+extern volatile int keypadValuesSet;
 
 void GPIO_Init(void){
 	
@@ -74,32 +79,76 @@ void GPIO_Init(void){
 
 }
 
-void rollLED(int rollDifference){
+int rollLED(float32_t rollDifference){
 	
 	if (rollDifference < 5){
 		HAL_GPIO_WritePin(GPIOD, LED1, GPIO_PIN_RESET);
 		HAL_GPIO_WritePin(GPIOD, LED3, GPIO_PIN_RESET);
-		
+		rollValue = 0;
+		return 100;
 	}	
 	
-	else{
-		
+	else if (rollDifference < 25){
 		HAL_GPIO_WritePin(GPIOD, LED1, GPIO_PIN_SET);
 		HAL_GPIO_WritePin(GPIOD, LED3, GPIO_PIN_SET);
-		
-	}
-}
-
-void pitchLED(int pitchDifference){
-	if (pitchDifference <5){
-		HAL_GPIO_WritePin(GPIOD, LED2, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOD, LED4, GPIO_PIN_RESET);
+		return 25;
 	}
 	
-	else {
-		HAL_GPIO_WritePin(GPIOD, LED2, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOD, LED4, GPIO_PIN_SET);
+	else if (rollDifference < 45){
+		HAL_GPIO_WritePin(GPIOD, LED1, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOD, LED3, GPIO_PIN_SET);
+		return 50;
 	}
+	
+	else if (rollDifference < 65){
+		HAL_GPIO_WritePin(GPIOD, LED1, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOD, LED3, GPIO_PIN_SET);
+		return 75;
+	}
+	
+	else{
+		HAL_GPIO_WritePin(GPIOD, LED1, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOD, LED3, GPIO_PIN_SET);		
+	  return 100;
+	}
+	
+	return 100;
+}
+
+int pitchLED(float32_t pitchDifference){
+	if (pitchDifference < 5){
+		HAL_GPIO_WritePin(GPIOD, LED1, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOD, LED3, GPIO_PIN_RESET);
+		pitchValue = 0;
+		keypadValuesSet = 0;
+		return 100;
+	}	
+	
+	else if (pitchDifference < 25){
+		HAL_GPIO_WritePin(GPIOD, LED1, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOD, LED3, GPIO_PIN_SET);
+		return 25;
+	}
+	
+	else if (pitchDifference < 45){
+		HAL_GPIO_WritePin(GPIOD, LED1, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOD, LED3, GPIO_PIN_SET);
+		return 50;
+	}
+	
+	else if (pitchDifference < 65){
+		HAL_GPIO_WritePin(GPIOD, LED1, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOD, LED3, GPIO_PIN_SET);
+		return 75;
+	}
+	
+	else{
+		HAL_GPIO_WritePin(GPIOD, LED1, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOD, LED3, GPIO_PIN_SET);		
+	  return 100;
+	}
+	
+	return 100;
 }
 
 void displayValue(int number, int position){
