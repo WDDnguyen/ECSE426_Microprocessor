@@ -22,14 +22,6 @@
 #include <math.h>
 
 /* Private variables ---------------------------------------------------------*/
-
-typedef struct FIR_coeff{
-float32_t coeffArray[5];
-}FIR_coeff;
-
-
-int FIR_C(float32_t* inputArray, float32_t* OutputArray, FIR_coeff* coeff, int Length, int Order);
-
 void initializeAccelerometer();
 void initializeAccelerometerPin();
 void initializeAccelerometerInterrupt();
@@ -42,53 +34,53 @@ void SystemClock_Config	(void);
 
 TIM_HandleTypeDef HWTimer;
 
-float32_t xArray[5];
-float32_t yArray[5];
-float32_t zArray[5];
-
-float32_t xOutputArray[1];
-float32_t yOutputArray[1];
-float32_t zOutputArray[1];
-
-int Length = 5;
-int Order = 4;
-int invalidCount = 4;
-
-FIR_coeff coeff;	
-
-float gravity = 9.81;
-
+//FIR filter variables
 uint32_t blockSize = 1;
 float32_t firStateF32[10 + 5 - 1];
 float32_t firStateF32y[10 + 5 - 1];
 float32_t coefficients[5] = {0.1,0.15,0.5,0.15,0.1};
 float32_t coefficientsy[5] = {0.1,0.15,0.5,0.15,0.1};
-
-int interruptCounter = 0;
-
+int invalidCount = 4;
 arm_fir_instance_f32 s = {5, firStateF32,coefficients};
 arm_fir_instance_f32 sy = {5, firStateF32y,coefficientsy};
 
-int multiplier  = 100 ;
-int roll = 0;
+//variables for fil 
+int interruptCounter = 0;
 
+// roll and pitch variable initialization
+int multiplier  = 100 ;
 int current = 0;
+
+int roll = 0;
 int pitch = 0;
 
 int position = 3;
 int state = 0;
 
-
-// ROLL AND PITCH VALUE
+//Values to be used in GPIO.C for LEDs intensity controlling 
 volatile int rollValue = 0;
 volatile int pitchValue = 0;
-int keypadValuesSet = 0;
+volatile int keypadValuesSet = 0;
 
 
-//CALIBRATED VALUE VARIABLES
-
+//variables for accelerometer
 float32_t xCalibrated = 0;
 float32_t yCalibrated = 0;
+
+float32_t xArray[5];
+float32_t yArray[5];
+
+float32_t xOutputArray[1];
+float32_t yOutputArray[1];
+
+float32_t gravity = 9.81;
+
+//variable for numpad
+
+int pressedCounter = 0;
+int pressedValue = -5;
+
+
 
 int main(void)
 {	
@@ -122,16 +114,9 @@ int main(void)
 	
 	//initialize KeyPad
 	initializeKeyPad();
-	
-	coeff.coeffArray[0] = 0.1;
-	coeff.coeffArray[1] = 0.15;
-	coeff.coeffArray[2] = 0.5;
-	coeff.coeffArray[3] = 0.15;
-	coeff.coeffArray[4] = 0.1;
 
-	// initialize GPIO
+	// initialize GPIOs
 	GPIO_Init();
-	
 	
 	while (1){
 	}
@@ -198,26 +183,9 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 		LIS3DSH_ReadACC(coordinate);
 	
 		
-		/*
-		int xFIROutput;
-		int yFIROutput;
-		int zFIROutput;
-		
-		*/
-		// .387)*.846
-		//0.981, 0.972
 		 xCalibrated = coordinate[0]* 0.846 + 0.372;
 		 yCalibrated = coordinate[1]* 0.846	+ 0.38;
 		
-		//arm_fir_f32(&s, &xArray[0], &OutputArrayDSP[0],blockSize);
-		
-		/*printf("X value : %f , ",coordinate[0]/gravity);
-		printf("Y value : %f , ",coordinate[1]/gravity);
-		printf("Z value : %f\n\n",coordinate[2]/gravity);
-		
-		printf("calibrated X value : %f , ", xCalibrated/gravity);
-		printf("calibrated X value : %f\n\n", yCalibrated/gravity);
-		*/
 		
 		/*
 		if (interruptCounter++ == 5000){
@@ -237,111 +205,83 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 		for (int i = 5; i < 5; i++){ 
 		xArray[5-i] = xArray[4-i];
 		yArray[5-i] = yArray[4-i];
-		//zArray[5-i] = zArray[4-i];	
 		}
 		
 		xArray[0] = xCalibrated;
 		yArray[0] = yCalibrated;
-		//zArray[0] = coordinate[2];
 		
 		arm_fir_f32(&s, &xArray[0], &xOutputArray[0],blockSize);
 		arm_fir_f32(&sy, &yArray[0], &yOutputArray[0],blockSize);
-		//arm_fir_f32(&s, &zArray[0], &zOutputArray[0],blockSize);
-		
-		//xFIROutput = FIR_C(xArray, xOutputArray, &coeff, Length, Order);
-		//yFIROutput = FIR_C(yArray, yOutputArray, &coeff, Length, Order);
-		//zFIROutput = FIR_C(zArray, zOutputArray, &coeff, Length, Order);
 			
-		printf("X value : %f ,",(xOutputArray[0]/gravity));
-		printf("Y value : %f \n",(yOutputArray[0]/gravity));
-		//printf("Z value : %f\n",(zOutputArray[0])/gravity);
-	
+		//printf("X value : %f ,",(xOutputArray[0]/gravity));
+		//printf("Y value : %f \n",(yOutputArray[0]/gravity));
+		
 }
 		
 		// If there is less than 4 input at the start then add into the array and wait till there is 5 value 
 		else {
 			xArray[invalidCount] = coordinate[0];
 			yArray[invalidCount] = coordinate[1];
-			zArray[invalidCount] = coordinate[2];
 			invalidCount -= 1;
-			printf("FIRST 4 POLL DOESNT GIVE VALUE : %d \n", invalidCount);
+			//printf("FIRST 4 POLL DOESNT GIVE VALUE : %d \n", invalidCount);
 	}
-	
-
-		//potential use DSP FIR
-	 /*
-
-// Changed from Length - Order
-for(int k = 0; k < Length; k++)
-{
-	arm_fir_f32(&s, &testArray[k], &OutputArrayDSP[k],blockSize);
-//	printf("THIS IS THE CMSIS DSP VALUE : %f\n",OutputArrayDSP[k]);
-}
-	*/
-		
+			
 	}
 	
 }
 
 void setRollInput(int roll){
-printf("SET VALUE FOR ROLL INPUT IS : %d\n", roll);
-rollValue = roll;
+	printf("SET VALUE FOR ROLL INPUT IS : %d\n", roll);
+	rollValue = roll;
 }
 
 void setPitchInput(int pitch){
-printf("SET VALUE FOR PITCH INPUT IS : %d\n", pitch);
-pitchValue = pitch;
+	printf("SET VALUE FOR PITCH INPUT IS : %d\n", pitch);
+	pitchValue = pitch;
 }	
 
 void rollInput(int input){
-
-			if (input == Key_hash){
-				if (roll > 180){
-				printf("Retype roll value : %d \n", roll);
-				state = 0;
-					
-				//resetDisplay();
-				}
-				else {
-				printf("Roll value is : %d\n", roll);
-				
-				state = 1; 
-				
-				setRollInput(roll);
-				rollLED(roll); // test
-				
-				// set value of Roll 
-				
-				}
-				position = 3;
-				multiplier = 1;
-				roll = 0;
-				
-			}
+// modify back to hash
+	if (input == Key_hash){
+		if (roll > 180){
+		printf("Retype roll value : %d \n", roll);
+		state = 0;
 			
-			else if (input == Key_star){
-				printf("Deleted current value\n");
-				roll = roll - current;
-				multiplier = multiplier / 10;
-				
-				position++;
-				displayValue(-1,position);
-				
-				
-			}
-			else{
-				printf("Value Of KeyPad is : %d\n", input);
-				roll = roll + input * multiplier;
-				multiplier = multiplier * 10;
-				current = input * multiplier;
-			
-				displayValue(input,position);
-				position--;
-			}
+		}
+		else {
+		printf("Roll value is : %d\n", roll);
+		
+		state = 1; 
+		setRollInput(roll);
+		//rollLED(roll); // test
+		displayValue(5,4);
+		}
+		position = 3;
+		multiplier = 1;
+		roll = 0;
+		
+	}
+	
+	else if (input == Key_star){
+		printf("Deleted current value\n");
+		roll = roll - current;
+		multiplier = multiplier / 10;
+		position++;
+		displayValue(-1,position);
+	}
+	else{
+		printf("Value Of KeyPad is : %d\n", input);
+		roll = roll + input * multiplier;
+		multiplier = multiplier * 10;
+		current = input * multiplier;
+	
+		displayValue(input,position);
+		position--;
+	}
 }
 
 void pitchInput(int input){
-
+			// modify back to hash
 			if (input == Key_hash){
 				
 				if (pitch > 180){
@@ -351,13 +291,16 @@ void pitchInput(int input){
 					
 				}
 				else {
-				printf("Pitch value is : %d\n", roll);
+				printf("Pitch value is : %d\n", pitch);
 				
 				state = 0; 
-				setPitchInput(roll);
-				pitchLED(pitch);
+				setPitchInput(pitch);
+				//pitchLED(pitch);
 				keypadValuesSet = 1;
-	
+				printf("keypadValuesSet has been set\n");
+				
+				displayValue(9,4);	
+					
 				}
 				
 				position = 3;
@@ -390,6 +333,33 @@ void pitchInput(int input){
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 	if (Timer->Instance == TIM4){
 		int input = KeyPadGetValue();
+		
+		if(input != -1 && pressedValue < 0){
+			pressedValue = input;
+			//printf("PRESSED VALUE IS : %d\n", pressedValue);
+		}
+		
+		if(input == pressedValue){
+			if (pressedCounter == 150){
+				printf("VALUE IS PRESSED is %d\n", pressedValue);
+				pressedCounter = 0;
+				pressedValue = -1;
+					
+			}else{
+				pressedCounter++;
+				//printf("VALUE OF COUNTER IS :%d\n",pressedCounter);
+			}
+		}
+		else if (input != -1){ 
+			pressedCounter =0;
+			//printf("INDEX VALUE : %d/n ", input);
+			pressedValue = -1;
+			//printf("COUNTER IS RESETTING\n");
+		}
+	  
+		
+		
+		/*
 		if (state == 0 && input != -1 && keypadValuesSet < 1){
 		rollInput(input); 
 		}
@@ -399,51 +369,39 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 		}
 		}
 		
+		else{
 		//printf("VALUES ARE SET ON THE KEYPAD NOW TRYING VALUES\n");
 		
 		if(rollValue > 0) {
 			float32_t rollDifference = xCalibrated - rollValue;
+			
+			printf("ROLL DIFFERENCE %f\n",rollDifference);
 			int rollDC = rollLED(rollDifference);
 			float pulse_length = (41999+1) * rollDC - 1;
-				
-			
-			/*
-				HWTimer.Instance = TIM4;
-				HWTimer.Init.Prescaler = 42000 - 1;
-				HWTimer.Init.Period = 1;
-				HWTimer.Init.CounterMode = TIM_COUNTERMODE_UP;
-				HWTimer.Init.RepetitionCounter = 0;
-				
-				HAL_TIM_Base_Init(&HWTimer);
-				HAL_TIM_Base_Start_IT(&HWTimer);
-			*/
-			
-			HWTimer.Init.Prescaler = pulse_length;
-			HAL_TIM_Base_Init(&HWTimer);
+							
+			//HWTimer.Init.Prescaler = pulse_length;
+			//HAL_TIM_Base_Init(&HWTimer);
 			//HAL_TIM_Base_Start_IT(&HWTimer);	
 		}
 		
-		if (pitchValue > 0 && rollValue != 0){
+		else if (pitchValue > 0 && rollValue == 0){
 			float32_t pitchDifference = yCalibrated - pitchValue;
+			printf("pitch DIFFERENCE %f\n",pitchDifference);
+			
 			int pitchDC = rollLED(pitchDifference);
 			float pulse_length = (41999+1) * pitchDC - 1;
 		  
-			HWTimer.Init.Prescaler = pulse_length;
-			HAL_TIM_Base_Init(&HWTimer);
+			
+			//NEED TO TEST THIS PART 
+			//HWTimer.Init.Prescaler = pulse_length;
+			//HAL_TIM_Base_Init(&HWTimer);
 			
 				
 		}
-		
-		
-		
+		*/
+	}		
+	
 }
-
-
-int FIR_C(float32_t* inputArray, float32_t* OutputArray, FIR_coeff* coeff, int Length, int Order){
-	OutputArray[0] = inputArray[0] * coeff->coeffArray[0] + inputArray[1] * coeff->coeffArray[1] + inputArray[2] * coeff->coeffArray[2] + inputArray[3] * coeff->coeffArray[3] + inputArray[4] * coeff->coeffArray[4];
-   return 0;
-}
-
 
 /** System Clock Configuration*/
 void SystemClock_Config(void){
