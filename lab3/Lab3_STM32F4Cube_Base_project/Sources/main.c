@@ -54,7 +54,7 @@ int current = 0;
 int roll = 0;
 int pitch = 0;
 
-int position = 3;
+int position = 1;
 int state = 0;
 
 //Values to be used in GPIO.C for LEDs intensity controlling 
@@ -230,106 +230,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 	
 }
 
-void setRollInput(int roll){
-	printf("SET VALUE FOR ROLL INPUT IS : %d\n", roll);
-	rollValue = roll;
-}
-
-void setPitchInput(int pitch){
-	printf("SET VALUE FOR PITCH INPUT IS : %d\n", pitch);
-	pitchValue = pitch;
-}	
-
-void rollInput(int input){
-// modify back to hash
-	if (input == Key_hash){
-		if (roll > 180){
-		printf("Retype roll value : %d \n", roll);
-		state = 0;
-			
-		}
-		else {
-		printf("Roll value is : %d\n", roll);
-		
-		state = 1; 
-		setRollInput(roll);
-		//rollLED(roll); // test
-		displayValue(5,4);
-		}
-		position = 3;
-		multiplier = 1;
-		roll = 0;
-		
-	}
-	
-	else if (input == Key_star){
-		printf("Deleted current value\n");
-		roll = roll - current;
-		multiplier = multiplier / 10;
-		position++;
-		displayValue(-1,position);
-	}
-	else{
-		printf("Value Of KeyPad is : %d\n", input);
-		roll = roll + input * multiplier;
-		multiplier = multiplier * 10;
-		current = input * multiplier;
-	
-		displayValue(input,position);
-		position--;
-	}
-}
-
-void pitchInput(int input){
-			// modify back to hash
-			if (input == Key_hash){
-				
-				if (pitch > 180){
-					printf("Retype pitch value : %d \n", pitch);
-					resetDisplay();
-					state = 1;
-					
-				}
-				else {
-				printf("Pitch value is : %d\n", pitch);
-				
-				state = 0; 
-				setPitchInput(pitch);
-				//pitchLED(pitch);
-				keypadValuesSet = 1;
-				printf("keypadValuesSet has been set\n");
-				
-				displayValue(9,4);	
-					
-				}
-				
-				position = 3;
-				multiplier = 1;
-				pitch = 0;
-				
-			}
-			
-			else if (input == Key_star){
-				printf("Deleted current value\n");
-				
-				pitch = pitch - current; // might have error
-				multiplier = multiplier / 10;
-				
-				position++;
-				displayValue(-1,position);
-			}
-			
-			else{
-				printf("Value Of KeyPad is : %d\n", input);
-				pitch = pitch + input * multiplier;
-				multiplier = multiplier * 10;
-				current = input * multiplier;
-				
-				displayValue(input,position);
-				position--;
-			}
-}
-
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 	if (Timer->Instance == TIM4){
 		int input = KeyPadGetValue();
@@ -340,11 +240,61 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 		}
 		
 		if(input == pressedValue){
-			if (pressedCounter == 150){
-				printf("VALUE IS PRESSED is %d\n", pressedValue);
+			if (pressedCounter == 500){
+				//printf("VALUE IS PRESSED is %d\n", pressedValue);
+				
+				displayValue(pressedValue,position);
+				position = position + 1;
+				if (position == 4){
+					position = 1;
+				}
+				
+				if (state == 1 && pressedValue != Key_hash){
+						  pitch = 10*pitch + pressedValue;
+							if (pitch > 180){
+							pitch =0;
+						//	printf("TOO MUCH\n");
+							displayValue(3,4);
+							}
+						
+						}
+				else if ( state == 1 && pressedValue == Key_hash){
+						//	printf("KEYPAD INPUT ROLL IS : %d\n", roll);
+							state = 0;
+							pitchLED(pitch);
+							displayValue(5,4);
+							pitch = 0; // remove when fully implement
+							position = 1;
+						}
+
+				
+				
+				else if (state == 0 && pressedValue != Key_hash){
+						  roll = 10*roll + pressedValue;
+							if (roll > 180){
+							roll =0;
+					//		printf("TOO MUCH\n");
+							
+							displayValue(1,4);
+							
+							}
+						
+						}
+				else if ( state == 0 && pressedValue == Key_hash){
+						//	printf("KEYPAD INPUT ROLL IS : %d\n", roll);
+							state = 1;
+							rollLED(roll);
+							displayValue(2,4);
+							roll = 0; // remove when fully implement
+							position = 1;
+						}
+							
+				
+						
 				pressedCounter = 0;
-				pressedValue = -1;
-					
+				pressedValue = -1;		
+						
+				
 			}else{
 				pressedCounter++;
 				//printf("VALUE OF COUNTER IS :%d\n",pressedCounter);
@@ -360,13 +310,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 		
 		
 		/*
-		if (state == 0 && input != -1 && keypadValuesSet < 1){
-		rollInput(input); 
-		}
 		
-		else if (state == 1 && input != -1 && keypadValuesSet < 1){
-	  pitchInput(input);
-		}
 		}
 		
 		else{

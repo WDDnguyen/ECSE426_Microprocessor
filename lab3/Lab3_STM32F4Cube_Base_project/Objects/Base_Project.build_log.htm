@@ -27,6 +27,14 @@ Project File Date:  02/25/2017
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 4 (build 422)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Lab 3'
+compiling KeyPad.c...
+.\Headers\KeyPad.h(26): warning:  #1295-D: Deprecated declaration initializeKeyPad - give arg types
+  void initializeKeyPad();
+.\Headers\KeyPad.h(27): warning:  #1-D: last line of file ends without a newline
+  int KeyPadGetValue();
+.\Headers\KeyPad.h(27): warning:  #1295-D: Deprecated declaration KeyPadGetValue - give arg types
+  int KeyPadGetValue();
+KeyPad.c: 3 warnings, 0 errors
 compiling main.c...
 .\Headers\KeyPad.h(26): warning:  #1295-D: Deprecated declaration initializeKeyPad - give arg types
   void initializeKeyPad();
@@ -42,6 +50,8 @@ Sources\main.c(25): warning:  #1295-D: Deprecated declaration initializeAccelero
   void initializeAccelerometer();
 Sources\main.c(26): warning:  #1295-D: Deprecated declaration initializeAccelerometerPin - give arg types
   void initializeAccelerometerPin();
+Sources\main.c(27): warning:  #1295-D: Deprecated declaration initializeAccelerometerInterrupt - give arg types
+  void initializeAccelerometerInterrupt();
 Sources\main.c(28): warning:  #1295-D: Deprecated declaration initializeTimer - give arg types
   void initializeTimer();
 Sources\main.c(186): warning:  #1035-D: single-precision operand implicitly converted to double-precision
@@ -49,9 +59,19 @@ Sources\main.c(186): warning:  #1035-D: single-precision operand implicitly conv
 Sources\main.c(187): warning:  #1035-D: single-precision operand implicitly converted to double-precision
   		 yCalibrated = coordinate[1]* 0.846	+ 0.38;
 Sources\main.c: 11 warnings, 0 errors
+compiling gpio.c...
+.\Headers\gpio.h(80): warning:  #1295-D: Deprecated declaration displayValue - give arg types
+  void displayValue();
+.\Headers\gpio.h(81): warning:  #1295-D: Deprecated declaration resetDisplay - give arg types
+  void resetDisplay();
+gpio.c(115): warning:  #111-D: statement is unreachable
+  	return 100;
+gpio.c(151): warning:  #111-D: statement is unreachable
+  	return 100;
+gpio.c: 4 warnings, 0 errors
 linking...
-Program Size: Code=10564 RO-data=440 RW-data=168 ZI-data=1328  
-".\Objects\Base_Project.axf" - 0 Error(s), 10 Warning(s).
+Program Size: Code=12028 RO-data=440 RW-data=168 ZI-data=1328  
+".\Objects\Base_Project.axf" - 0 Error(s), 18 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -176,7 +196,7 @@ Package Vendor: Keil
 
    * Component: Keil::Device:STM32Cube HAL:SPI:1.4.2
       Source file:   Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_hal_spi.c
-Build Time Elapsed:  00:00:03
+Build Time Elapsed:  00:00:04
 </pre>
 </body>
 </html>

@@ -117,34 +117,34 @@ int rollLED(float32_t rollDifference){
 
 int pitchLED(float32_t pitchDifference){
 	if (pitchDifference < 5){
-		HAL_GPIO_WritePin(GPIOD, LED1, GPIO_PIN_RESET);
-		HAL_GPIO_WritePin(GPIOD, LED3, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOD, LED2, GPIO_PIN_RESET);
+		HAL_GPIO_WritePin(GPIOD, LED4, GPIO_PIN_RESET);
 		pitchValue = 0;
 		keypadValuesSet = 0;
 		return 100;
 	}	
 	
 	else if (pitchDifference < 25){
-		HAL_GPIO_WritePin(GPIOD, LED1, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOD, LED3, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOD, LED2, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOD, LED4, GPIO_PIN_SET);
 		return 25;
 	}
 	
 	else if (pitchDifference < 45){
-		HAL_GPIO_WritePin(GPIOD, LED1, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOD, LED3, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOD, LED2, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOD, LED4, GPIO_PIN_SET);
 		return 50;
 	}
 	
 	else if (pitchDifference < 65){
-		HAL_GPIO_WritePin(GPIOD, LED1, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOD, LED3, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOD, LED2, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOD, LED4, GPIO_PIN_SET);
 		return 75;
 	}
 	
 	else{
-		HAL_GPIO_WritePin(GPIOD, LED1, GPIO_PIN_SET);
-		HAL_GPIO_WritePin(GPIOD, LED3, GPIO_PIN_SET);		
+		HAL_GPIO_WritePin(GPIOD, LED2, GPIO_PIN_SET);
+		HAL_GPIO_WritePin(GPIOD, LED4, GPIO_PIN_SET);		
 	  return 100;
 	}
 	
