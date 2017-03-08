@@ -18,7 +18,8 @@
 #include "arm_math.h"
 #include "gpio.h"
 
-
+#include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 
 /* Private variables ---------------------------------------------------------*/
@@ -33,6 +34,7 @@ void SystemClock_Config	(void);
 
 
 TIM_HandleTypeDef HWTimer;
+//TIM_OC_InitTypeDef TIM_OCInitStructure;
 
 //FIR filter variables
 uint32_t blockSize = 1;
@@ -81,7 +83,6 @@ int pressedCounter = 0;
 int pressedValue = -5;
 
 
-
 int main(void)
 {	
   /* MCU Configuration----------------------------------------------------------*/
@@ -122,6 +123,15 @@ int main(void)
 	}
 }
 
+void setUpRollValue(int roll){
+printf("SET UP THE ROLL VALUE TO MANIPULATE %d\n",roll);
+rollValue = roll;
+}
+
+void setUpPitchValue(int pitch){
+printf("SET UP THE PITCH VALUE TO MANIPULATE  %d\n",pitch);
+pitchValue = pitch;
+}
 
 void initializeAccelerometer(){
  	
@@ -165,13 +175,18 @@ void initializeTimer(){
 	__TIM4_CLK_ENABLE();
 	
 	HWTimer.Instance = TIM4;
-	HWTimer.Init.Prescaler = 42000 - 1;
-	HWTimer.Init.Period = 1;
+	//HWTimer.Init.Prescaler = 42000 - 1;
+	//HWTimer.Init.Period = 1;
+	HWTimer.Init.Prescaler = 420 - 1;
+	HWTimer.Init.Period = 100;
+	
 	HWTimer.Init.CounterMode = TIM_COUNTERMODE_UP;
 	HWTimer.Init.RepetitionCounter = 0;
 	
 	HAL_TIM_Base_Init(&HWTimer);
 	HAL_TIM_Base_Start_IT(&HWTimer);
+	
+	
 	
 }
 
@@ -245,52 +260,69 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 				
 				displayValue(pressedValue,position);
 				position = position + 1;
-				if (position == 4){
-					position = 1;
-				}
 				
-				if (state == 1 && pressedValue != Key_hash){
-						  pitch = 10*pitch + pressedValue;
+				
+				if (state == 1 && pressedValue != Key_hash && pressedValue != Key_star ){
+						  current = pitch;
+							pitch = 10*pitch + pressedValue;
 							if (pitch > 180){
 							pitch =0;
 						//	printf("TOO MUCH\n");
-							displayValue(3,4);
+							displayValue(4,4);
+							}
+							
+							if (position > 3){
+							position = 1;
 							}
 						
 						}
 				else if ( state == 1 && pressedValue == Key_hash){
-						//	printf("KEYPAD INPUT ROLL IS : %d\n", roll);
+							printf("KEYPAD INPUT ROLL IS : %d\n", roll);
 							state = 0;
-							pitchLED(pitch);
+							setUpPitchValue(pitch);
+							//pitchLED(pitch);
 							displayValue(5,4);
 							pitch = 0; // remove when fully implement
 							position = 1;
 						}
+				
+				else if ( state == 1 && pressedValue == Key_star){
+							pitch = current;
+							position -= 2;
+							displayValue(6,4);
+				}
 
 				
 				
-				else if (state == 0 && pressedValue != Key_hash){
-						  roll = 10*roll + pressedValue;
+				else if (state == 0 && pressedValue != Key_hash && pressedValue != Key_star){
+						  current = roll;
+							roll = 10*roll + pressedValue;
 							if (roll > 180){
 							roll =0;
-					//		printf("TOO MUCH\n");
+							printf("TOO MUCH\n");
 							
 							displayValue(1,4);
 							
 							}
 						
 						}
-				else if ( state == 0 && pressedValue == Key_hash){
-						//	printf("KEYPAD INPUT ROLL IS : %d\n", roll);
+				else if ( state == 0 && pressedValue == Key_hash ){
+							printf("KEYPAD INPUT PITCH IS : %d\n", roll);
 							state = 1;
-							rollLED(roll);
+							//rollLED(roll);
+							setUpRollValue(roll);
 							displayValue(2,4);
 							roll = 0; // remove when fully implement
 							position = 1;
 						}
-							
 				
-						
+				
+				else if ( state == 0 && pressedValue == Key_star){
+							roll = current;
+							position -= 2;
+							displayValue(3,4);
+				}
+										
 				pressedCounter = 0;
 				pressedValue = -1;		
 						
@@ -300,52 +332,42 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 				//printf("VALUE OF COUNTER IS :%d\n",pressedCounter);
 			}
 		}
+		
+		//RESET COUNTER
 		else if (input != -1){ 
-			pressedCounter =0;
+			pressedCounter = 0;
 			//printf("INDEX VALUE : %d/n ", input);
 			pressedValue = -1;
 			//printf("COUNTER IS RESETTING\n");
 		}
-	  
-		
-		
-		/*
-		
-		}
-		
-		else{
-		//printf("VALUES ARE SET ON THE KEYPAD NOW TRYING VALUES\n");
 		
 		if(rollValue > 0) {
-			float32_t rollDifference = xCalibrated - rollValue;
-			
-			printf("ROLL DIFFERENCE %f\n",rollDifference);
+			float32_t convertedRollValue = rollValue - 90;
+			float32_t xAccelerometerAngle = xCalibrated/gravity;
+			float32_t rollDifference = fabs(xAccelerometerAngle - convertedRollValue);
+			//printf("ROLL DIFFERENCE %f\n",rollDifference);
 			int rollDC = rollLED(rollDifference);
-			float pulse_length = (41999+1) * rollDC - 1;
-							
-			//HWTimer.Init.Prescaler = pulse_length;
-			//HAL_TIM_Base_Init(&HWTimer);
-			//HAL_TIM_Base_Start_IT(&HWTimer);	
+						
+			
 		}
 		
 		else if (pitchValue > 0 && rollValue == 0){
-			float32_t pitchDifference = yCalibrated - pitchValue;
-			printf("pitch DIFFERENCE %f\n",pitchDifference);
 			
-			int pitchDC = rollLED(pitchDifference);
-			float pulse_length = (41999+1) * pitchDC - 1;
-		  
+			float32_t convertPitchValue = pitchValue - 90;
+			float32_t yAccelerometerAngle = yCalibrated/gravity;
+			float32_t pitchDifference = fabs(yAccelerometerAngle - convertPitchValue);
+			//printf("pitch DIFFERENCE %f\n",pitchDifference);
 			
-			//NEED TO TEST THIS PART 
-			//HWTimer.Init.Prescaler = pulse_length;
-			//HAL_TIM_Base_Init(&HWTimer);
-			
+			int pitchDC = pitchLED(pitchDifference);
+			//float pulse_length = (41999+1) * pitchDC - 1;
 				
 		}
-		*/
-	}		
-	
-}
+		
+	}
+	  
+		
+		}
+		
 
 /** System Clock Configuration*/
 void SystemClock_Config(void){
