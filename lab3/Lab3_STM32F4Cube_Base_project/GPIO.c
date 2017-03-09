@@ -68,17 +68,21 @@ void GPIO_Init(void){
 	// when initialize, set all the pins to LOW
 	HAL_GPIO_WritePin(GPIOE, SEG7_A | SEG7_B | SEG7_C | SEG7_D | SEG7_E | SEG7_F | SEG7_G | SEG7_DP | SEG7_OUT1 | SEG7_OUT2 | SEG7_OUT3 | SEG7_OUT4, GPIO_PIN_RESET); 
 
-	// FOR LEDs
+	// FOR LEDs  // READD LED2
 	GPIO_INIT.Pin = LED1 | LED2 | LED3 | LED4; // initialize the pins for the LEDs pin
-	GPIO_INIT.Mode = GPIO_MODE_OUTPUT_PP; // Set pins to output push pull mode 
+	//GPIO_INIT.Mode = GPIO_MODE_OUTPUT_PP; // Set pins to output push pull mode 
+	GPIO_INIT.Mode = GPIO_MODE_AF_PP;
+	GPIO_INIT.Alternate = GPIO_AF2_TIM4; // added in 
 	GPIO_INIT.Pull = GPIO_NOPULL; // No pull for LEDs pins
 	GPIO_INIT.Speed = GPIO_SPEED_FREQ_MEDIUM;	//Speed of pin
 	
 	HAL_GPIO_Init(GPIOD, &GPIO_INIT);	//Initiate the pins with the settings from GPIO_INIT.
-	HAL_GPIO_WritePin(GPIOD, LED1 | LED2 | LED3 | LED4 , GPIO_PIN_RESET); // when initialize, set all the pins to LOW
+	
+//HAL_GPIO_WritePin(GPIOD, LED1 | LED2 | LED3 | LED4 , GPIO_PIN_RESET); // when initialize, set all the pins to LOW
 
 }
 
+/*
 int rollLED(float32_t rollDifference){
 	
 	if (rollDifference < 5){
@@ -114,7 +118,8 @@ int rollLED(float32_t rollDifference){
 	
 	return 100;
 }
-
+*/
+/*
 int pitchLED(float32_t pitchDifference){
 	if (pitchDifference < 5){
 		HAL_GPIO_WritePin(GPIOD, LED2, GPIO_PIN_RESET);
@@ -150,7 +155,7 @@ int pitchLED(float32_t pitchDifference){
 	
 	return 100;
 }
-
+*/
 void displayValue(int number, int position){
 	// set a specific value to set all the segment pins to low 
 	if (number == -1){

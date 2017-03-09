@@ -32,9 +32,8 @@ void initializeTimer();
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config	(void);
 
-
+//Initialize TIM4 timer 
 TIM_HandleTypeDef HWTimer;
-//TIM_OC_InitTypeDef TIM_OCInitStructure;
 
 //FIR filter variables
 uint32_t blockSize = 1;
@@ -42,11 +41,11 @@ float32_t firStateF32[10 + 5 - 1];
 float32_t firStateF32y[10 + 5 - 1];
 float32_t coefficients[5] = {0.1,0.15,0.5,0.15,0.1};
 float32_t coefficientsy[5] = {0.1,0.15,0.5,0.15,0.1};
-int invalidCount = 4;
 arm_fir_instance_f32 s = {5, firStateF32,coefficients};
 arm_fir_instance_f32 sy = {5, firStateF32y,coefficientsy};
+int invalidCount = 4;
 
-//variables for fil 
+//Use to slow down prints  
 int interruptCounter = 0;
 
 // roll and pitch variable initialization
@@ -57,13 +56,13 @@ int roll = 0;
 int pitch = 0;
 
 int position = 1;
+// state 0 -> roll Input , state 1 -> pitch input 
 int state = 0;
 
 //Values to be used in GPIO.C for LEDs intensity controlling 
 volatile int rollValue = 0;
 volatile int pitchValue = 0;
 volatile int keypadValuesSet = 0;
-
 
 //variables for accelerometer
 float32_t xCalibrated = 0;
@@ -78,10 +77,8 @@ float32_t yOutputArray[1];
 float32_t gravity = 9.81;
 
 //variable for numpad
-
 int pressedCounter = 0;
 int pressedValue = -5;
-
 
 int main(void)
 {	
@@ -92,6 +89,7 @@ int main(void)
   /* Configure the system clock */
   SystemClock_Config();
 	
+	//initialize filters for x and y 
 	arm_fir_init_f32(&s, 5,(float32_t *)&coefficients[0],&firStateF32[0],blockSize);
 	arm_fir_init_f32(&sy, 5,(float32_t *)&coefficientsy[0],&firStateF32y[0],blockSize);
 	
@@ -104,12 +102,14 @@ int main(void)
 	// initialize interrupt for accelerometer 
 	initializeAccelerometerInterrupt();
 
+	//Enable interrupt and set priority for accelerometer 
 	HAL_NVIC_SetPriority(EXTI0_IRQn, 1, 0);
   HAL_NVIC_EnableIRQ(EXTI0_IRQn);	
 	
-	//initialize Timer
+	//initialize Timer on Tim4
 	initializeTimer();
 
+  //Enable Interrupt and set priority for Timer
 	HAL_NVIC_SetPriority(TIM4_IRQn,0,0);
 	HAL_NVIC_EnableIRQ(TIM4_IRQn);	
 	
@@ -123,46 +123,62 @@ int main(void)
 	}
 }
 
+//function to set up roll and pitch value  after input on KeyPad
 void setUpRollValue(int roll){
-printf("SET UP THE ROLL VALUE TO MANIPULATE %d\n",roll);
 rollValue = roll;
 }
 
 void setUpPitchValue(int pitch){
-printf("SET UP THE PITCH VALUE TO MANIPULATE  %d\n",pitch);
 pitchValue = pitch;
 }
 
 void initializeAccelerometer(){
- 	
+	//initializer for accelerometer
 	LIS3DSH_InitTypeDef accelerometer_Init;
+	// filter to use if frequency of signal is too high. 
 	accelerometer_Init.AA_Filter_BW = LIS3DSH_AA_BW_800;
+	//sample 25 times per second
 	accelerometer_Init.Power_Mode_Output_DataRate = LIS3DSH_DATARATE_25;
+	//enable X,Y,Z coordinates
 	accelerometer_Init.Axes_Enable = LIS3DSH_XYZ_ENABLE;
+	//Continously sample beside of blocking 
 	accelerometer_Init.Continous_Update = LIS3DSH_ContinousUpdate_Enabled;
+	//set maximum scale to +/- 2g.
 	accelerometer_Init.Full_Scale = LIS3DSH_FULLSCALE_2;
 	accelerometer_Init.Self_Test = LIS3DSH_SELFTEST_NORMAL;
+	
+	//Set up the accelerometer with the configuration
 	LIS3DSH_Init(&accelerometer_Init);
 }
 
 void initializeAccelerometerPin(){
 
+	//set up  clock for port E 
 	__HAL_RCC_GPIOE_CLK_ENABLE();
 	
+	// initialize PIN setup
 	GPIO_InitTypeDef GPIO_INIT;
+	// set pin to specific accelerometer pin
 	GPIO_INIT.Pin = LIS3DSH_SPI_INT1_PIN; 
-	GPIO_INIT.Mode = GPIO_MODE_IT_FALLING;  
-	//GPIO_INIT.Pull = GPIO_NOPULL; 
+	// trigger when falling edge of samp;ing
+	GPIO_INIT.Mode = GPIO_MODE_IT_FALLING;
+	
 	GPIO_INIT.Pull = GPIO_PULLDOWN;
 	GPIO_INIT.Speed = GPIO_SPEED_FREQ_MEDIUM;
+	
+	//set up pin on PORT E
 	HAL_GPIO_Init(GPIOE, &GPIO_INIT);
 	
 }
 
 void initializeAccelerometerInterrupt(){
 	
+	//initialize configuration set up for Interrupt
 	LIS3DSH_DRYInterruptConfigTypeDef accelerometer_Interrupt_Init;
+	//when to trigger the interrupt 
 	accelerometer_Interrupt_Init.Dataready_Interrupt = LIS3DSH_DATA_READY_INTERRUPT_ENABLED;
+	
+	//Active low when getting signal 
 	accelerometer_Interrupt_Init.Interrupt_signal = LIS3DSH_ACTIVE_LOW_INTERRUPT_SIGNAL;
 	accelerometer_Interrupt_Init.Interrupt_type = LIS3DSH_INTERRUPT_REQUEST_PULSED;
 	
@@ -174,32 +190,53 @@ void initializeTimer(){
 
 	__TIM4_CLK_ENABLE();
 	
+	//set timer as TIM 4
 	HWTimer.Instance = TIM4;
-	//HWTimer.Init.Prescaler = 42000 - 1;
-	//HWTimer.Init.Period = 1;
-	HWTimer.Init.Prescaler = 420 - 1;
-	HWTimer.Init.Period = 100;
 	
+	//Frequency wanted = frequency of TIM4 / (Prescaler + Period)
+	
+	HWTimer.Init.Prescaler = 420 - 1;
+	//counter
+	HWTimer.Init.Period = 100;
+	//count upward 
 	HWTimer.Init.CounterMode = TIM_COUNTERMODE_UP;
 	HWTimer.Init.RepetitionCounter = 0;
-	
+
+//Setting up PWM	
+	TIM_OC_InitTypeDef outputChannelInit;
+
+	outputChannelInit.OCMode = TIM_OCMODE_PWM1;
+	outputChannelInit.Pulse = 100;
+	outputChannelInit.OCFastMode = TIM_OCFAST_ENABLE;
+	outputChannelInit.OCPolarity = TIM_OCPOLARITY_HIGH;
+
+	HAL_TIM_PWM_ConfigChannel(&HWTimer, &outputChannelInit, TIM_CHANNEL_1);
+	HAL_TIM_PWM_ConfigChannel(&HWTimer, &outputChannelInit, TIM_CHANNEL_2);
+  HAL_TIM_PWM_ConfigChannel(&HWTimer, &outputChannelInit, TIM_CHANNEL_3);
+	HAL_TIM_PWM_ConfigChannel(&HWTimer, &outputChannelInit, TIM_CHANNEL_4);
+
+	//Start timer 
 	HAL_TIM_Base_Init(&HWTimer);
 	HAL_TIM_Base_Start_IT(&HWTimer);
 	
-	
-	
+		//START PWM 
+		HAL_TIM_PWM_Start(&HWTimer,TIM_CHANNEL_1);
+		HAL_TIM_PWM_Start(&HWTimer,TIM_CHANNEL_2);
+		HAL_TIM_PWM_Start(&HWTimer,TIM_CHANNEL_3);
+		HAL_TIM_PWM_Start(&HWTimer,TIM_CHANNEL_4);
 }
+
+	
+
 
 void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 	if(Pin == LIS3DSH_SPI_INT1_PIN){
 		
-		float32_t coordinate[3];
-		
-		LIS3DSH_ReadACC(coordinate);
+	float32_t coordinate[3];
+	LIS3DSH_ReadACC(coordinate);
 	
-		
-		 xCalibrated = coordinate[0]* 0.846 + 0.372;
-		 yCalibrated = coordinate[1]* 0.846	+ 0.38;
+	xCalibrated = coordinate[0]* 0.846 + 0.372;
+	yCalibrated = coordinate[1]* 0.846	+ 0.38;
 		
 		
 		/*
@@ -215,112 +252,96 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 		}
 		*/
 		
-		if (invalidCount == 0){
+	if (invalidCount == 0){
 			
 		for (int i = 5; i < 5; i++){ 
-		xArray[5-i] = xArray[4-i];
-		yArray[5-i] = yArray[4-i];
+			xArray[5-i] = xArray[4-i];
+			yArray[5-i] = yArray[4-i];
 		}
 		
 		xArray[0] = xCalibrated;
 		yArray[0] = yCalibrated;
 		
+		//filtering the calibrated value using DSP filter
 		arm_fir_f32(&s, &xArray[0], &xOutputArray[0],blockSize);
 		arm_fir_f32(&sy, &yArray[0], &yOutputArray[0],blockSize);
 			
 		//printf("X value : %f ,",(xOutputArray[0]/gravity));
-		//printf("Y value : %f \n",(yOutputArray[0]/gravity));
-		
-}
-		
-		// If there is less than 4 input at the start then add into the array and wait till there is 5 value 
-		else {
-			xArray[invalidCount] = coordinate[0];
-			yArray[invalidCount] = coordinate[1];
-			invalidCount -= 1;
-			//printf("FIRST 4 POLL DOESNT GIVE VALUE : %d \n", invalidCount);
+		//printf("Y value : %f \n",(yOutputArray[0]/gravity));	
 	}
-			
+		
+	else {
+		xArray[invalidCount] = coordinate[0];
+		yArray[invalidCount] = coordinate[1];
+		invalidCount -= 1;
+		}	
 	}
-	
 }
 
+//Exception Handling for timer
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
+	
+	
 	if (Timer->Instance == TIM4){
 		int input = KeyPadGetValue();
 		
 		if(input != -1 && pressedValue < 0){
 			pressedValue = input;
-			//printf("PRESSED VALUE IS : %d\n", pressedValue);
+			
 		}
 		
 		if(input == pressedValue){
 			if (pressedCounter == 500){
-				//printf("VALUE IS PRESSED is %d\n", pressedValue);
-				
+								
 				displayValue(pressedValue,position);
 				position = position + 1;
-				
-				
+
 				if (state == 1 && pressedValue != Key_hash && pressedValue != Key_star ){
-						  current = pitch;
-							pitch = 10*pitch + pressedValue;
-							if (pitch > 180){
-							pitch =0;
-						//	printf("TOO MUCH\n");
-							displayValue(4,4);
-							}
-							
-							if (position > 3){
-							position = 1;
-							}
-						
-						}
+					current = pitch;
+					pitch = 10*pitch + pressedValue;
+					if (pitch > 180){
+					pitch =0;
+					displayValue(4,4);
+					}
+					
+					if (position > 3){
+					position = 1;
+					}		
+				}
 				else if ( state == 1 && pressedValue == Key_hash){
-							printf("KEYPAD INPUT ROLL IS : %d\n", roll);
-							state = 0;
-							setUpPitchValue(pitch);
-							//pitchLED(pitch);
-							displayValue(5,4);
-							pitch = 0; // remove when fully implement
-							position = 1;
-						}
-				
+					
+					state = 0;
+					setUpPitchValue(pitch);
+					displayValue(5,4);
+					pitch = 0; 
+					position = 1;
+				}
 				else if ( state == 1 && pressedValue == Key_star){
 							pitch = current;
 							position -= 2;
 							displayValue(6,4);
 				}
-
-				
 				
 				else if (state == 0 && pressedValue != Key_hash && pressedValue != Key_star){
-						  current = roll;
-							roll = 10*roll + pressedValue;
-							if (roll > 180){
-							roll =0;
-							printf("TOO MUCH\n");
-							
-							displayValue(1,4);
-							
-							}
-						
-						}
+					current = roll;
+					roll = 10*roll + pressedValue;
+					if (roll > 180){
+						roll =0;
+						displayValue(1,4);				
+					}				
+				}
 				else if ( state == 0 && pressedValue == Key_hash ){
-							printf("KEYPAD INPUT PITCH IS : %d\n", roll);
-							state = 1;
-							//rollLED(roll);
-							setUpRollValue(roll);
-							displayValue(2,4);
-							roll = 0; // remove when fully implement
-							position = 1;
-						}
-				
+					state = 1;
+					setUpRollValue(roll);
+					displayValue(2,4);
+					roll = 0; 
+					position = 1;
+				}
 				
 				else if ( state == 0 && pressedValue == Key_star){
-							roll = current;
-							position -= 2;
-							displayValue(3,4);
+					roll = current;
+					position -= 2;
+					displayValue(3,4);
 				}
 										
 				pressedCounter = 0;
@@ -329,43 +350,50 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 				
 			}else{
 				pressedCounter++;
-				//printf("VALUE OF COUNTER IS :%d\n",pressedCounter);
 			}
 		}
 		
 		//RESET COUNTER
 		else if (input != -1){ 
 			pressedCounter = 0;
-			//printf("INDEX VALUE : %d/n ", input);
 			pressedValue = -1;
-			//printf("COUNTER IS RESETTING\n");
+			
 		}
 		
 		if(rollValue > 0) {
 			float32_t convertedRollValue = rollValue - 90;
 			float32_t xAccelerometerAngle = xCalibrated/gravity;
 			float32_t rollDifference = fabs(xAccelerometerAngle - convertedRollValue);
-			//printf("ROLL DIFFERENCE %f\n",rollDifference);
-			int rollDC = rollLED(rollDifference);
-						
+			
+			if (rollDifference < 5){
+			__HAL_TIM_SetCompare(&HWTimer, TIM_CHANNEL_1, 0);
+			__HAL_TIM_SetCompare(&HWTimer, TIM_CHANNEL_3, 0);
+			
+			}
+			else {
+			__HAL_TIM_SetCompare(&HWTimer, TIM_CHANNEL_1, rollDifference);
+			__HAL_TIM_SetCompare(&HWTimer, TIM_CHANNEL_3, rollDifference);
+			}
 			
 		}
-		
-		else if (pitchValue > 0 && rollValue == 0){
-			
+		 if (pitchValue > 0 ){
 			float32_t convertPitchValue = pitchValue - 90;
 			float32_t yAccelerometerAngle = yCalibrated/gravity;
 			float32_t pitchDifference = fabs(yAccelerometerAngle - convertPitchValue);
-			//printf("pitch DIFFERENCE %f\n",pitchDifference);
 			
-			int pitchDC = pitchLED(pitchDifference);
-			//float pulse_length = (41999+1) * pitchDC - 1;
-				
+			 if(pitchDifference < 5){
+			__HAL_TIM_SetCompare(&HWTimer, TIM_CHANNEL_2, 0);
+			__HAL_TIM_SetCompare(&HWTimer, TIM_CHANNEL_4, 0);
+			}
+			else {
+			__HAL_TIM_SetCompare(&HWTimer, TIM_CHANNEL_2, pitchDifference);
+			__HAL_TIM_SetCompare(&HWTimer, TIM_CHANNEL_4, pitchDifference);
+			
+			}
 		}
 		
 	}
 	  
-		
 		}
 		
 
@@ -408,12 +436,10 @@ void SystemClock_Config(void){
   HAL_NVIC_SetPriority(SysTick_IRQn, 0, 0);
 }
 
-//Modified
+//Modified the handler for TIM4  
 void TIM4_IRQHandler(void){
 HAL_TIM_IRQHandler(&HWTimer);
-	
 }
-
 
 #ifdef USE_FULL_ASSERT
 
