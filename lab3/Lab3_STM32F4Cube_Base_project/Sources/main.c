@@ -27,7 +27,9 @@ void initializeAccelerometer();
 void initializeAccelerometerPin();
 void initializeAccelerometerInterrupt();
 void initializeTimer();
-
+void controlRollLED();
+void controlPitchLED();
+void keyPadInput();
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config	(void);
@@ -39,10 +41,16 @@ TIM_HandleTypeDef HWTimer;
 uint32_t blockSize = 1;
 float32_t firStateF32[10 + 5 - 1];
 float32_t firStateF32y[10 + 5 - 1];
+float32_t firStateF32z[10 + 5 - 1];
+
 float32_t coefficients[5] = {0.1,0.15,0.5,0.15,0.1};
 float32_t coefficientsy[5] = {0.1,0.15,0.5,0.15,0.1};
+float32_t coefficientsz[5] = {0.1,0.15,0.5,0.15,0.1};
+
 arm_fir_instance_f32 s = {5, firStateF32,coefficients};
 arm_fir_instance_f32 sy = {5, firStateF32y,coefficientsy};
+arm_fir_instance_f32 sz = {5, firStateF32z,coefficientsz};
+
 int invalidCount = 4;
 
 //Use to slow down prints  
@@ -67,12 +75,15 @@ volatile int keypadValuesSet = 0;
 //variables for accelerometer
 float32_t xCalibrated = 0;
 float32_t yCalibrated = 0;
+float32_t zCalibrated = 0;
 
 float32_t xArray[5];
 float32_t yArray[5];
+float32_t zArray[5];
 
 float32_t xOutputArray[1];
 float32_t yOutputArray[1];
+float32_t zOutputArray[1];
 
 float32_t gravity = 9.81;
 
@@ -89,9 +100,10 @@ int main(void)
   /* Configure the system clock */
   SystemClock_Config();
 	
-	//initialize filters for x and y 
+	//initialize filters for x,y,z
 	arm_fir_init_f32(&s, 5,(float32_t *)&coefficients[0],&firStateF32[0],blockSize);
 	arm_fir_init_f32(&sy, 5,(float32_t *)&coefficientsy[0],&firStateF32y[0],blockSize);
+	arm_fir_init_f32(&sz, 5,(float32_t *)&coefficientsz[0],&firStateF32z[0],blockSize);
 	
 	//Set up accelerometer 
 	initializeAccelerometer();	
@@ -193,8 +205,7 @@ void initializeTimer(){
 	//set timer as TIM 4
 	HWTimer.Instance = TIM4;
 	
-	//Frequency wanted = frequency of TIM4 / (Prescaler + Period)
-	
+	//Frequency wanted = frequency of TIM4 / (Prescaler + Period) = 2kHz
 	HWTimer.Init.Prescaler = 420 - 1;
 	//counter
 	HWTimer.Init.Period = 100;
@@ -219,15 +230,12 @@ void initializeTimer(){
 	HAL_TIM_Base_Init(&HWTimer);
 	HAL_TIM_Base_Start_IT(&HWTimer);
 	
-		//START PWM 
-		HAL_TIM_PWM_Start(&HWTimer,TIM_CHANNEL_1);
-		HAL_TIM_PWM_Start(&HWTimer,TIM_CHANNEL_2);
-		HAL_TIM_PWM_Start(&HWTimer,TIM_CHANNEL_3);
-		HAL_TIM_PWM_Start(&HWTimer,TIM_CHANNEL_4);
+	//START PWM 
+	HAL_TIM_PWM_Start(&HWTimer,TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&HWTimer,TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&HWTimer,TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start(&HWTimer,TIM_CHANNEL_4);
 }
-
-	
-
 
 void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 	if(Pin == LIS3DSH_SPI_INT1_PIN){
@@ -237,35 +245,36 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 	
 	xCalibrated = coordinate[0]* 0.846 + 0.372;
 	yCalibrated = coordinate[1]* 0.846	+ 0.38;
+	zCalibrated = coordinate[2] * 0.846 + 0.38;			
+		
+	//printf("X value : %f ,",coordinate[0]/gravity);
+	//printf("Y value : %f ,",coordinate[1]/gravity);
+	//printf("Z value : %f\n",coordinate[2]/gravity);
+	
+	//printf("NOT FILTERED: %f,", xCalibrated/gravity);
+	//printf("%f,", yCalibrated/gravity);
+	//printf("%f\n", zCalibrated/gravity);
 		
 		
-		/*
-		if (interruptCounter++ == 5000){
-		interruptCounter = 0;
-		printf("X value : %f ,",coordinate[0]/gravity);
-		printf("Y value : %f ,",coordinate[1]/gravity);
-		printf("Z value : %f\n",coordinate[2]/gravity);
-		
-		printf("calibrated X value : %f , ", xCalibrated/gravity);
-		printf("calibrated X value : %f\n\n", yCalibrated/gravity);
-		
-		}
-		*/
 		
 	if (invalidCount == 0){
 			
 		for (int i = 5; i < 5; i++){ 
 			xArray[5-i] = xArray[4-i];
 			yArray[5-i] = yArray[4-i];
+			zArray[5-i] = zArray[4-i];
 		}
 		
 		xArray[0] = xCalibrated;
 		yArray[0] = yCalibrated;
+		zArray[0] = zCalibrated;
 		
 		//filtering the calibrated value using DSP filter
 		arm_fir_f32(&s, &xArray[0], &xOutputArray[0],blockSize);
 		arm_fir_f32(&sy, &yArray[0], &yOutputArray[0],blockSize);
-			
+		arm_fir_f32(&sz, &zArray[0], &zOutputArray[0],blockSize);	
+		
+		//printf("FILTERED : %f,%f,%f\n",(xOutputArray[0]/gravity),(yOutputArray[0]/gravity), (zOutputArray[0]/gravity));
 		//printf("X value : %f ,",(xOutputArray[0]/gravity));
 		//printf("Y value : %f \n",(yOutputArray[0]/gravity));	
 	}
@@ -273,6 +282,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 	else {
 		xArray[invalidCount] = coordinate[0];
 		yArray[invalidCount] = coordinate[1];
+		zArray[invalidCount] = coordinate[2];
 		invalidCount -= 1;
 		}	
 	}
@@ -285,7 +295,21 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 	if (Timer->Instance == TIM4){
 		int input = KeyPadGetValue();
 		
-		if(input != -1 && pressedValue < 0){
+    keyPadInput(input);		
+
+		if(rollValue > 0) {
+			controlRollLED();
+		}
+		 if (pitchValue > 0 ){
+			controlPitchLED();
+		}
+		
+	}
+	  
+		}
+
+void keyPadInput(int input){
+if(input != -1 && pressedValue < 0){
 			pressedValue = input;
 			
 		}
@@ -320,6 +344,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 							pitch = current;
 							position -= 2;
 							displayValue(6,4);
+					if(position <=0){
+					position = 1;
+					current = 0;
+					pitch = 0;
+					state = 0;
+					}
 				}
 				
 				else if (state == 0 && pressedValue != Key_hash && pressedValue != Key_star){
@@ -342,6 +372,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 					roll = current;
 					position -= 2;
 					displayValue(3,4);
+					if(position <=0){
+					position = 1;
+					current = 0;
+					roll = 0;
+					}
 				}
 										
 				pressedCounter = 0;
@@ -351,18 +386,18 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 			}else{
 				pressedCounter++;
 			}
-		}
-		
-		//RESET COUNTER
+		}//RESET COUNTER
 		else if (input != -1){ 
 			pressedCounter = 0;
 			pressedValue = -1;
 			
 		}
 		
-		if(rollValue > 0) {
-			float32_t convertedRollValue = rollValue - 90;
-			float32_t xAccelerometerAngle = xCalibrated/gravity;
+
+}
+void controlRollLED(){
+float32_t convertedRollValue = rollValue - 90;
+			float32_t xAccelerometerAngle = xOutputArray[0]/gravity;
 			float32_t rollDifference = fabs(xAccelerometerAngle - convertedRollValue);
 			
 			if (rollDifference < 5){
@@ -374,11 +409,13 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 			__HAL_TIM_SetCompare(&HWTimer, TIM_CHANNEL_1, rollDifference);
 			__HAL_TIM_SetCompare(&HWTimer, TIM_CHANNEL_3, rollDifference);
 			}
-			
-		}
-		 if (pitchValue > 0 ){
+
+}
+
+void controlPitchLED(){
+	
 			float32_t convertPitchValue = pitchValue - 90;
-			float32_t yAccelerometerAngle = yCalibrated/gravity;
+			float32_t yAccelerometerAngle = yOutputArray[0]/gravity;
 			float32_t pitchDifference = fabs(yAccelerometerAngle - convertPitchValue);
 			
 			 if(pitchDifference < 5){
@@ -390,13 +427,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 			__HAL_TIM_SetCompare(&HWTimer, TIM_CHANNEL_4, pitchDifference);
 			
 			}
-		}
-		
-	}
-	  
-		}
-		
-
+}
 /** System Clock Configuration*/
 void SystemClock_Config(void){
 

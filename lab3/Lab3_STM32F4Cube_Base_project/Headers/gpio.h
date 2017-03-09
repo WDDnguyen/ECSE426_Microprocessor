@@ -80,7 +80,6 @@ int pitchLED(float32_t pitchDifference);
 void displayValue();
 void resetDisplay();
 
-
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
