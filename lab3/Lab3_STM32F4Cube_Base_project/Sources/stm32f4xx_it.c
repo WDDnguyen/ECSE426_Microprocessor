@@ -178,7 +178,6 @@ void SysTick_Handler(void)
 {
 }*/
 
-// created
 
 void EXTI0_IRQHandler(void)
 {

@@ -71,8 +71,11 @@ void GPIO_Init(void){
 	// FOR LEDs  // READD LED2
 	GPIO_INIT.Pin = LED1 | LED2 | LED3 | LED4; // initialize the pins for the LEDs pin
 	//GPIO_INIT.Mode = GPIO_MODE_OUTPUT_PP; // Set pins to output push pull mode 
+	
+	//Set up LEDs for alternate function PWM push pull
 	GPIO_INIT.Mode = GPIO_MODE_AF_PP;
-	GPIO_INIT.Alternate = GPIO_AF2_TIM4; // added in 
+	//setting up alternate function on TIM4
+	GPIO_INIT.Alternate = GPIO_AF2_TIM4; 
 	GPIO_INIT.Pull = GPIO_NOPULL; // No pull for LEDs pins
 	GPIO_INIT.Speed = GPIO_SPEED_FREQ_MEDIUM;	//Speed of pin
 	

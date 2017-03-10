@@ -85,6 +85,8 @@ float32_t xOutputArray[1];
 float32_t yOutputArray[1];
 float32_t zOutputArray[1];
 
+float32_t rollAngle = 0;		
+float32_t pitchAngle = 0;
 float32_t gravity = 9.81;
 
 //variable for numpad
@@ -118,7 +120,7 @@ int main(void)
 	HAL_NVIC_SetPriority(EXTI0_IRQn, 1, 0);
   HAL_NVIC_EnableIRQ(EXTI0_IRQn);	
 	
-	//initialize Timer on Tim4
+	//initialize Timer and PWM on Tim4
 	initializeTimer();
 
   //Enable Interrupt and set priority for Timer
@@ -153,7 +155,7 @@ void initializeAccelerometer(){
 	accelerometer_Init.Power_Mode_Output_DataRate = LIS3DSH_DATARATE_25;
 	//enable X,Y,Z coordinates
 	accelerometer_Init.Axes_Enable = LIS3DSH_XYZ_ENABLE;
-	//Continously sample beside of blocking 
+	//Continously sample beside of blocking. 
 	accelerometer_Init.Continous_Update = LIS3DSH_ContinousUpdate_Enabled;
 	//set maximum scale to +/- 2g.
 	accelerometer_Init.Full_Scale = LIS3DSH_FULLSCALE_2;
@@ -172,25 +174,25 @@ void initializeAccelerometerPin(){
 	GPIO_InitTypeDef GPIO_INIT;
 	// set pin to specific accelerometer pin
 	GPIO_INIT.Pin = LIS3DSH_SPI_INT1_PIN; 
-	// trigger when falling edge of samp;ing
+	// trigger when falling edge of sampling
 	GPIO_INIT.Mode = GPIO_MODE_IT_FALLING;
 	
 	GPIO_INIT.Pull = GPIO_PULLDOWN;
 	GPIO_INIT.Speed = GPIO_SPEED_FREQ_MEDIUM;
 	
-	//set up pin on PORT E
+	//set up pin on PORT E with configuration
 	HAL_GPIO_Init(GPIOE, &GPIO_INIT);
 	
 }
 
 void initializeAccelerometerInterrupt(){
 	
-	//initialize configuration set up for Interrupt
+	//initialize configuration set up for interrupt of accelerometer
 	LIS3DSH_DRYInterruptConfigTypeDef accelerometer_Interrupt_Init;
-	//when to trigger the interrupt 
+	//enable Interrupt for accelerometer
 	accelerometer_Interrupt_Init.Dataready_Interrupt = LIS3DSH_DATA_READY_INTERRUPT_ENABLED;
 	
-	//Active low when getting signal 
+	//Active high when getting signal 
 	accelerometer_Interrupt_Init.Interrupt_signal = LIS3DSH_ACTIVE_LOW_INTERRUPT_SIGNAL;
 	accelerometer_Interrupt_Init.Interrupt_type = LIS3DSH_INTERRUPT_REQUEST_PULSED;
 	
@@ -216,11 +218,15 @@ void initializeTimer(){
 //Setting up PWM	
 	TIM_OC_InitTypeDef outputChannelInit;
 
+	//Configure TIM mode to be PWM1  which is fastest 
 	outputChannelInit.OCMode = TIM_OCMODE_PWM1;
+	//Pulse value to be set in compare register 
 	outputChannelInit.Pulse = 100;
+	//set up fast mode when using PWM1
 	outputChannelInit.OCFastMode = TIM_OCFAST_ENABLE;
 	outputChannelInit.OCPolarity = TIM_OCPOLARITY_HIGH;
 
+	//set configuration to each channel of TIM
 	HAL_TIM_PWM_ConfigChannel(&HWTimer, &outputChannelInit, TIM_CHANNEL_1);
 	HAL_TIM_PWM_ConfigChannel(&HWTimer, &outputChannelInit, TIM_CHANNEL_2);
   HAL_TIM_PWM_ConfigChannel(&HWTimer, &outputChannelInit, TIM_CHANNEL_3);
@@ -237,24 +243,36 @@ void initializeTimer(){
 	HAL_TIM_PWM_Start(&HWTimer,TIM_CHANNEL_4);
 }
 
+//Exception Handling for  accelerometer
 void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 	if(Pin == LIS3DSH_SPI_INT1_PIN){
 		
 	float32_t coordinate[3];
 	LIS3DSH_ReadACC(coordinate);
 	
-	xCalibrated = coordinate[0]* 0.846 + 0.372;
+	
+	/*printf("X value : %f ,",coordinate[0]);
+	printf("Y value : %f ,",coordinate[1]);
+	printf("Z value : %f\n",coordinate[2]);
+	*/		
+	// might need to change to 0.981 + 0.372, 0.9792 + 0.38
+	xCalibrated = coordinate[0]* 0.991 + 0.372;
+	yCalibrated = coordinate[1]* 0.9792	+ 0.38;
+	zCalibrated = coordinate[2] * 0.9792 + 0.38;			
+	
+		
+	/*xCalibrated = coordinate[0]* 0.846 + 0.372;
 	yCalibrated = coordinate[1]* 0.846	+ 0.38;
 	zCalibrated = coordinate[2] * 0.846 + 0.38;			
-		
+		*/
 	//printf("X value : %f ,",coordinate[0]/gravity);
 	//printf("Y value : %f ,",coordinate[1]/gravity);
 	//printf("Z value : %f\n",coordinate[2]/gravity);
-	
-	//printf("NOT FILTERED: %f,", xCalibrated/gravity);
-	//printf("%f,", yCalibrated/gravity);
-	//printf("%f\n", zCalibrated/gravity);
-		
+	/*
+	printf("NOT FILTERED: %f,", xCalibrated);
+	printf("%f,", yCalibrated);
+	printf("%f\n", zCalibrated);
+		*/
 		
 		
 	if (invalidCount == 0){
@@ -273,10 +291,17 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 		arm_fir_f32(&s, &xArray[0], &xOutputArray[0],blockSize);
 		arm_fir_f32(&sy, &yArray[0], &yOutputArray[0],blockSize);
 		arm_fir_f32(&sz, &zArray[0], &zOutputArray[0],blockSize);	
+	
+
+		float32_t val = 180.0/PI;
+		float32_t rollCalculation = xOutputArray[0]/ sqrt(yOutputArray[0] * yOutputArray[0] + zOutputArray[0] * zOutputArray[0]);
+		rollAngle = atan(rollCalculation) * val;
 		
-		//printf("FILTERED : %f,%f,%f\n",(xOutputArray[0]/gravity),(yOutputArray[0]/gravity), (zOutputArray[0]/gravity));
-		//printf("X value : %f ,",(xOutputArray[0]/gravity));
-		//printf("Y value : %f \n",(yOutputArray[0]/gravity));	
+		float32_t pitchCalculation = yOutputArray[0]/ sqrt(xOutputArray[0] * xOutputArray[0] + zOutputArray[0] * zOutputArray[0]);
+		pitchAngle = atan(pitchCalculation) * val;
+		
+		printf("FILTERED : %f,%f\n",rollAngle,pitchAngle);
+		
 	}
 		
 	else {
@@ -293,10 +318,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 	
 	
 	if (Timer->Instance == TIM4){
+		//Call keypad function to determine which key was pressed
 		int input = KeyPadGetValue();
-		
     keyPadInput(input);		
 
+		//if roll/pitch value are set then start checking LED
 		if(rollValue > 0) {
 			controlRollLED();
 		}
@@ -311,8 +337,8 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *Timer){
 void keyPadInput(int input){
 if(input != -1 && pressedValue < 0){
 			pressedValue = input;
-			
-		}
+		//State 0 for roll and State 1 for pitch			
+	}
 		
 		if(input == pressedValue){
 			if (pressedCounter == 500){
@@ -395,10 +421,10 @@ if(input != -1 && pressedValue < 0){
 		
 
 }
+//Control PWM after keypad Input
 void controlRollLED(){
 float32_t convertedRollValue = rollValue - 90;
-			float32_t xAccelerometerAngle = xOutputArray[0]/gravity;
-			float32_t rollDifference = fabs(xAccelerometerAngle - convertedRollValue);
+			float32_t rollDifference = fabs(rollAngle - convertedRollValue);
 			
 			if (rollDifference < 5){
 			__HAL_TIM_SetCompare(&HWTimer, TIM_CHANNEL_1, 0);
@@ -415,8 +441,7 @@ float32_t convertedRollValue = rollValue - 90;
 void controlPitchLED(){
 	
 			float32_t convertPitchValue = pitchValue - 90;
-			float32_t yAccelerometerAngle = yOutputArray[0]/gravity;
-			float32_t pitchDifference = fabs(yAccelerometerAngle - convertPitchValue);
+			float32_t pitchDifference = fabs(pitchAngle - convertPitchValue);
 			
 			 if(pitchDifference < 5){
 			__HAL_TIM_SetCompare(&HWTimer, TIM_CHANNEL_2, 0);
