@@ -152,7 +152,7 @@ void ACCEL_thread(void const *args) {
 		float32_t pitchCalculation = yOutputArray[0]/ sqrt(xOutputArray[0] * xOutputArray[0] + zOutputArray[0] * zOutputArray[0]);
 		pitchAngle = atan(pitchCalculation) * val;
 		
-		printf("FILTERED : %f,%f\n",rollAngle,pitchAngle);
+		//printf("FILTERED : %f,%f\n",rollAngle,pitchAngle);
 		
 	}
 		

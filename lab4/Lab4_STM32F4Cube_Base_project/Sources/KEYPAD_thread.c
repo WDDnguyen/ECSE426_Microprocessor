@@ -39,6 +39,7 @@ extern float32_t rollAngle;
 extern float32_t pitchAngle;
 float32_t gravity = 9.81;
 
+extern int mode;
 
 //function to set up roll and pitch value  after input on KeyPad
 void setUpRollValue(int roll){
@@ -81,6 +82,7 @@ if(input != -1 && pressedValue < 0){
 					displayValue(5,4);
 					pitch = 0; 
 					position = 1;
+					mode = 0;
 				}
 				else if ( state == 1 && pressedValue == Key_star){
 							pitch = current;
@@ -108,6 +110,7 @@ if(input != -1 && pressedValue < 0){
 					displayValue(2,4);
 					roll = 0; 
 					position = 1;
+					mode = 2;
 				}
 				
 				else if ( state == 0 && pressedValue == Key_star){
@@ -217,7 +220,6 @@ void KEYPAD_thread_periph_init(void) {
 	HAL_NVIC_EnableIRQ(TIM4_IRQn);	
 }
 
-
 void start_KEYPAD_thread(void *args) {
 	KEYPAD_thread_ID = osThreadCreate(osThread(KEYPAD_thread), args);
 }
@@ -232,8 +234,11 @@ void KEYPAD_thread(void const *args) {
 	while(1){
 		osSignalWait(0x00000001, osWaitForever);
 		int input = KeyPadGetValue();
-		keyPadInput(input);		
-
+		if(input != -1){
+		mode = 1;
+		}
+		
+		keyPadInput(input);
 		//if roll/pitch value are set then start checking LED
 		if(rollValue > 0) {
 			controlRollLED();

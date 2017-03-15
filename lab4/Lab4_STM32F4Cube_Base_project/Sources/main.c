@@ -13,6 +13,8 @@
 #include "RTE_Components.h"             // Component selection
 #include "ACCEL_thread.h"
 #include "KEYPAD_thread.h"
+#include "TEMP_thread.h"
+#include "SEG_thread.h"
 #include "gpio.h"
 #include "keypad.h"
 #include "lis3dsh.h"
@@ -20,7 +22,13 @@
 
 extern osThreadId ACCEL_thread_ID;
 extern osThreadId KEYPAD_thread_ID;
+extern osThreadId TEMP_thread_ID;
+extern osThreadId SEG_thread_ID;
+
 extern TIM_HandleTypeDef HWTimer;
+extern TIM_HandleTypeDef TIM2_handle;
+extern TIM_HandleTypeDef TIM3_handle;
+
 
 /**
 	These lines are mandatory to make CMSIS-RTOS RTX work with te new Cube HAL
@@ -83,6 +91,9 @@ int main (void) {
 	/* User codes goes here*/
   start_ACCEL_thread(NULL);
 	start_KEYPAD_thread(NULL);
+	start_TEMP_thread(NULL);
+	start_SEG_thread(NULL);
+	
 	//initializeLED_IO();                       /* Initialize LED GPIO Buttons    */
   //start_Thread_LED();                       /* Create LED thread              */
 	/* User codes ends here*/
@@ -94,10 +105,18 @@ int main (void) {
 void TIM4_IRQHandler(void){
 HAL_TIM_IRQHandler(&HWTimer);
 }
-void EXT10_IRQHandler(void){
-	HAL_GPIO_EXTI_IRQHandler(LIS3DSH_SPI_INT1_PIN);
+
+void TIM2_IRQHandler(void){
+HAL_TIM_IRQHandler(&TIM2_handle);
 }
 
+void TIM3_IRQHandler(void){
+HAL_TIM_IRQHandler(&TIM3_handle);
+}
+
+void EXTI0_IRQHandler(void){
+	HAL_GPIO_EXTI_IRQHandler(LIS3DSH_SPI_INT1_PIN);
+}
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 	if(GPIO_Pin == LIS3DSH_SPI_INT1_PIN)
@@ -105,7 +124,13 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
 }
 
 void  HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {	
-	if(htim->Instance == TIM4)
+	if(htim->Instance == TIM4){
 		osSignalSet(KEYPAD_thread_ID, 0x00000001);
-	
+	}
+	else if (htim->Instance == TIM2){
+		osSignalSet(TEMP_thread_ID, 0x00000001);
+	}
+		else if (htim->Instance == TIM3){
+		osSignalSet(SEG_thread_ID, 0x00000001);
+	} 
 }
