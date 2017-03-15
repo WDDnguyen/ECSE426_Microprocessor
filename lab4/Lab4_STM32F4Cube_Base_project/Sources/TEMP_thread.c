@@ -23,7 +23,7 @@ void TEMP_thread_periph_init(void) {
 	//Frequency wanted = frequency of TIM4 / (Prescaler + Period) = 2kHz
 	TIM2_handle.Init.Prescaler = 19999;
 	//counter
-	TIM2_handle.Init.Period = 20;
+	TIM2_handle.Init.Period = 500;
 	//count upward 
 	TIM2_handle.Init.CounterMode = TIM_COUNTERMODE_UP;
 	TIM2_handle.Init.RepetitionCounter = 0;

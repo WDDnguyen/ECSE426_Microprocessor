@@ -30,6 +30,7 @@ int pitch = 0;
 int position = 1;
 // state 0 -> roll Input , state 1 -> pitch input 
 int state = 0;
+int angle = 0;
  
 int rollValue = 0;
 int pitchValue = 0;
@@ -56,11 +57,17 @@ if(input != -1 && pressedValue < 0){
 			pressedValue = input;
 		//State 0 for roll and State 1 for pitch			
 	}
-		
+	
 		if(input == pressedValue){
 			if (pressedCounter == 500){
-								
+				
+						
+			if(mode == 0){
+				mode = 1;
+				}
+						
 				displayValue(pressedValue,position);
+				angle = angle * 10 + pressedValue;
 				position = position + 1;
 
 				if (state == 1 && pressedValue != Key_hash && pressedValue != Key_star ){
@@ -68,7 +75,8 @@ if(input != -1 && pressedValue < 0){
 					pitch = 10*pitch + pressedValue;
 					if (pitch > 180){
 					pitch =0;
-					displayValue(4,4);
+					angle = 0;
+					//displayValue(4,4);
 					}
 					
 					if (position > 3){
@@ -79,15 +87,16 @@ if(input != -1 && pressedValue < 0){
 					
 					state = 0;
 					setUpPitchValue(pitch);
-					displayValue(5,4);
+					//displayValue(5,4);
 					pitch = 0; 
 					position = 1;
 					mode = 0;
+					angle = 0;
 				}
 				else if ( state == 1 && pressedValue == Key_star){
 							pitch = current;
 							position -= 2;
-							displayValue(6,4);
+							//displayValue(6,4);
 					if(position <=0){
 					position = 1;
 					current = 0;
@@ -101,16 +110,18 @@ if(input != -1 && pressedValue < 0){
 					roll = 10*roll + pressedValue;
 					if (roll > 180){
 						roll =0;
+						angle = 0;
 						displayValue(1,4);				
 					}				
 				}
 				else if ( state == 0 && pressedValue == Key_hash ){
 					state = 1;
 					setUpRollValue(roll);
-					displayValue(2,4);
+				//	displayValue(2,4);
 					roll = 0; 
 					position = 1;
 					mode = 2;
+					angle = 0;
 				}
 				
 				else if ( state == 0 && pressedValue == Key_star){
@@ -234,9 +245,6 @@ void KEYPAD_thread(void const *args) {
 	while(1){
 		osSignalWait(0x00000001, osWaitForever);
 		int input = KeyPadGetValue();
-		if(input != -1){
-		mode = 1;
-		}
 		
 		keyPadInput(input);
 		//if roll/pitch value are set then start checking LED

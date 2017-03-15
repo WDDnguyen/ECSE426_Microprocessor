@@ -12,26 +12,24 @@ osThreadDef(SEG_thread, osPriorityNormal, 1 , 0);
 TIM_HandleTypeDef TIM3_handle;
 int alarm = 0;
 extern float temp;
-//extern float32_t rollAngle;
-//extern float32_t pitchAngle;
-extern float32_t roll;
-extern float32_t pitch;
-
+extern int rollValue; 
+extern int pitchValue;
+extern int angle;
 int segmentPosition = 3;
 int toggle = 0;
 int mode = 0;
-int value = 0;
+
 
 void SEG_thread_periph_init(void) {
 	
 	__HAL_RCC_TIM3_CLK_ENABLE();
-	__TIM4_CLK_ENABLE();
+	__TIM3_CLK_ENABLE();
 	
 	//set timer as TIM 3
 	TIM3_handle.Instance = TIM3;
 	
 	//Frequency wanted = frequency of TIM4 / (Prescaler + Period) = 2kHz
-	TIM3_handle.Init.Prescaler = (1750/4) -1;
+	TIM3_handle.Init.Prescaler = (1750/6) -1;
 	//counter
 	TIM3_handle.Init.Period = 749;
 	//count upward 
@@ -58,30 +56,24 @@ void SEG_thread(void const *args) {
 
 	while(1){
 	osSignalWait(0x00000001, osWaitForever);
-	if (mode == 0){
+
+	int value;
+		
+			if (temp < 35 || alarm % 20 > 10){
 		if (segmentPosition == 3)
 		{
-			if(toggle == 0){
-			value = temp * 10;
-			}
-		 // need to put back fahrenheit
-		}
+		
+						
+					
+				if (mode == 0){
+					
+					value = temp * 10;
+				}else{
+					value = angle ;//* 10;
+				}
 		
 	}
-	/*
-	else if (mode == 1)  {
-		if(segmentPosition == 3){
-			value = roll * 10;
-		}
-	}
-	
-	else if (mode == 2){
-			if(segmentPosition == 3){
-			value = pitch * 10;
-		}
-	
-	}*/
-	/*
+		
 	if(segmentPosition > 0){
 		int out = value % 10;
 		value = value / 10;
@@ -90,11 +82,21 @@ void SEG_thread(void const *args) {
 		}
 		else {
 		segmentPosition = 3;
-		}*/
+		}
 		
-	
+			if (temp > 35){
+				alarm++;
+			}
+			else {
+			 alarm = 0;
+			}
 		
-			
-	
+		
+	}
+			else {
+				displayValue(-1);
+				alarm++;
+			}
+
 }
-}
+	}
