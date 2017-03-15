@@ -193,7 +193,7 @@ void initializeAccelerometerInterrupt(){
 	accelerometer_Interrupt_Init.Dataready_Interrupt = LIS3DSH_DATA_READY_INTERRUPT_ENABLED;
 	
 	//Active high when getting signal 
-	accelerometer_Interrupt_Init.Interrupt_signal = LIS3DSH_ACTIVE_LOW_INTERRUPT_SIGNAL;
+	accelerometer_Interrupt_Init.Interrupt_signal = LIS3DSH_ACTIVE_HIGH_INTERRUPT_SIGNAL;
 	accelerometer_Interrupt_Init.Interrupt_type = LIS3DSH_INTERRUPT_REQUEST_PULSED;
 	
 	LIS3DSH_DataReadyInterruptConfig(&accelerometer_Interrupt_Init);
@@ -257,7 +257,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t Pin){
 	*/		
 	// might need to change to 0.981 + 0.372, 0.9792 + 0.38
 	xCalibrated = coordinate[0]* 0.991 + 0.372;
-	yCalibrated = coordinate[1]* 0.9792	+ 0.38;
+	yCalibrated = coordinate[1]* 0.987	+ 0.38;
 	zCalibrated = coordinate[2] * 0.9792 + 0.38;			
 	
 		

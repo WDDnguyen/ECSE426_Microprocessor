@@ -11,11 +11,16 @@
 #include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
 #include "cmsis_os.h"                   // ARM::CMSIS:RTOS:Keil RTX
 #include "RTE_Components.h"             // Component selection
+#include "ACCEL_thread.h"
+#include "KEYPAD_thread.h"
+#include "gpio.h"
+#include "keypad.h"
+#include "lis3dsh.h"
+#include "arm_math.h"
 
-extern void initializeLED_IO			(void);
-extern void start_Thread_LED			(void);
-extern void Thread_LED(void const *argument);
-extern osThreadId tid_Thread_LED;
+extern osThreadId ACCEL_thread_ID;
+extern osThreadId KEYPAD_thread_ID;
+extern TIM_HandleTypeDef HWTimer;
 
 /**
 	These lines are mandatory to make CMSIS-RTOS RTX work with te new Cube HAL
@@ -74,11 +79,33 @@ int main (void) {
   HAL_Init();                               /* Initialize the HAL Library     */
 
   SystemClock_Config();                     /* Configure the System Clock     */
-
+	
 	/* User codes goes here*/
-  initializeLED_IO();                       /* Initialize LED GPIO Buttons    */
-  start_Thread_LED();                       /* Create LED thread              */
+  start_ACCEL_thread(NULL);
+	start_KEYPAD_thread(NULL);
+	//initializeLED_IO();                       /* Initialize LED GPIO Buttons    */
+  //start_Thread_LED();                       /* Create LED thread              */
 	/* User codes ends here*/
   
 	osKernelStart();                          /* start thread execution         */
+	osDelay(osWaitForever);
+}
+
+void TIM4_IRQHandler(void){
+HAL_TIM_IRQHandler(&HWTimer);
+}
+void EXT10_IRQHandler(void){
+	HAL_GPIO_EXTI_IRQHandler(LIS3DSH_SPI_INT1_PIN);
+}
+
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin){
+	if(GPIO_Pin == LIS3DSH_SPI_INT1_PIN)
+		osSignalSet(ACCEL_thread_ID, 0x00000001);
+}
+
+void  HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {	
+	if(htim->Instance == TIM4)
+		osSignalSet(KEYPAD_thread_ID, 0x00000001);
+	
 }
