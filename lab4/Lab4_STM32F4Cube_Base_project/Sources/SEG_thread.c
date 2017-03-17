@@ -22,17 +22,12 @@ int mode = 0;
 
 void SEG_thread_periph_init(void) {
 	
+	//set to 1KHz
 	__HAL_RCC_TIM3_CLK_ENABLE();
 	__TIM3_CLK_ENABLE();
-	
-	//set timer as TIM 3
 	TIM3_handle.Instance = TIM3;
-	
-	//Frequency wanted = frequency of TIM4 / (Prescaler + Period) = 2kHz
-	TIM3_handle.Init.Prescaler = (1750/6) -1;
-	//counter
-	TIM3_handle.Init.Period = 749;
-	//count upward 
+	TIM3_handle.Init.Prescaler = 840 - 1;
+	TIM3_handle.Init.Period = 100;
 	TIM3_handle.Init.CounterMode = TIM_COUNTERMODE_UP;
 	TIM3_handle.Init.RepetitionCounter = 0;
 

@@ -6,25 +6,21 @@
 void TEMP_thread(void const *args);
 //Global 
 
-osThreadId TEMP_thread_ID;
-osThreadDef(TEMP_thread, osPriorityNormal, 1 , 0);
+osThreadId TEMP_thread_ID; // create thread id 
+osThreadDef(TEMP_thread, osPriorityNormal, 1 , 0); // setup the attributes when osthreadcreate is called 
 TIM_HandleTypeDef TIM2_handle;
 float temp;
 
 void TEMP_thread_periph_init(void) {
-	
+
+	//Set timer to 100 hz	
 	__HAL_RCC_TIM2_CLK_ENABLE();
-	//100hz
-	__TIM4_CLK_ENABLE();
 	
 	//set timer as TIM 2
 	TIM2_handle.Instance = TIM2;
-	
-	//Frequency wanted = frequency of TIM4 / (Prescaler + Period) = 2kHz
 	TIM2_handle.Init.Prescaler = 19999;
-	//counter
+	// reset back to 42  to get to 100 hz
 	TIM2_handle.Init.Period = 500;
-	//count upward 
 	TIM2_handle.Init.CounterMode = TIM_COUNTERMODE_UP;
 	TIM2_handle.Init.RepetitionCounter = 0;
 

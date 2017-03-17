@@ -186,7 +186,6 @@ void controlPitchLED(){
 
 void KEYPAD_thread_periph_init(void) {
 	__HAL_RCC_TIM4_CLK_ENABLE();
-	//2KHz
 	__TIM4_CLK_ENABLE();
 	
 	//set timer as TIM 4

@@ -7,8 +7,8 @@
 .\objects\system_stm32f4xx.o: C:\McGill\Software_Install\EDU\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include\cmsis_armcc.h
 .\objects\system_stm32f4xx.o: C:\McGill\Software_Install\EDU\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h
 .\objects\system_stm32f4xx.o: C:\McGill\Software_Install\EDU\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h
-.\objects\system_stm32f4xx.o: C:\Users\wnguye\Downloads\lab4\ECSE426_Microprocessor\lab4\Lab4_STM32F4Cube_Base_project\RTE\Device\STM32F407VGTx\stm32f4xx_hal_conf.h
-.\objects\system_stm32f4xx.o: C:\Users\wnguye\Downloads\lab4\ECSE426_Microprocessor\lab4\Lab4_STM32F4Cube_Base_project\RTE\RTE_Components.h
+.\objects\system_stm32f4xx.o: C:\Users\wnguye\Downloads\ECSE426_Microprocessor\lab4\Lab4_STM32F4Cube_Base_project\RTE\Device\STM32F407VGTx\stm32f4xx_hal_conf.h
+.\objects\system_stm32f4xx.o: C:\Users\wnguye\Downloads\ECSE426_Microprocessor\lab4\Lab4_STM32F4Cube_Base_project\RTE\RTE_Components.h
 .\objects\system_stm32f4xx.o: C:\McGill\Software_Install\EDU\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h
 .\objects\system_stm32f4xx.o: C:\McGill\Software_Install\EDU\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h
 .\objects\system_stm32f4xx.o: C:\McGill\Software_Install\EDU\Keil_v5\ARM\PACK\Keil\STM32F4xx_DFP\2.7.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h

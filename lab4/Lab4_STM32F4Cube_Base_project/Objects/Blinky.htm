@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\Objects\Blinky.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\Objects\Blinky.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050169: Last Updated: Wed Mar 15 17:43:52 2017
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050169: Last Updated: Fri Mar 17 10:50:05 2017
 <BR><P>
 <H3>Maximum Stack Usage =        224 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -25,13 +25,13 @@ Mutually Recursive functions
 Function Pointers
 </H3><UL>
  <LI><a href="#[83]">ACCEL_thread</a> from accel_thread.o(.text) referenced from accel_thread.o(.constdata)
- <LI><a href="#[60]">ADC_DMAConvCplt</a> from stm32f4xx_hal_adc.o(.text) referenced from stm32f4xx_hal_adc.o(.text)
- <LI><a href="#[62]">ADC_DMAError</a> from stm32f4xx_hal_adc.o(.text) referenced from stm32f4xx_hal_adc.o(.text)
- <LI><a href="#[61]">ADC_DMAHalfConvCplt</a> from stm32f4xx_hal_adc.o(.text) referenced from stm32f4xx_hal_adc.o(.text)
+ <LI><a href="#[5e]">ADC_DMAConvCplt</a> from stm32f4xx_hal_adc.o(.text) referenced from stm32f4xx_hal_adc.o(.text)
+ <LI><a href="#[60]">ADC_DMAError</a> from stm32f4xx_hal_adc.o(.text) referenced from stm32f4xx_hal_adc.o(.text)
+ <LI><a href="#[5f]">ADC_DMAHalfConvCplt</a> from stm32f4xx_hal_adc.o(.text) referenced from stm32f4xx_hal_adc.o(.text)
  <LI><a href="#[1d]">ADC_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
- <LI><a href="#[63]">ADC_MultiModeDMAConvCplt</a> from stm32f4xx_hal_adc_ex.o(.text) referenced from stm32f4xx_hal_adc_ex.o(.text)
- <LI><a href="#[65]">ADC_MultiModeDMAError</a> from stm32f4xx_hal_adc_ex.o(.text) referenced from stm32f4xx_hal_adc_ex.o(.text)
- <LI><a href="#[64]">ADC_MultiModeDMAHalfConvCplt</a> from stm32f4xx_hal_adc_ex.o(.text) referenced from stm32f4xx_hal_adc_ex.o(.text)
+ <LI><a href="#[61]">ADC_MultiModeDMAConvCplt</a> from stm32f4xx_hal_adc_ex.o(.text) referenced from stm32f4xx_hal_adc_ex.o(.text)
+ <LI><a href="#[63]">ADC_MultiModeDMAError</a> from stm32f4xx_hal_adc_ex.o(.text) referenced from stm32f4xx_hal_adc_ex.o(.text)
+ <LI><a href="#[62]">ADC_MultiModeDMAHalfConvCplt</a> from stm32f4xx_hal_adc_ex.o(.text) referenced from stm32f4xx_hal_adc_ex.o(.text)
  <LI><a href="#[5]">BusFault_Handler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[1f]">CAN1_RX0_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[20]">CAN1_RX1_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
@@ -95,25 +95,25 @@ Function Pointers
  <LI><a href="#[e]">RTC_WKUP_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[1]">Reset_Handler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[3c]">SDIO_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
- <LI><a href="#[86]">SEG_thread</a> from seg_thread.o(.text) referenced from seg_thread.o(.constdata)
+ <LI><a href="#[85]">SEG_thread</a> from seg_thread.o(.text) referenced from seg_thread.o(.constdata)
  <LI><a href="#[2e]">SPI1_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[2f]">SPI2_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[3e]">SPI3_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
- <LI><a href="#[67]">SPI_2LinesRxISR</a> from stm32f4xx_hal_spi.o(.text) referenced from stm32f4xx_hal_spi.o(.text)
- <LI><a href="#[6b]">SPI_DMAError</a> from stm32f4xx_hal_spi.o(.text) referenced 2 times from stm32f4xx_hal_spi.o(.text)
- <LI><a href="#[6c]">SPI_DMAHalfReceiveCplt</a> from stm32f4xx_hal_spi.o(.text) referenced 2 times from stm32f4xx_hal_spi.o(.text)
- <LI><a href="#[69]">SPI_DMAHalfTransmitCplt</a> from stm32f4xx_hal_spi.o(.text) referenced from stm32f4xx_hal_spi.o(.text)
- <LI><a href="#[6e]">SPI_DMAHalfTransmitReceiveCplt</a> from stm32f4xx_hal_spi.o(.text) referenced from stm32f4xx_hal_spi.o(.text)
- <LI><a href="#[6d]">SPI_DMAReceiveCplt</a> from stm32f4xx_hal_spi.o(.text) referenced 2 times from stm32f4xx_hal_spi.o(.text)
- <LI><a href="#[6a]">SPI_DMATransmitCplt</a> from stm32f4xx_hal_spi.o(.text) referenced from stm32f4xx_hal_spi.o(.text)
- <LI><a href="#[6f]">SPI_DMATransmitReceiveCplt</a> from stm32f4xx_hal_spi.o(.text) referenced from stm32f4xx_hal_spi.o(.text)
- <LI><a href="#[68]">SPI_RxISR</a> from stm32f4xx_hal_spi.o(.text) referenced from stm32f4xx_hal_spi.o(.text)
- <LI><a href="#[66]">SPI_TxISR</a> from stm32f4xx_hal_spi.o(.text) referenced from stm32f4xx_hal_spi.o(.text)
+ <LI><a href="#[65]">SPI_2LinesRxISR</a> from stm32f4xx_hal_spi.o(.text) referenced from stm32f4xx_hal_spi.o(.text)
+ <LI><a href="#[69]">SPI_DMAError</a> from stm32f4xx_hal_spi.o(.text) referenced 2 times from stm32f4xx_hal_spi.o(.text)
+ <LI><a href="#[6a]">SPI_DMAHalfReceiveCplt</a> from stm32f4xx_hal_spi.o(.text) referenced 2 times from stm32f4xx_hal_spi.o(.text)
+ <LI><a href="#[67]">SPI_DMAHalfTransmitCplt</a> from stm32f4xx_hal_spi.o(.text) referenced from stm32f4xx_hal_spi.o(.text)
+ <LI><a href="#[6c]">SPI_DMAHalfTransmitReceiveCplt</a> from stm32f4xx_hal_spi.o(.text) referenced from stm32f4xx_hal_spi.o(.text)
+ <LI><a href="#[6b]">SPI_DMAReceiveCplt</a> from stm32f4xx_hal_spi.o(.text) referenced 2 times from stm32f4xx_hal_spi.o(.text)
+ <LI><a href="#[68]">SPI_DMATransmitCplt</a> from stm32f4xx_hal_spi.o(.text) referenced from stm32f4xx_hal_spi.o(.text)
+ <LI><a href="#[6d]">SPI_DMATransmitReceiveCplt</a> from stm32f4xx_hal_spi.o(.text) referenced from stm32f4xx_hal_spi.o(.text)
+ <LI><a href="#[66]">SPI_RxISR</a> from stm32f4xx_hal_spi.o(.text) referenced from stm32f4xx_hal_spi.o(.text)
+ <LI><a href="#[64]">SPI_TxISR</a> from stm32f4xx_hal_spi.o(.text) referenced from stm32f4xx_hal_spi.o(.text)
  <LI><a href="#[7]">SVC_Handler</a> from hal_cm4.o(.emb_text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[a]">SysTick_Handler</a> from hal_cm4.o(.emb_text) referenced from startup_stm32f407xx.o(RESET)
- <LI><a href="#[5e]">SystemInit</a> from system_stm32f4xx.o(.text) referenced from startup_stm32f407xx.o(.text)
+ <LI><a href="#[74]">SystemInit</a> from system_stm32f4xx.o(.text) referenced from startup_stm32f407xx.o(.text)
  <LI><a href="#[d]">TAMP_STAMP_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
- <LI><a href="#[85]">TEMP_thread</a> from temp_thread.o(.text) referenced from temp_thread.o(.constdata)
+ <LI><a href="#[86]">TEMP_thread</a> from temp_thread.o(.text) referenced from temp_thread.o(.constdata)
  <LI><a href="#[23]">TIM1_BRK_TIM9_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[26]">TIM1_CC_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[25]">TIM1_TRG_COM_TIM11_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
@@ -128,12 +128,12 @@ Function Pointers
  <LI><a href="#[39]">TIM8_CC_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[38]">TIM8_TRG_COM_TIM14_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[37]">TIM8_UP_TIM13_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
- <LI><a href="#[73]">TIMEx_DMACommutationCplt</a> from stm32f4xx_hal_tim_ex.o(.text) referenced 2 times from stm32f4xx_hal_tim.o(.text)
- <LI><a href="#[75]">TIM_DMACaptureCplt</a> from stm32f4xx_hal_tim.o(.text) referenced 10 times from stm32f4xx_hal_tim.o(.text)
- <LI><a href="#[72]">TIM_DMADelayPulseCplt</a> from stm32f4xx_hal_tim.o(.text) referenced 11 times from stm32f4xx_hal_tim.o(.text)
- <LI><a href="#[71]">TIM_DMAError</a> from stm32f4xx_hal_tim.o(.text) referenced 18 times from stm32f4xx_hal_tim.o(.text)
- <LI><a href="#[70]">TIM_DMAPeriodElapsedCplt</a> from stm32f4xx_hal_tim.o(.text) referenced 2 times from stm32f4xx_hal_tim.o(.text)
- <LI><a href="#[74]">TIM_DMATriggerCplt</a> from stm32f4xx_hal_tim.o(.text) referenced from stm32f4xx_hal_tim.o(.text)
+ <LI><a href="#[71]">TIMEx_DMACommutationCplt</a> from stm32f4xx_hal_tim_ex.o(.text) referenced 2 times from stm32f4xx_hal_tim.o(.text)
+ <LI><a href="#[73]">TIM_DMACaptureCplt</a> from stm32f4xx_hal_tim.o(.text) referenced 10 times from stm32f4xx_hal_tim.o(.text)
+ <LI><a href="#[70]">TIM_DMADelayPulseCplt</a> from stm32f4xx_hal_tim.o(.text) referenced 11 times from stm32f4xx_hal_tim.o(.text)
+ <LI><a href="#[6f]">TIM_DMAError</a> from stm32f4xx_hal_tim.o(.text) referenced 18 times from stm32f4xx_hal_tim.o(.text)
+ <LI><a href="#[6e]">TIM_DMAPeriodElapsedCplt</a> from stm32f4xx_hal_tim.o(.text) referenced 2 times from stm32f4xx_hal_tim.o(.text)
+ <LI><a href="#[72]">TIM_DMATriggerCplt</a> from stm32f4xx_hal_tim.o(.text) referenced from stm32f4xx_hal_tim.o(.text)
  <LI><a href="#[3f]">UART4_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[40]">UART5_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[30]">USART1_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
@@ -142,7 +142,7 @@ Function Pointers
  <LI><a href="#[52]">USART6_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[6]">UsageFault_Handler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
  <LI><a href="#[b]">WWDG_IRQHandler</a> from startup_stm32f407xx.o(.text) referenced from startup_stm32f407xx.o(RESET)
- <LI><a href="#[5f]">__main</a> from entry.o(.ARM.Collect$$$$00000000) referenced from startup_stm32f407xx.o(.text)
+ <LI><a href="#[75]">__main</a> from entry.o(.ARM.Collect$$$$00000000) referenced from startup_stm32f407xx.o(.text)
  <LI><a href="#[76]">fputc</a> from fputc.o(i.fputc) referenced from printfb.o(i.__0printf$bare)
  <LI><a href="#[88]">main</a> from main.o(.text) referenced from rtx_conf_cm.o(.constdata)
  <LI><a href="#[82]">osThreadExit</a> from rt_cmsis.o(i.osThreadExit) referenced from rt_cmsis.o(i.svcThreadCreate)
@@ -165,7 +165,7 @@ Function Pointers
 <H3>
 Global Symbols
 </H3>
-<P><STRONG><a name="[5f]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
+<P><STRONG><a name="[75]"></a>__main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry.o(.ARM.Collect$$$$00000000))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(.text)
 </UL>
 <P><STRONG><a name="[1da]"></a>_main_stk</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry2.o(.ARM.Collect$$$$00000001))
@@ -232,15 +232,15 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[e4]"></a>HAL_GetTick</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, main.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_PollForConversion
+<BR><BR>[Called By]<UL><LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADCEx_InjectedPollForConversion
+<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
+<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_PollForEvent
+<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
+<LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_PollForConversion
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_OscConfig
 <LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
 <LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitOnFlagUntilTimeout
 <LI><a href="#[102]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_PollForTransfer
-<LI><a href="#[f5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADCEx_InjectedPollForConversion
-<LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
-<LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_PollForEvent
-<LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Delay
 </UL>
 
 <P><STRONG><a name="[94]"></a>SystemClock_Config</STRONG> (Thumb, 142 bytes, Stack size 80 bytes, main.o(.text))
@@ -309,7 +309,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[a0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalSet
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
-<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_DMAPeriodElapsedCplt
+<LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_DMAPeriodElapsedCplt
 </UL>
 
 <P><STRONG><a name="[a2]"></a>ACCEL_thread_periph_init</STRONG> (Thumb, 176 bytes, Stack size 40 bytes, accel_thread.o(.text))
@@ -355,7 +355,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConfigChannel
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memcpy4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread
+<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread
 </UL>
 
 <P><STRONG><a name="[b5]"></a>ADC_getValue</STRONG> (Thumb, 174 bytes, Stack size 32 bytes, adc.o(.text))
@@ -370,7 +370,7 @@ Global Symbols
 <LI><a href="#[b0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_ddiv
 <LI><a href="#[ad]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_d2f
 </UL>
-<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread
+<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread
 </UL>
 
 <P><STRONG><a name="[1e3]"></a>convertToFahrenheit</STRONG> (Thumb, 34 bytes, Stack size 0 bytes, adc.o(.text), UNUSED)
@@ -381,7 +381,7 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 <LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
 </UL>
-<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread
+<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread
 </UL>
 
 <P><STRONG><a name="[bd]"></a>displayValue</STRONG> (Thumb, 1172 bytes, Stack size 16 bytes, gpio.o(.text))
@@ -389,7 +389,7 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[bc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_WritePin
 </UL>
-<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread
+<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread
 <LI><a href="#[c2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;keyPadInput
 </UL>
 
@@ -487,36 +487,7 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> keypad_thread.o(.constdata)
 </UL>
-<P><STRONG><a name="[cd]"></a>TEMP_thread_periph_init</STRONG> (Thumb, 118 bytes, Stack size 8 bytes, temp_thread.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = TEMP_thread_periph_init &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
-</UL>
-<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
-<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
-<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
-<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
-</UL>
-<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread
-</UL>
-
-<P><STRONG><a name="[9a]"></a>start_TEMP_thread</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, temp_thread.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = start_TEMP_thread &rArr; osThreadCreate &rArr; svcThreadCreate &rArr; rt_tsk_create &rArr; rt_init_context &rArr; rt_init_stack
-</UL>
-<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadCreate
-</UL>
-<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[85]"></a>TEMP_thread</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, temp_thread.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = TEMP_thread &rArr; ADC_getValue &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
-</UL>
-<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread_periph_init
-<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_getValue
-<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Init
-<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalWait
-</UL>
-<BR>[Address Reference Count : 1]<UL><LI> temp_thread.o(.constdata)
-</UL>
-<P><STRONG><a name="[ce]"></a>SEG_thread_periph_init</STRONG> (Thumb, 118 bytes, Stack size 8 bytes, seg_thread.o(.text))
+<P><STRONG><a name="[cd]"></a>SEG_thread_periph_init</STRONG> (Thumb, 116 bytes, Stack size 8 bytes, seg_thread.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = SEG_thread_periph_init &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
 </UL>
 <BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
@@ -524,7 +495,7 @@ Global Symbols
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
 </UL>
-<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread
+<BR>[Called By]<UL><LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread
 </UL>
 
 <P><STRONG><a name="[9b]"></a>start_SEG_thread</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, seg_thread.o(.text))
@@ -535,15 +506,44 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[86]"></a>SEG_thread</STRONG> (Thumb, 218 bytes, Stack size 16 bytes, seg_thread.o(.text))
+<P><STRONG><a name="[85]"></a>SEG_thread</STRONG> (Thumb, 218 bytes, Stack size 16 bytes, seg_thread.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = SEG_thread &rArr; SEG_thread_periph_init &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
 </UL>
-<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread_periph_init
+<BR>[Calls]<UL><LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread_periph_init
 <LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayValue
 <LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalWait
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> seg_thread.o(.constdata)
+</UL>
+<P><STRONG><a name="[ce]"></a>TEMP_thread_periph_init</STRONG> (Thumb, 88 bytes, Stack size 8 bytes, temp_thread.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = TEMP_thread_periph_init &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
+</UL>
+<BR>[Calls]<UL><LI><a href="#[cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_IT
+<LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+<LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_EnableIRQ
+</UL>
+<BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread
+</UL>
+
+<P><STRONG><a name="[9a]"></a>start_TEMP_thread</STRONG> (Thumb, 18 bytes, Stack size 8 bytes, temp_thread.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = start_TEMP_thread &rArr; osThreadCreate &rArr; svcThreadCreate &rArr; rt_tsk_create &rArr; rt_init_context &rArr; rt_init_stack
+</UL>
+<BR>[Calls]<UL><LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osThreadCreate
+</UL>
+<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[86]"></a>TEMP_thread</STRONG> (Thumb, 38 bytes, Stack size 16 bytes, temp_thread.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 136<LI>Call Chain = TEMP_thread &rArr; ADC_getValue &rArr; __aeabi_dsub &rArr; __aeabi_dadd &rArr; _double_epilogue &rArr; _double_round
+</UL>
+<BR>[Calls]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread_periph_init
+<LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_getValue
+<LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Init
+<LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;osSignalWait
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> temp_thread.o(.constdata)
 </UL>
 <P><STRONG><a name="[d2]"></a>SPI_ReceiveData</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, lis3dsh.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS3DSH_SendByte
@@ -647,6 +647,1127 @@ Global Symbols
 <LI><a href="#[1a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;rt_psq_enq
 <LI><a href="#[1cb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;sysTimerTick
 </UL>
+
+<P><STRONG><a name="[e0]"></a>HAL_MspInit</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, stm32f4xx_hal.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_MspInit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
+</UL>
+
+<P><STRONG><a name="[dc]"></a>HAL_InitTick</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, stm32f4xx_hal.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
+</UL>
+<BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
+<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
+</UL>
+<BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
+<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
+</UL>
+
+<P><STRONG><a name="[97]"></a>HAL_Init</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, stm32f4xx_hal.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = HAL_Init &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
+</UL>
+<BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspInit
+<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriorityGrouping
+</UL>
+<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
+</UL>
+
+<P><STRONG><a name="[e2]"></a>HAL_MspDeInit</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, stm32f4xx_hal.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DeInit
+</UL>
+
+<P><STRONG><a name="[e1]"></a>HAL_DeInit</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, stm32f4xx_hal.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspDeInit
+</UL>
+
+<P><STRONG><a name="[1e4]"></a>HAL_IncTick</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
+
+<P><STRONG><a name="[e3]"></a>HAL_Delay</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, stm32f4xx_hal.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+</UL>
+
+<P><STRONG><a name="[1e5]"></a>HAL_SuspendTick</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
+
+<P><STRONG><a name="[1e6]"></a>HAL_ResumeTick</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
+
+<P><STRONG><a name="[1e7]"></a>HAL_GetHalVersion</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
+
+<P><STRONG><a name="[1e8]"></a>HAL_GetREVID</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
+
+<P><STRONG><a name="[1e9]"></a>HAL_GetDEVID</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
+
+<P><STRONG><a name="[1ea]"></a>HAL_DBGMCU_EnableDBGSleepMode</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
+
+<P><STRONG><a name="[1eb]"></a>HAL_DBGMCU_DisableDBGSleepMode</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
+
+<P><STRONG><a name="[1ec]"></a>HAL_DBGMCU_EnableDBGStopMode</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
+
+<P><STRONG><a name="[1ed]"></a>HAL_DBGMCU_DisableDBGStopMode</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
+
+<P><STRONG><a name="[1ee]"></a>HAL_DBGMCU_EnableDBGStandbyMode</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
+
+<P><STRONG><a name="[1ef]"></a>HAL_DBGMCU_DisableDBGStandbyMode</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
+
+<P><STRONG><a name="[1f0]"></a>HAL_EnableCompensationCell</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
+
+<P><STRONG><a name="[1f1]"></a>HAL_DisableCompensationCell</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
+
+<P><STRONG><a name="[e6]"></a>HAL_ADC_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_Init
+</UL>
+
+<P><STRONG><a name="[e5]"></a>HAL_ADC_Init</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
+<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Init
+</UL>
+
+<P><STRONG><a name="[e9]"></a>HAL_ADC_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_DeInit
+</UL>
+
+<P><STRONG><a name="[e8]"></a>HAL_ADC_DeInit</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspDeInit
+</UL>
+
+<P><STRONG><a name="[b6]"></a>HAL_ADC_Start</STRONG> (Thumb, 182 bytes, Stack size 8 bytes, stm32f4xx_hal_adc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_ADC_Start
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_getValue
+</UL>
+
+<P><STRONG><a name="[b9]"></a>HAL_ADC_Stop</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_getValue
+</UL>
+
+<P><STRONG><a name="[b7]"></a>HAL_ADC_PollForConversion</STRONG> (Thumb, 130 bytes, Stack size 16 bytes, stm32f4xx_hal_adc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HAL_ADC_PollForConversion
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_getValue
+</UL>
+
+<P><STRONG><a name="[ea]"></a>HAL_ADC_PollForEvent</STRONG> (Thumb, 104 bytes, Stack size 24 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+</UL>
+
+<P><STRONG><a name="[1f2]"></a>HAL_ADC_Start_IT</STRONG> (Thumb, 232 bytes, Stack size 8 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
+
+<P><STRONG><a name="[1f3]"></a>HAL_ADC_Stop_IT</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
+
+<P><STRONG><a name="[ef]"></a>HAL_ADC_ErrorCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_MultiModeDMAError
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_IRQHandler
+<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_DMAError
+</UL>
+
+<P><STRONG><a name="[ee]"></a>HAL_ADC_LevelOutOfWindowCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_IRQHandler
+</UL>
+
+<P><STRONG><a name="[ec]"></a>HAL_ADC_ConvCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_MultiModeDMAConvCplt
+<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_IRQHandler
+<LI><a href="#[5e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_DMAConvCplt
+</UL>
+
+<P><STRONG><a name="[eb]"></a>HAL_ADC_IRQHandler</STRONG> (Thumb, 348 bytes, Stack size 16 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConvCpltCallback
+<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_LevelOutOfWindowCallback
+<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ErrorCallback
+<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADCEx_InjectedConvCpltCallback
+</UL>
+
+<P><STRONG><a name="[f0]"></a>HAL_ADC_ConvHalfCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_MultiModeDMAHalfConvCplt
+<LI><a href="#[5f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_DMAHalfConvCplt
+</UL>
+
+<P><STRONG><a name="[f1]"></a>HAL_ADC_Start_DMA</STRONG> (Thumb, 186 bytes, Stack size 24 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+</UL>
+
+<P><STRONG><a name="[f3]"></a>HAL_ADC_Stop_DMA</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
+</UL>
+
+<P><STRONG><a name="[b8]"></a>HAL_ADC_GetValue</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_getValue
+</UL>
+
+<P><STRONG><a name="[b4]"></a>HAL_ADC_ConfigChannel</STRONG> (Thumb, 416 bytes, Stack size 12 bytes, stm32f4xx_hal_adc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = HAL_ADC_ConfigChannel
+</UL>
+<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Init
+</UL>
+
+<P><STRONG><a name="[1f4]"></a>HAL_ADC_AnalogWDGConfig</STRONG> (Thumb, 132 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
+
+<P><STRONG><a name="[1f5]"></a>HAL_ADC_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
+
+<P><STRONG><a name="[1f6]"></a>HAL_ADC_GetError</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
+
+<P><STRONG><a name="[1f7]"></a>HAL_ADCEx_InjectedStart</STRONG> (Thumb, 230 bytes, Stack size 12 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
+
+<P><STRONG><a name="[1f8]"></a>HAL_ADCEx_InjectedStart_IT</STRONG> (Thumb, 258 bytes, Stack size 12 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
+
+<P><STRONG><a name="[1f9]"></a>HAL_ADCEx_InjectedStop</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
+
+<P><STRONG><a name="[f5]"></a>HAL_ADCEx_InjectedPollForConversion</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+</UL>
+
+<P><STRONG><a name="[1fa]"></a>HAL_ADCEx_InjectedStop_IT</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
+
+<P><STRONG><a name="[1fb]"></a>HAL_ADCEx_InjectedGetValue</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
+
+<P><STRONG><a name="[f6]"></a>HAL_ADCEx_MultiModeStart_DMA</STRONG> (Thumb, 206 bytes, Stack size 24 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+</UL>
+
+<P><STRONG><a name="[f7]"></a>HAL_ADCEx_MultiModeStop_DMA</STRONG> (Thumb, 116 bytes, Stack size 8 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
+</UL>
+
+<P><STRONG><a name="[1fc]"></a>HAL_ADCEx_MultiModeGetValue</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
+
+<P><STRONG><a name="[ed]"></a>HAL_ADCEx_InjectedConvCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_IRQHandler
+</UL>
+
+<P><STRONG><a name="[1fd]"></a>HAL_ADCEx_InjectedConfigChannel</STRONG> (Thumb, 552 bytes, Stack size 8 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
+
+<P><STRONG><a name="[1fe]"></a>HAL_ADCEx_MultiModeConfigChannel</STRONG> (Thumb, 130 bytes, Stack size 0 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
+
+<P><STRONG><a name="[df]"></a>HAL_NVIC_SetPriorityGrouping</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
+</UL>
+
+<P><STRONG><a name="[a6]"></a>HAL_NVIC_SetPriority</STRONG> (Thumb, 124 bytes, Stack size 40 bytes, stm32f4xx_hal_cortex.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_GetPriorityGrouping
+<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
+</UL>
+<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread_periph_init
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread_periph_init
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEYPAD_thread_periph_init
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCEL_thread_periph_init
+</UL>
+
+<P><STRONG><a name="[a7]"></a>HAL_NVIC_EnableIRQ</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread_periph_init
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread_periph_init
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEYPAD_thread_periph_init
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCEL_thread_periph_init
+</UL>
+
+<P><STRONG><a name="[1ff]"></a>HAL_NVIC_DisableIRQ</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
+
+<P><STRONG><a name="[200]"></a>HAL_NVIC_SystemReset</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
+
+<P><STRONG><a name="[de]"></a>HAL_SYSTICK_Config</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, stm32f4xx_hal_cortex.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_SYSTICK_Config &rArr; __NVIC_SetPriority
+</UL>
+<BR>[Calls]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
+</UL>
+<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+</UL>
+
+<P><STRONG><a name="[201]"></a>HAL_MPU_ConfigRegion</STRONG> (Thumb, 90 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
+
+<P><STRONG><a name="[fa]"></a>HAL_NVIC_GetPriorityGrouping</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_GetPriorityGrouping
+</UL>
+
+<P><STRONG><a name="[202]"></a>HAL_NVIC_GetPriority</STRONG> (Thumb, 138 bytes, Stack size 28 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
+
+<P><STRONG><a name="[203]"></a>HAL_NVIC_SetPendingIRQ</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
+
+<P><STRONG><a name="[204]"></a>HAL_NVIC_GetPendingIRQ</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
+
+<P><STRONG><a name="[205]"></a>HAL_NVIC_ClearPendingIRQ</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
+
+<P><STRONG><a name="[206]"></a>HAL_NVIC_GetActive</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
+
+<P><STRONG><a name="[207]"></a>HAL_SYSTICK_CLKSourceConfig</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
+
+<P><STRONG><a name="[fc]"></a>HAL_SYSTICK_Callback</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_IRQHandler
+</UL>
+
+<P><STRONG><a name="[fb]"></a>HAL_SYSTICK_IRQHandler</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Callback
+</UL>
+
+<P><STRONG><a name="[fd]"></a>HAL_DMA_Init</STRONG> (Thumb, 128 bytes, Stack size 16 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CalcBaseAndBitshift
+</UL>
+
+<P><STRONG><a name="[ff]"></a>HAL_DMA_DeInit</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CalcBaseAndBitshift
+</UL>
+
+<P><STRONG><a name="[100]"></a>HAL_DMA_Start</STRONG> (Thumb, 82 bytes, Stack size 24 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetConfig
+</UL>
+
+<P><STRONG><a name="[f2]"></a>HAL_DMA_Start_IT</STRONG> (Thumb, 106 bytes, Stack size 24 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetConfig
+</UL>
+<BR>[Called By]<UL><LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADCEx_MultiModeStart_DMA
+<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_Start_DMA
+<LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_PWMN_Start_DMA
+<LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_OCN_Start_DMA
+<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Start_DMA
+<LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_DMABurst_ReadStart
+<LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_DMABurst_WriteStart
+<LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Start_DMA
+<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Start_DMA
+<LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start_DMA
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Start_DMA
+<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_DMA
+<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Receive_DMA
+<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive_DMA
+<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
+</UL>
+
+<P><STRONG><a name="[f4]"></a>HAL_DMA_Abort</STRONG> (Thumb, 94 bytes, Stack size 16 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+</UL>
+<BR>[Called By]<UL><LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADCEx_MultiModeStop_DMA
+<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_Stop_DMA
+<LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_DMABurst_ReadStop
+<LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_DMABurst_WriteStop
+<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_DMAStop
+</UL>
+
+<P><STRONG><a name="[102]"></a>HAL_DMA_PollForTransfer</STRONG> (Thumb, 412 bytes, Stack size 40 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+</UL>
+
+<P><STRONG><a name="[208]"></a>HAL_DMA_IRQHandler</STRONG> (Thumb, 530 bytes, Stack size 16 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
+
+<P><STRONG><a name="[209]"></a>HAL_DMA_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
+
+<P><STRONG><a name="[20a]"></a>HAL_DMA_GetError</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
+
+<P><STRONG><a name="[a4]"></a>HAL_GPIO_Init</STRONG> (Thumb, 476 bytes, Stack size 24 bytes, stm32f4xx_hal_gpio.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_GPIO_Init
+</UL>
+<BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initializeKeyPad
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCEL_thread_periph_init
+<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_MCOConfig
+</UL>
+
+<P><STRONG><a name="[20b]"></a>HAL_GPIO_DeInit</STRONG> (Thumb, 326 bytes, Stack size 20 bytes, stm32f4xx_hal_gpio.o(.text), UNUSED)
+
+<P><STRONG><a name="[c1]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyPadGetValue
+</UL>
+
+<P><STRONG><a name="[bc]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
+<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS3DSH_Read
+<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS3DSH_Write
+<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyPadGetValue
+<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initializeKeyPad
+<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;resetDisplay
+<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayValue
+<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
+</UL>
+
+<P><STRONG><a name="[20c]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text), UNUSED)
+
+<P><STRONG><a name="[20d]"></a>HAL_GPIO_LockPin</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, stm32f4xx_hal_gpio.o(.text), UNUSED)
+
+<P><STRONG><a name="[9e]"></a>HAL_GPIO_EXTI_IRQHandler</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, stm32f4xx_hal_gpio.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = HAL_GPIO_EXTI_IRQHandler &rArr; HAL_GPIO_EXTI_Callback &rArr; osSignalSet &rArr; isrSignalSet &rArr; isr_evt_set &rArr; rt_psq_enq
+</UL>
+<BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_Callback
+</UL>
+<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI0_IRQHandler
+</UL>
+
+<P><STRONG><a name="[95]"></a>HAL_RCC_OscConfig</STRONG> (Thumb, 1032 bytes, Stack size 16 bytes, stm32f4xx_hal_rcc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HAL_RCC_OscConfig
+</UL>
+<BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+</UL>
+<BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+</UL>
+
+<P><STRONG><a name="[96]"></a>HAL_RCC_ClockConfig</STRONG> (Thumb, 680 bytes, Stack size 16 bytes, stm32f4xx_hal_rcc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = HAL_RCC_ClockConfig &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
+</UL>
+<BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
+</UL>
+<BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
+</UL>
+
+<P><STRONG><a name="[103]"></a>HAL_RCC_MCOConfig</STRONG> (Thumb, 178 bytes, Stack size 40 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
+</UL>
+
+<P><STRONG><a name="[20e]"></a>HAL_RCC_EnableCSS</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
+
+<P><STRONG><a name="[20f]"></a>HAL_RCC_DisableCSS</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
+
+<P><STRONG><a name="[104]"></a>HAL_RCC_GetSysClockFreq</STRONG> (Thumb, 198 bytes, Stack size 16 bytes, stm32f4xx_hal_rcc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HAL_RCC_GetSysClockFreq
+</UL>
+<BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
+</UL>
+
+<P><STRONG><a name="[dd]"></a>HAL_RCC_GetHCLKFreq</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, stm32f4xx_hal_rcc.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_RCC_GetHCLKFreq &rArr; HAL_RCC_GetSysClockFreq
+</UL>
+<BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
+</UL>
+<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
+<LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK2Freq
+<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
+</UL>
+
+<P><STRONG><a name="[105]"></a>HAL_RCC_GetPCLK1Freq</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
+</UL>
+
+<P><STRONG><a name="[106]"></a>HAL_RCC_GetPCLK2Freq</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
+</UL>
+
+<P><STRONG><a name="[210]"></a>HAL_RCC_GetOscConfig</STRONG> (Thumb, 296 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
+
+<P><STRONG><a name="[211]"></a>HAL_RCC_GetClockConfig</STRONG> (Thumb, 58 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
+
+<P><STRONG><a name="[108]"></a>HAL_RCC_CSSCallback</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_NMI_IRQHandler
+</UL>
+
+<P><STRONG><a name="[107]"></a>HAL_RCC_NMI_IRQHandler</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_CSSCallback
+</UL>
+
+<P><STRONG><a name="[d5]"></a>HAL_SPI_Init</STRONG> (Thumb, 136 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = HAL_SPI_Init &rArr; HAL_SPI_MspInit &rArr; HAL_GPIO_Init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS3DSH_Init
+</UL>
+
+<P><STRONG><a name="[109]"></a>HAL_SPI_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_DeInit
+</UL>
+
+<P><STRONG><a name="[d4]"></a>HAL_SPI_DeInit</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_SPI_DeInit
+</UL>
+<BR>[Calls]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspDeInit
+</UL>
+<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS3DSH_Init
+</UL>
+
+<P><STRONG><a name="[10b]"></a>HAL_SPI_Transmit</STRONG> (Thumb, 450 bytes, Stack size 24 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitOnFlagUntilTimeout
+</UL>
+
+<P><STRONG><a name="[10c]"></a>HAL_SPI_TransmitReceive</STRONG> (Thumb, 850 bytes, Stack size 40 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitOnFlagUntilTimeout
+</UL>
+<BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Receive
+</UL>
+
+<P><STRONG><a name="[10d]"></a>HAL_SPI_Receive</STRONG> (Thumb, 572 bytes, Stack size 32 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive
+<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitOnFlagUntilTimeout
+</UL>
+
+<P><STRONG><a name="[111]"></a>HAL_SPI_ErrorCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_IRQHandler
+<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitReceiveCplt
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAReceiveCplt
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitCplt
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAError
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_RxCloseIRQHandler
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_TxCloseIRQHandler
+</UL>
+
+<P><STRONG><a name="[110]"></a>HAL_SPI_TxCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitCplt
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_TxCloseIRQHandler
+</UL>
+
+<P><STRONG><a name="[10f]"></a>HAL_SPI_TxRxCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitReceiveCplt
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_RxCloseIRQHandler
+<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_TxCloseIRQHandler
+</UL>
+
+<P><STRONG><a name="[212]"></a>HAL_SPI_Transmit_IT</STRONG> (Thumb, 198 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
+
+<P><STRONG><a name="[113]"></a>HAL_SPI_RxCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAReceiveCplt
+<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_RxCloseIRQHandler
+</UL>
+
+<P><STRONG><a name="[115]"></a>HAL_SPI_TransmitReceive_IT</STRONG> (Thumb, 192 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Receive_IT
+</UL>
+
+<P><STRONG><a name="[114]"></a>HAL_SPI_Receive_IT</STRONG> (Thumb, 222 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive_IT
+</UL>
+
+<P><STRONG><a name="[116]"></a>HAL_SPI_TxHalfCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAHalfTransmitCplt
+</UL>
+
+<P><STRONG><a name="[117]"></a>HAL_SPI_Transmit_DMA</STRONG> (Thumb, 218 bytes, Stack size 24 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+</UL>
+
+<P><STRONG><a name="[119]"></a>HAL_SPI_RxHalfCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAHalfReceiveCplt
+</UL>
+
+<P><STRONG><a name="[11a]"></a>HAL_SPI_TxRxHalfCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAHalfTransmitReceiveCplt
+</UL>
+
+<P><STRONG><a name="[11b]"></a>HAL_SPI_TransmitReceive_DMA</STRONG> (Thumb, 324 bytes, Stack size 24 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+</UL>
+<BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Receive_DMA
+</UL>
+
+<P><STRONG><a name="[11c]"></a>HAL_SPI_Receive_DMA</STRONG> (Thumb, 288 bytes, Stack size 24 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive_DMA
+</UL>
+
+<P><STRONG><a name="[213]"></a>HAL_SPI_DMAPause</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
+
+<P><STRONG><a name="[214]"></a>HAL_SPI_DMAResume</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
+
+<P><STRONG><a name="[11d]"></a>HAL_SPI_DMAStop</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
+</UL>
+
+<P><STRONG><a name="[11e]"></a>HAL_SPI_IRQHandler</STRONG> (Thumb, 262 bytes, Stack size 24 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_ErrorCallback
+</UL>
+
+<P><STRONG><a name="[215]"></a>HAL_SPI_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
+
+<P><STRONG><a name="[216]"></a>HAL_SPI_GetError</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
+
+<P><STRONG><a name="[120]"></a>TIM_Base_SetConfig</STRONG> (Thumb, 184 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
+<LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Init
+<LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Init
+<LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_Init
+<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Init
+<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
+<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Init
+</UL>
+
+<P><STRONG><a name="[11f]"></a>HAL_TIM_Base_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
+</UL>
+
+<P><STRONG><a name="[ca]"></a>HAL_TIM_Base_Init</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_TIM_Base_Init
+</UL>
+<BR>[Calls]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
+</UL>
+<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread_periph_init
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread_periph_init
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEYPAD_thread_periph_init
+</UL>
+
+<P><STRONG><a name="[122]"></a>HAL_TIM_Base_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_DeInit
+</UL>
+
+<P><STRONG><a name="[121]"></a>HAL_TIM_Base_DeInit</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspDeInit
+</UL>
+
+<P><STRONG><a name="[217]"></a>HAL_TIM_Base_Start</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+
+<P><STRONG><a name="[218]"></a>HAL_TIM_Base_Stop</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+
+<P><STRONG><a name="[cb]"></a>HAL_TIM_Base_Start_IT</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread_periph_init
+<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread_periph_init
+<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEYPAD_thread_periph_init
+</UL>
+
+<P><STRONG><a name="[219]"></a>HAL_TIM_Base_Stop_IT</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+
+<P><STRONG><a name="[123]"></a>HAL_TIM_ErrorCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_DMAError
+</UL>
+
+<P><STRONG><a name="[6f]"></a>TIM_DMAError</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIM_DMAError
+</UL>
+<BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_ErrorCallback
+</UL>
+<BR>[Address Reference Count : 2]<UL><LI> stm32f4xx_hal_tim.o(.text)
+<LI> stm32f4xx_hal_tim_ex.o(.text)
+</UL>
+<P><STRONG><a name="[124]"></a>HAL_TIM_Base_Start_DMA</STRONG> (Thumb, 98 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+</UL>
+
+<P><STRONG><a name="[21a]"></a>HAL_TIM_Base_Stop_DMA</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+
+<P><STRONG><a name="[126]"></a>HAL_TIM_OC_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Init
+</UL>
+
+<P><STRONG><a name="[125]"></a>HAL_TIM_OC_Init</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_MspInit
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
+</UL>
+
+<P><STRONG><a name="[128]"></a>HAL_TIM_OC_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_DeInit
+</UL>
+
+<P><STRONG><a name="[127]"></a>HAL_TIM_OC_DeInit</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_MspDeInit
+</UL>
+
+<P><STRONG><a name="[12a]"></a>TIM_CCxChannelCmd</STRONG> (Thumb, 28 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = TIM_CCxChannelCmd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
+<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Stop_DMA
+<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Start_DMA
+<LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Stop_IT
+<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Start_IT
+<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Stop
+<LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Start
+<LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Stop_DMA
+<LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Start_DMA
+<LI><a href="#[154]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Stop_IT
+<LI><a href="#[153]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Start_IT
+<LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Stop
+<LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Start
+<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_Stop_IT
+<LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_Start_IT
+<LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_Stop
+<LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_Start
+<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Stop_DMA
+<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Start_DMA
+<LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Stop_IT
+<LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Start_IT
+<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Stop
+<LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Start
+<LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Stop_DMA
+<LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start_DMA
+<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Stop_IT
+<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start_IT
+<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Stop
+<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Stop_DMA
+<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Start_DMA
+<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Stop_IT
+<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Start_IT
+<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Stop
+<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Start
+</UL>
+
+<P><STRONG><a name="[129]"></a>HAL_TIM_OC_Start</STRONG> (Thumb, 68 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[12b]"></a>HAL_TIM_OC_Stop</STRONG> (Thumb, 170 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[12c]"></a>HAL_TIM_OC_Start_IT</STRONG> (Thumb, 144 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[12d]"></a>HAL_TIM_OC_Stop_IT</STRONG> (Thumb, 196 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[12e]"></a>HAL_TIM_PWM_PulseFinishedCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
+<LI><a href="#[70]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_DMADelayPulseCplt
+</UL>
+
+<P><STRONG><a name="[70]"></a>TIM_DMADelayPulseCplt</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIM_DMADelayPulseCplt
+</UL>
+<BR>[Calls]<UL><LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_PulseFinishedCallback
+</UL>
+<BR>[Address Reference Count : 2]<UL><LI> stm32f4xx_hal_tim.o(.text)
+<LI> stm32f4xx_hal_tim_ex.o(.text)
+</UL>
+<P><STRONG><a name="[12f]"></a>HAL_TIM_OC_Start_DMA</STRONG> (Thumb, 312 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[130]"></a>HAL_TIM_OC_Stop_DMA</STRONG> (Thumb, 202 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[132]"></a>HAL_TIM_PWM_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
+</UL>
+
+<P><STRONG><a name="[131]"></a>HAL_TIM_PWM_Init</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_MspInit
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
+</UL>
+
+<P><STRONG><a name="[134]"></a>HAL_TIM_PWM_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_DeInit
+</UL>
+
+<P><STRONG><a name="[133]"></a>HAL_TIM_PWM_DeInit</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_MspDeInit
+</UL>
+
+<P><STRONG><a name="[cc]"></a>HAL_TIM_PWM_Start</STRONG> (Thumb, 78 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_TIM_PWM_Start &rArr; TIM_CCxChannelCmd
+</UL>
+<BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEYPAD_thread_periph_init
+</UL>
+
+<P><STRONG><a name="[135]"></a>HAL_TIM_PWM_Stop</STRONG> (Thumb, 126 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[136]"></a>HAL_TIM_PWM_Start_IT</STRONG> (Thumb, 144 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[137]"></a>HAL_TIM_PWM_Stop_IT</STRONG> (Thumb, 196 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[138]"></a>HAL_TIM_PWM_Start_DMA</STRONG> (Thumb, 312 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[139]"></a>HAL_TIM_PWM_Stop_DMA</STRONG> (Thumb, 202 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[13b]"></a>HAL_TIM_IC_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Init
+</UL>
+
+<P><STRONG><a name="[13a]"></a>HAL_TIM_IC_Init</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_MspInit
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
+</UL>
+
+<P><STRONG><a name="[13d]"></a>HAL_TIM_IC_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_DeInit
+</UL>
+
+<P><STRONG><a name="[13c]"></a>HAL_TIM_IC_DeInit</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_MspDeInit
+</UL>
+
+<P><STRONG><a name="[13e]"></a>HAL_TIM_IC_Start</STRONG> (Thumb, 32 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[13f]"></a>HAL_TIM_IC_Stop</STRONG> (Thumb, 58 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[140]"></a>HAL_TIM_IC_Start_IT</STRONG> (Thumb, 108 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[141]"></a>HAL_TIM_IC_Stop_IT</STRONG> (Thumb, 134 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[142]"></a>HAL_TIM_IC_CaptureCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
+<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_DMACaptureCplt
+</UL>
+
+<P><STRONG><a name="[73]"></a>TIM_DMACaptureCplt</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIM_DMACaptureCplt
+</UL>
+<BR>[Calls]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_CaptureCallback
+</UL>
+<BR>[Address Reference Count : 2]<UL><LI> stm32f4xx_hal_tim.o(.text)
+<LI> stm32f4xx_hal_tim_ex.o(.text)
+</UL>
+<P><STRONG><a name="[143]"></a>HAL_TIM_IC_Start_DMA</STRONG> (Thumb, 276 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[144]"></a>HAL_TIM_IC_Stop_DMA</STRONG> (Thumb, 140 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[146]"></a>HAL_TIM_OnePulse_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_Init
+</UL>
+
+<P><STRONG><a name="[145]"></a>HAL_TIM_OnePulse_Init</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_MspInit
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
+</UL>
+
+<P><STRONG><a name="[148]"></a>HAL_TIM_OnePulse_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_DeInit
+</UL>
+
+<P><STRONG><a name="[147]"></a>HAL_TIM_OnePulse_DeInit</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_MspDeInit
+</UL>
+
+<P><STRONG><a name="[149]"></a>HAL_TIM_OnePulse_Start</STRONG> (Thumb, 66 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[14a]"></a>HAL_TIM_OnePulse_Stop</STRONG> (Thumb, 130 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[14b]"></a>HAL_TIM_OnePulse_Start_IT</STRONG> (Thumb, 90 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[14c]"></a>HAL_TIM_OnePulse_Stop_IT</STRONG> (Thumb, 154 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[14e]"></a>HAL_TIM_Encoder_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Init
+</UL>
+
+<P><STRONG><a name="[14d]"></a>HAL_TIM_Encoder_Init</STRONG> (Thumb, 180 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_MspInit
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
+</UL>
+
+<P><STRONG><a name="[150]"></a>HAL_TIM_Encoder_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_DeInit
+</UL>
+
+<P><STRONG><a name="[14f]"></a>HAL_TIM_Encoder_DeInit</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_MspDeInit
+</UL>
+
+<P><STRONG><a name="[151]"></a>HAL_TIM_Encoder_Start</STRONG> (Thumb, 78 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[152]"></a>HAL_TIM_Encoder_Stop</STRONG> (Thumb, 104 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[153]"></a>HAL_TIM_Encoder_Start_IT</STRONG> (Thumb, 126 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[154]"></a>HAL_TIM_Encoder_Stop_IT</STRONG> (Thumb, 160 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[155]"></a>HAL_TIM_Encoder_Start_DMA</STRONG> (Thumb, 328 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[156]"></a>HAL_TIM_Encoder_Stop_DMA</STRONG> (Thumb, 152 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[159]"></a>HAL_TIM_TriggerCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_DMATriggerCplt
+</UL>
+
+<P><STRONG><a name="[157]"></a>HAL_TIM_OC_DelayElapsedCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
+</UL>
+
+<P><STRONG><a name="[9d]"></a>HAL_TIM_IRQHandler</STRONG> (Thumb, 406 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = HAL_TIM_IRQHandler &rArr; HAL_TIM_PeriodElapsedCallback &rArr; osSignalSet &rArr; isrSignalSet &rArr; isr_evt_set &rArr; rt_psq_enq
+</UL>
+<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
+<LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_DelayElapsedCallback
+<LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_TriggerCallback
+<LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_CaptureCallback
+<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_PulseFinishedCallback
+<LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_CommutationCallback
+<LI><a href="#[158]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_BreakCallback
+</UL>
+<BR>[Called By]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_IRQHandler
+<LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_IRQHandler
+<LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_IRQHandler
+</UL>
+
+<P><STRONG><a name="[15d]"></a>TIM_OC2_SetConfig</STRONG> (Thumb, 112 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = TIM_OC2_SetConfig
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
+<LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Init
+<LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_ConfigChannel
+<LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_ConfigChannel
+</UL>
+
+<P><STRONG><a name="[15b]"></a>HAL_TIM_OC_ConfigChannel</STRONG> (Thumb, 116 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC2_SetConfig
+<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC1_SetConfig
+<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC3_SetConfig
+<LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC4_SetConfig
+</UL>
+
+<P><STRONG><a name="[161]"></a>TIM_TI1_SetConfig</STRONG> (Thumb, 122 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Init
+<LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_ConfigChannel
+<LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_ConfigChannel
+</UL>
+
+<P><STRONG><a name="[160]"></a>HAL_TIM_IC_ConfigChannel</STRONG> (Thumb, 224 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI1_SetConfig
+<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI2_SetConfig
+<LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI3_SetConfig
+<LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI4_SetConfig
+</UL>
+
+<P><STRONG><a name="[c9]"></a>HAL_TIM_PWM_ConfigChannel</STRONG> (Thumb, 294 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = HAL_TIM_PWM_ConfigChannel &rArr; TIM_OC2_SetConfig
+</UL>
+<BR>[Calls]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC2_SetConfig
+<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC1_SetConfig
+<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC3_SetConfig
+<LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC4_SetConfig
+</UL>
+<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEYPAD_thread_periph_init
+</UL>
+
+<P><STRONG><a name="[165]"></a>HAL_TIM_OnePulse_ConfigChannel</STRONG> (Thumb, 286 bytes, Stack size 48 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI1_SetConfig
+<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC2_SetConfig
+<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI2_SetConfig
+<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC1_SetConfig
+</UL>
+
+<P><STRONG><a name="[166]"></a>HAL_TIM_DMABurst_WriteStart</STRONG> (Thumb, 366 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+</UL>
+
+<P><STRONG><a name="[167]"></a>HAL_TIM_DMABurst_WriteStop</STRONG> (Thumb, 128 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
+</UL>
+
+<P><STRONG><a name="[168]"></a>HAL_TIM_DMABurst_ReadStart</STRONG> (Thumb, 366 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+</UL>
+
+<P><STRONG><a name="[169]"></a>HAL_TIM_DMABurst_ReadStop</STRONG> (Thumb, 128 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
+</UL>
+
+<P><STRONG><a name="[21b]"></a>HAL_TIM_GenerateEvent</STRONG> (Thumb, 54 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+
+<P><STRONG><a name="[16a]"></a>HAL_TIM_ConfigOCrefClear</STRONG> (Thumb, 252 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ETR_SetConfig
+</UL>
+
+<P><STRONG><a name="[16c]"></a>HAL_TIM_ConfigClockSource</STRONG> (Thumb, 306 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI2_ConfigInputStage
+<LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI1_ConfigInputStage
+<LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITRx_SetConfig
+<LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ETR_SetConfig
+</UL>
+
+<P><STRONG><a name="[21c]"></a>HAL_TIM_ConfigTI1Input</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+
+<P><STRONG><a name="[171]"></a>HAL_TIM_SlaveConfigSynchronization</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SlaveTimer_SetConfig
+</UL>
+
+<P><STRONG><a name="[172]"></a>HAL_TIM_SlaveConfigSynchronization_IT</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SlaveTimer_SetConfig
+</UL>
+
+<P><STRONG><a name="[21d]"></a>HAL_TIM_ReadCapturedValue</STRONG> (Thumb, 84 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+
+<P><STRONG><a name="[21e]"></a>HAL_TIM_Base_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+
+<P><STRONG><a name="[21f]"></a>HAL_TIM_OC_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+
+<P><STRONG><a name="[220]"></a>HAL_TIM_PWM_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+
+<P><STRONG><a name="[221]"></a>HAL_TIM_IC_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+
+<P><STRONG><a name="[222]"></a>HAL_TIM_OnePulse_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+
+<P><STRONG><a name="[223]"></a>HAL_TIM_Encoder_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
+
+<P><STRONG><a name="[174]"></a>HAL_TIMEx_HallSensor_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Init
+</UL>
+
+<P><STRONG><a name="[173]"></a>HAL_TIMEx_HallSensor_Init</STRONG> (Thumb, 196 bytes, Stack size 40 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_MspInit
+<LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI1_SetConfig
+<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC2_SetConfig
+<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
+</UL>
+
+<P><STRONG><a name="[176]"></a>HAL_TIMEx_HallSensor_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Called By]<UL><LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_DeInit
+</UL>
+
+<P><STRONG><a name="[175]"></a>HAL_TIMEx_HallSensor_DeInit</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_MspDeInit
+</UL>
+
+<P><STRONG><a name="[177]"></a>HAL_TIMEx_HallSensor_Start</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[178]"></a>HAL_TIMEx_HallSensor_Stop</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[179]"></a>HAL_TIMEx_HallSensor_Start_IT</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[17a]"></a>HAL_TIMEx_HallSensor_Stop_IT</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[17b]"></a>HAL_TIMEx_HallSensor_Start_DMA</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+<LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[17c]"></a>HAL_TIMEx_HallSensor_Stop_DMA</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
+</UL>
+
+<P><STRONG><a name="[17d]"></a>HAL_TIMEx_OCN_Start</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
+</UL>
+
+<P><STRONG><a name="[17f]"></a>HAL_TIMEx_OCN_Stop</STRONG> (Thumb, 96 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
+</UL>
+
+<P><STRONG><a name="[180]"></a>HAL_TIMEx_OCN_Start_IT</STRONG> (Thumb, 132 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
+</UL>
+
+<P><STRONG><a name="[181]"></a>HAL_TIMEx_OCN_Stop_IT</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
+</UL>
+
+<P><STRONG><a name="[182]"></a>HAL_TIMEx_OCN_Start_DMA</STRONG> (Thumb, 272 bytes, Stack size 24 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
+</UL>
+
+<P><STRONG><a name="[183]"></a>HAL_TIMEx_OCN_Stop_DMA</STRONG> (Thumb, 192 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
+</UL>
+
+<P><STRONG><a name="[184]"></a>HAL_TIMEx_PWMN_Start</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
+</UL>
+
+<P><STRONG><a name="[185]"></a>HAL_TIMEx_PWMN_Stop</STRONG> (Thumb, 96 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
+</UL>
+
+<P><STRONG><a name="[186]"></a>HAL_TIMEx_PWMN_Start_IT</STRONG> (Thumb, 132 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
+</UL>
+
+<P><STRONG><a name="[187]"></a>HAL_TIMEx_PWMN_Stop_IT</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
+</UL>
+
+<P><STRONG><a name="[188]"></a>HAL_TIMEx_PWMN_Start_DMA</STRONG> (Thumb, 272 bytes, Stack size 24 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+<LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
+</UL>
+
+<P><STRONG><a name="[189]"></a>HAL_TIMEx_PWMN_Stop_DMA</STRONG> (Thumb, 178 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
+</UL>
+
+<P><STRONG><a name="[18a]"></a>HAL_TIMEx_OnePulseN_Start</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
+</UL>
+
+<P><STRONG><a name="[18b]"></a>HAL_TIMEx_OnePulseN_Stop</STRONG> (Thumb, 96 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
+</UL>
+
+<P><STRONG><a name="[18c]"></a>HAL_TIMEx_OnePulseN_Start_IT</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
+</UL>
+
+<P><STRONG><a name="[18d]"></a>HAL_TIMEx_OnePulseN_Stop_IT</STRONG> (Thumb, 120 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
+</UL>
+
+<P><STRONG><a name="[224]"></a>HAL_TIMEx_ConfigCommutationEvent</STRONG> (Thumb, 110 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+
+<P><STRONG><a name="[225]"></a>HAL_TIMEx_ConfigCommutationEvent_IT</STRONG> (Thumb, 122 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+
+<P><STRONG><a name="[15a]"></a>HAL_TIMEx_CommutationCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim_ex.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
+<LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMEx_DMACommutationCplt
+</UL>
+
+<P><STRONG><a name="[71]"></a>TIMEx_DMACommutationCplt</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIMEx_DMACommutationCplt
+</UL>
+<BR>[Calls]<UL><LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_CommutationCallback
+</UL>
+<BR>[Address Reference Count : 2]<UL><LI> stm32f4xx_hal_tim.o(.text)
+<LI> stm32f4xx_hal_tim_ex.o(.text)
+</UL>
+<P><STRONG><a name="[226]"></a>HAL_TIMEx_ConfigCommutationEvent_DMA</STRONG> (Thumb, 146 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+
+<P><STRONG><a name="[227]"></a>HAL_TIMEx_MasterConfigSynchronization</STRONG> (Thumb, 98 bytes, Stack size 0 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+
+<P><STRONG><a name="[228]"></a>HAL_TIMEx_ConfigBreakDeadTime</STRONG> (Thumb, 80 bytes, Stack size 0 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+
+<P><STRONG><a name="[229]"></a>HAL_TIMEx_RemapConfig</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+
+<P><STRONG><a name="[158]"></a>HAL_TIMEx_BreakCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim_ex.o(.text))
+<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
+</UL>
+
+<P><STRONG><a name="[22a]"></a>HAL_TIMEx_HallSensor_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
 
 <P><STRONG><a name="[1]"></a>Reset_Handler</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, startup_stm32f407xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(RESET)
@@ -928,1131 +2049,10 @@ Global Symbols
 <P><STRONG><a name="[b]"></a>WWDG_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f407xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(RESET)
 </UL>
-<P><STRONG><a name="[5e]"></a>SystemInit</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, system_stm32f4xx.o(.text))
+<P><STRONG><a name="[74]"></a>SystemInit</STRONG> (Thumb, 82 bytes, Stack size 0 bytes, system_stm32f4xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f407xx.o(.text)
 </UL>
-<P><STRONG><a name="[1e4]"></a>SystemCoreClockUpdate</STRONG> (Thumb, 174 bytes, Stack size 16 bytes, system_stm32f4xx.o(.text), UNUSED)
-
-<P><STRONG><a name="[e0]"></a>HAL_MspInit</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, stm32f4xx_hal.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_MspInit
-</UL>
-<BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-</UL>
-
-<P><STRONG><a name="[dc]"></a>HAL_InitTick</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, stm32f4xx_hal.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
-<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
-<LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
-</UL>
-<BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_ClockConfig
-<LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-</UL>
-
-<P><STRONG><a name="[97]"></a>HAL_Init</STRONG> (Thumb, 54 bytes, Stack size 8 bytes, stm32f4xx_hal.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 72<LI>Call Chain = HAL_Init &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
-</UL>
-<BR>[Calls]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
-<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspInit
-<LI><a href="#[df]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriorityGrouping
-</UL>
-<BR>[Called By]<UL><LI><a href="#[88]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
-</UL>
-
-<P><STRONG><a name="[e2]"></a>HAL_MspDeInit</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, stm32f4xx_hal.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DeInit
-</UL>
-
-<P><STRONG><a name="[e1]"></a>HAL_DeInit</STRONG> (Thumb, 64 bytes, Stack size 8 bytes, stm32f4xx_hal.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[e2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_MspDeInit
-</UL>
-
-<P><STRONG><a name="[1e5]"></a>HAL_IncTick</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
-
-<P><STRONG><a name="[e3]"></a>HAL_Delay</STRONG> (Thumb, 26 bytes, Stack size 16 bytes, stm32f4xx_hal.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-</UL>
-
-<P><STRONG><a name="[1e6]"></a>HAL_SuspendTick</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
-
-<P><STRONG><a name="[1e7]"></a>HAL_ResumeTick</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
-
-<P><STRONG><a name="[1e8]"></a>HAL_GetHalVersion</STRONG> (Thumb, 4 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
-
-<P><STRONG><a name="[1e9]"></a>HAL_GetREVID</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
-
-<P><STRONG><a name="[1ea]"></a>HAL_GetDEVID</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
-
-<P><STRONG><a name="[1eb]"></a>HAL_DBGMCU_EnableDBGSleepMode</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
-
-<P><STRONG><a name="[1ec]"></a>HAL_DBGMCU_DisableDBGSleepMode</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
-
-<P><STRONG><a name="[1ed]"></a>HAL_DBGMCU_EnableDBGStopMode</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
-
-<P><STRONG><a name="[1ee]"></a>HAL_DBGMCU_DisableDBGStopMode</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
-
-<P><STRONG><a name="[1ef]"></a>HAL_DBGMCU_EnableDBGStandbyMode</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
-
-<P><STRONG><a name="[1f0]"></a>HAL_DBGMCU_DisableDBGStandbyMode</STRONG> (Thumb, 14 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
-
-<P><STRONG><a name="[1f1]"></a>HAL_EnableCompensationCell</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
-
-<P><STRONG><a name="[1f2]"></a>HAL_DisableCompensationCell</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_hal.o(.text), UNUSED)
-
-<P><STRONG><a name="[e6]"></a>HAL_ADC_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_Init
-</UL>
-
-<P><STRONG><a name="[e5]"></a>HAL_ADC_Init</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[e6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspInit
-<LI><a href="#[e7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Init
-</UL>
-
-<P><STRONG><a name="[e9]"></a>HAL_ADC_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[e8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_DeInit
-</UL>
-
-<P><STRONG><a name="[e8]"></a>HAL_ADC_DeInit</STRONG> (Thumb, 34 bytes, Stack size 8 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[e9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_MspDeInit
-</UL>
-
-<P><STRONG><a name="[b6]"></a>HAL_ADC_Start</STRONG> (Thumb, 182 bytes, Stack size 8 bytes, stm32f4xx_hal_adc.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_ADC_Start
-</UL>
-<BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_getValue
-</UL>
-
-<P><STRONG><a name="[b9]"></a>HAL_ADC_Stop</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_getValue
-</UL>
-
-<P><STRONG><a name="[b7]"></a>HAL_ADC_PollForConversion</STRONG> (Thumb, 130 bytes, Stack size 16 bytes, stm32f4xx_hal_adc.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HAL_ADC_PollForConversion
-</UL>
-<BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-</UL>
-<BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_getValue
-</UL>
-
-<P><STRONG><a name="[ea]"></a>HAL_ADC_PollForEvent</STRONG> (Thumb, 104 bytes, Stack size 24 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-</UL>
-
-<P><STRONG><a name="[1f3]"></a>HAL_ADC_Start_IT</STRONG> (Thumb, 232 bytes, Stack size 8 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
-
-<P><STRONG><a name="[1f4]"></a>HAL_ADC_Stop_IT</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
-
-<P><STRONG><a name="[ef]"></a>HAL_ADC_ErrorCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_MultiModeDMAError
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_IRQHandler
-<LI><a href="#[62]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_DMAError
-</UL>
-
-<P><STRONG><a name="[ee]"></a>HAL_ADC_LevelOutOfWindowCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_IRQHandler
-</UL>
-
-<P><STRONG><a name="[ec]"></a>HAL_ADC_ConvCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_MultiModeDMAConvCplt
-<LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_IRQHandler
-<LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_DMAConvCplt
-</UL>
-
-<P><STRONG><a name="[eb]"></a>HAL_ADC_IRQHandler</STRONG> (Thumb, 348 bytes, Stack size 16 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConvCpltCallback
-<LI><a href="#[ee]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_LevelOutOfWindowCallback
-<LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ErrorCallback
-<LI><a href="#[ed]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADCEx_InjectedConvCpltCallback
-</UL>
-
-<P><STRONG><a name="[f0]"></a>HAL_ADC_ConvHalfCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_MultiModeDMAHalfConvCplt
-<LI><a href="#[61]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_DMAHalfConvCplt
-</UL>
-
-<P><STRONG><a name="[f1]"></a>HAL_ADC_Start_DMA</STRONG> (Thumb, 186 bytes, Stack size 24 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
-</UL>
-
-<P><STRONG><a name="[f3]"></a>HAL_ADC_Stop_DMA</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
-</UL>
-
-<P><STRONG><a name="[b8]"></a>HAL_ADC_GetValue</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_getValue
-</UL>
-
-<P><STRONG><a name="[b4]"></a>HAL_ADC_ConfigChannel</STRONG> (Thumb, 416 bytes, Stack size 12 bytes, stm32f4xx_hal_adc.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = HAL_ADC_ConfigChannel
-</UL>
-<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ADC_Init
-</UL>
-
-<P><STRONG><a name="[1f5]"></a>HAL_ADC_AnalogWDGConfig</STRONG> (Thumb, 132 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
-
-<P><STRONG><a name="[1f6]"></a>HAL_ADC_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
-
-<P><STRONG><a name="[1f7]"></a>HAL_ADC_GetError</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_hal_adc.o(.text), UNUSED)
-
-<P><STRONG><a name="[1f8]"></a>HAL_ADCEx_InjectedStart</STRONG> (Thumb, 230 bytes, Stack size 12 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
-
-<P><STRONG><a name="[1f9]"></a>HAL_ADCEx_InjectedStart_IT</STRONG> (Thumb, 258 bytes, Stack size 12 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
-
-<P><STRONG><a name="[1fa]"></a>HAL_ADCEx_InjectedStop</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
-
-<P><STRONG><a name="[f5]"></a>HAL_ADCEx_InjectedPollForConversion</STRONG> (Thumb, 90 bytes, Stack size 16 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-</UL>
-
-<P><STRONG><a name="[1fb]"></a>HAL_ADCEx_InjectedStop_IT</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
-
-<P><STRONG><a name="[1fc]"></a>HAL_ADCEx_InjectedGetValue</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
-
-<P><STRONG><a name="[f6]"></a>HAL_ADCEx_MultiModeStart_DMA</STRONG> (Thumb, 206 bytes, Stack size 24 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
-</UL>
-
-<P><STRONG><a name="[f7]"></a>HAL_ADCEx_MultiModeStop_DMA</STRONG> (Thumb, 116 bytes, Stack size 8 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
-</UL>
-
-<P><STRONG><a name="[1fd]"></a>HAL_ADCEx_MultiModeGetValue</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
-
-<P><STRONG><a name="[ed]"></a>HAL_ADCEx_InjectedConvCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[eb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_IRQHandler
-</UL>
-
-<P><STRONG><a name="[1fe]"></a>HAL_ADCEx_InjectedConfigChannel</STRONG> (Thumb, 552 bytes, Stack size 8 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
-
-<P><STRONG><a name="[1ff]"></a>HAL_ADCEx_MultiModeConfigChannel</STRONG> (Thumb, 130 bytes, Stack size 0 bytes, stm32f4xx_hal_adc_ex.o(.text), UNUSED)
-
-<P><STRONG><a name="[df]"></a>HAL_NVIC_SetPriorityGrouping</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_Init
-</UL>
-
-<P><STRONG><a name="[a6]"></a>HAL_NVIC_SetPriority</STRONG> (Thumb, 124 bytes, Stack size 40 bytes, stm32f4xx_hal_cortex.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
-</UL>
-<BR>[Calls]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_GetPriorityGrouping
-<LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
-</UL>
-<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread_periph_init
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread_periph_init
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEYPAD_thread_periph_init
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCEL_thread_periph_init
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
-</UL>
-
-<P><STRONG><a name="[a7]"></a>HAL_NVIC_EnableIRQ</STRONG> (Thumb, 32 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread_periph_init
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread_periph_init
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEYPAD_thread_periph_init
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCEL_thread_periph_init
-</UL>
-
-<P><STRONG><a name="[200]"></a>HAL_NVIC_DisableIRQ</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
-
-<P><STRONG><a name="[201]"></a>HAL_NVIC_SystemReset</STRONG> (Thumb, 64 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
-
-<P><STRONG><a name="[de]"></a>HAL_SYSTICK_Config</STRONG> (Thumb, 52 bytes, Stack size 16 bytes, stm32f4xx_hal_cortex.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_SYSTICK_Config &rArr; __NVIC_SetPriority
-</UL>
-<BR>[Calls]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_SetPriority
-</UL>
-<BR>[Called By]<UL><LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
-</UL>
-
-<P><STRONG><a name="[202]"></a>HAL_MPU_ConfigRegion</STRONG> (Thumb, 90 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
-
-<P><STRONG><a name="[fa]"></a>HAL_NVIC_GetPriorityGrouping</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[f8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__NVIC_GetPriorityGrouping
-</UL>
-
-<P><STRONG><a name="[203]"></a>HAL_NVIC_GetPriority</STRONG> (Thumb, 138 bytes, Stack size 28 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
-
-<P><STRONG><a name="[204]"></a>HAL_NVIC_SetPendingIRQ</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
-
-<P><STRONG><a name="[205]"></a>HAL_NVIC_GetPendingIRQ</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
-
-<P><STRONG><a name="[206]"></a>HAL_NVIC_ClearPendingIRQ</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
-
-<P><STRONG><a name="[207]"></a>HAL_NVIC_GetActive</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
-
-<P><STRONG><a name="[208]"></a>HAL_SYSTICK_CLKSourceConfig</STRONG> (Thumb, 40 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
-
-<P><STRONG><a name="[fc]"></a>HAL_SYSTICK_Callback</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[fb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_IRQHandler
-</UL>
-
-<P><STRONG><a name="[fb]"></a>HAL_SYSTICK_IRQHandler</STRONG> (Thumb, 8 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[fc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Callback
-</UL>
-
-<P><STRONG><a name="[fd]"></a>HAL_DMA_Init</STRONG> (Thumb, 128 bytes, Stack size 16 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CalcBaseAndBitshift
-</UL>
-
-<P><STRONG><a name="[ff]"></a>HAL_DMA_DeInit</STRONG> (Thumb, 100 bytes, Stack size 16 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[fe]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_CalcBaseAndBitshift
-</UL>
-
-<P><STRONG><a name="[100]"></a>HAL_DMA_Start</STRONG> (Thumb, 82 bytes, Stack size 24 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetConfig
-</UL>
-
-<P><STRONG><a name="[f2]"></a>HAL_DMA_Start_IT</STRONG> (Thumb, 106 bytes, Stack size 24 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[101]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;DMA_SetConfig
-</UL>
-<BR>[Called By]<UL><LI><a href="#[188]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_PWMN_Start_DMA
-<LI><a href="#[182]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_OCN_Start_DMA
-<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Start_DMA
-<LI><a href="#[168]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_DMABurst_ReadStart
-<LI><a href="#[166]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_DMABurst_WriteStart
-<LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Start_DMA
-<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Start_DMA
-<LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start_DMA
-<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Start_DMA
-<LI><a href="#[124]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Start_DMA
-<LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Receive_DMA
-<LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive_DMA
-<LI><a href="#[117]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit_DMA
-<LI><a href="#[f6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADCEx_MultiModeStart_DMA
-<LI><a href="#[f1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_Start_DMA
-</UL>
-
-<P><STRONG><a name="[f4]"></a>HAL_DMA_Abort</STRONG> (Thumb, 94 bytes, Stack size 16 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-</UL>
-<BR>[Called By]<UL><LI><a href="#[169]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_DMABurst_ReadStop
-<LI><a href="#[167]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_DMABurst_WriteStop
-<LI><a href="#[11d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_DMAStop
-<LI><a href="#[f7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADCEx_MultiModeStop_DMA
-<LI><a href="#[f3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_Stop_DMA
-</UL>
-
-<P><STRONG><a name="[102]"></a>HAL_DMA_PollForTransfer</STRONG> (Thumb, 412 bytes, Stack size 40 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-</UL>
-
-<P><STRONG><a name="[209]"></a>HAL_DMA_IRQHandler</STRONG> (Thumb, 530 bytes, Stack size 16 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
-
-<P><STRONG><a name="[20a]"></a>HAL_DMA_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
-
-<P><STRONG><a name="[20b]"></a>HAL_DMA_GetError</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
-
-<P><STRONG><a name="[a4]"></a>HAL_GPIO_Init</STRONG> (Thumb, 476 bytes, Stack size 24 bytes, stm32f4xx_hal_gpio.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_GPIO_Init
-</UL>
-<BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initializeKeyPad
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
-<LI><a href="#[a2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCEL_thread_periph_init
-<LI><a href="#[103]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_MCOConfig
-</UL>
-
-<P><STRONG><a name="[20c]"></a>HAL_GPIO_DeInit</STRONG> (Thumb, 326 bytes, Stack size 20 bytes, stm32f4xx_hal_gpio.o(.text), UNUSED)
-
-<P><STRONG><a name="[c1]"></a>HAL_GPIO_ReadPin</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyPadGetValue
-</UL>
-
-<P><STRONG><a name="[bc]"></a>HAL_GPIO_WritePin</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
-<LI><a href="#[d7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS3DSH_Read
-<LI><a href="#[d3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS3DSH_Write
-<LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KeyPadGetValue
-<LI><a href="#[bf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;initializeKeyPad
-<LI><a href="#[be]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;resetDisplay
-<LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;displayValue
-<LI><a href="#[bb]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_Init
-</UL>
-
-<P><STRONG><a name="[20d]"></a>HAL_GPIO_TogglePin</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_gpio.o(.text), UNUSED)
-
-<P><STRONG><a name="[20e]"></a>HAL_GPIO_LockPin</STRONG> (Thumb, 46 bytes, Stack size 8 bytes, stm32f4xx_hal_gpio.o(.text), UNUSED)
-
-<P><STRONG><a name="[9e]"></a>HAL_GPIO_EXTI_IRQHandler</STRONG> (Thumb, 28 bytes, Stack size 8 bytes, stm32f4xx_hal_gpio.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = HAL_GPIO_EXTI_IRQHandler &rArr; HAL_GPIO_EXTI_Callback &rArr; osSignalSet &rArr; isrSignalSet &rArr; isr_evt_set &rArr; rt_psq_enq
-</UL>
-<BR>[Calls]<UL><LI><a href="#[9f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_EXTI_Callback
-</UL>
-<BR>[Called By]<UL><LI><a href="#[11]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;EXTI0_IRQHandler
-</UL>
-
-<P><STRONG><a name="[95]"></a>HAL_RCC_OscConfig</STRONG> (Thumb, 1032 bytes, Stack size 16 bytes, stm32f4xx_hal_rcc.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HAL_RCC_OscConfig
-</UL>
-<BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-</UL>
-<BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
-</UL>
-
-<P><STRONG><a name="[96]"></a>HAL_RCC_ClockConfig</STRONG> (Thumb, 680 bytes, Stack size 16 bytes, stm32f4xx_hal_rcc.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = HAL_RCC_ClockConfig &rArr; HAL_InitTick &rArr; HAL_NVIC_SetPriority &rArr; __NVIC_SetPriority
-</UL>
-<BR>[Calls]<UL><LI><a href="#[e4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GetTick
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
-</UL>
-<BR>[Called By]<UL><LI><a href="#[94]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SystemClock_Config
-</UL>
-
-<P><STRONG><a name="[103]"></a>HAL_RCC_MCOConfig</STRONG> (Thumb, 178 bytes, Stack size 40 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_GPIO_Init
-</UL>
-
-<P><STRONG><a name="[20f]"></a>HAL_RCC_EnableCSS</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
-
-<P><STRONG><a name="[210]"></a>HAL_RCC_DisableCSS</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
-
-<P><STRONG><a name="[104]"></a>HAL_RCC_GetSysClockFreq</STRONG> (Thumb, 198 bytes, Stack size 16 bytes, stm32f4xx_hal_rcc.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = HAL_RCC_GetSysClockFreq
-</UL>
-<BR>[Called By]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
-</UL>
-
-<P><STRONG><a name="[dd]"></a>HAL_RCC_GetHCLKFreq</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, stm32f4xx_hal_rcc.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_RCC_GetHCLKFreq &rArr; HAL_RCC_GetSysClockFreq
-</UL>
-<BR>[Calls]<UL><LI><a href="#[104]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetSysClockFreq
-</UL>
-<BR>[Called By]<UL><LI><a href="#[106]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK2Freq
-<LI><a href="#[105]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetPCLK1Freq
-<LI><a href="#[dc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_InitTick
-</UL>
-
-<P><STRONG><a name="[105]"></a>HAL_RCC_GetPCLK1Freq</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
-</UL>
-
-<P><STRONG><a name="[106]"></a>HAL_RCC_GetPCLK2Freq</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[dd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_GetHCLKFreq
-</UL>
-
-<P><STRONG><a name="[211]"></a>HAL_RCC_GetOscConfig</STRONG> (Thumb, 296 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
-
-<P><STRONG><a name="[212]"></a>HAL_RCC_GetClockConfig</STRONG> (Thumb, 58 bytes, Stack size 0 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
-
-<P><STRONG><a name="[108]"></a>HAL_RCC_CSSCallback</STRONG> (Thumb, 10 bytes, Stack size 8 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[107]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_NMI_IRQHandler
-</UL>
-
-<P><STRONG><a name="[107]"></a>HAL_RCC_NMI_IRQHandler</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, stm32f4xx_hal_rcc.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[108]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_RCC_CSSCallback
-</UL>
-
-<P><STRONG><a name="[d5]"></a>HAL_SPI_Init</STRONG> (Thumb, 136 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = HAL_SPI_Init &rArr; HAL_SPI_MspInit &rArr; HAL_GPIO_Init
-</UL>
-<BR>[Calls]<UL><LI><a href="#[db]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspInit
-</UL>
-<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS3DSH_Init
-</UL>
-
-<P><STRONG><a name="[109]"></a>HAL_SPI_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[d4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_DeInit
-</UL>
-
-<P><STRONG><a name="[d4]"></a>HAL_SPI_DeInit</STRONG> (Thumb, 48 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_SPI_DeInit
-</UL>
-<BR>[Calls]<UL><LI><a href="#[109]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_MspDeInit
-</UL>
-<BR>[Called By]<UL><LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LIS3DSH_Init
-</UL>
-
-<P><STRONG><a name="[10b]"></a>HAL_SPI_Transmit</STRONG> (Thumb, 450 bytes, Stack size 24 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitOnFlagUntilTimeout
-</UL>
-
-<P><STRONG><a name="[10c]"></a>HAL_SPI_TransmitReceive</STRONG> (Thumb, 850 bytes, Stack size 40 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitOnFlagUntilTimeout
-</UL>
-<BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Receive
-</UL>
-
-<P><STRONG><a name="[10d]"></a>HAL_SPI_Receive</STRONG> (Thumb, 572 bytes, Stack size 32 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive
-<LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitOnFlagUntilTimeout
-</UL>
-
-<P><STRONG><a name="[111]"></a>HAL_SPI_ErrorCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[11e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_IRQHandler
-<LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitReceiveCplt
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAReceiveCplt
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitCplt
-<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAError
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_RxCloseIRQHandler
-<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_TxCloseIRQHandler
-</UL>
-
-<P><STRONG><a name="[110]"></a>HAL_SPI_TxCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitCplt
-<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_TxCloseIRQHandler
-</UL>
-
-<P><STRONG><a name="[10f]"></a>HAL_SPI_TxRxCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitReceiveCplt
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_RxCloseIRQHandler
-<LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_TxCloseIRQHandler
-</UL>
-
-<P><STRONG><a name="[213]"></a>HAL_SPI_Transmit_IT</STRONG> (Thumb, 198 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
-
-<P><STRONG><a name="[113]"></a>HAL_SPI_RxCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAReceiveCplt
-<LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_RxCloseIRQHandler
-</UL>
-
-<P><STRONG><a name="[115]"></a>HAL_SPI_TransmitReceive_IT</STRONG> (Thumb, 192 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[114]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Receive_IT
-</UL>
-
-<P><STRONG><a name="[114]"></a>HAL_SPI_Receive_IT</STRONG> (Thumb, 222 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[115]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive_IT
-</UL>
-
-<P><STRONG><a name="[116]"></a>HAL_SPI_TxHalfCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAHalfTransmitCplt
-</UL>
-
-<P><STRONG><a name="[117]"></a>HAL_SPI_Transmit_DMA</STRONG> (Thumb, 218 bytes, Stack size 24 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
-</UL>
-
-<P><STRONG><a name="[119]"></a>HAL_SPI_RxHalfCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[6c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAHalfReceiveCplt
-</UL>
-
-<P><STRONG><a name="[11a]"></a>HAL_SPI_TxRxHalfCpltCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAHalfTransmitReceiveCplt
-</UL>
-
-<P><STRONG><a name="[11b]"></a>HAL_SPI_TransmitReceive_DMA</STRONG> (Thumb, 324 bytes, Stack size 24 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
-</UL>
-<BR>[Called By]<UL><LI><a href="#[11c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Receive_DMA
-</UL>
-
-<P><STRONG><a name="[11c]"></a>HAL_SPI_Receive_DMA</STRONG> (Thumb, 288 bytes, Stack size 24 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[11b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive_DMA
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
-</UL>
-
-<P><STRONG><a name="[214]"></a>HAL_SPI_DMAPause</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
-
-<P><STRONG><a name="[215]"></a>HAL_SPI_DMAResume</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
-
-<P><STRONG><a name="[11d]"></a>HAL_SPI_DMAStop</STRONG> (Thumb, 58 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
-</UL>
-
-<P><STRONG><a name="[11e]"></a>HAL_SPI_IRQHandler</STRONG> (Thumb, 262 bytes, Stack size 24 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_ErrorCallback
-</UL>
-
-<P><STRONG><a name="[216]"></a>HAL_SPI_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
-
-<P><STRONG><a name="[217]"></a>HAL_SPI_GetError</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, stm32f4xx_hal_spi.o(.text), UNUSED)
-
-<P><STRONG><a name="[120]"></a>TIM_Base_SetConfig</STRONG> (Thumb, 184 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
-<LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Init
-<LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Init
-<LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_Init
-<LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Init
-<LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
-<LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Init
-</UL>
-
-<P><STRONG><a name="[11f]"></a>HAL_TIM_Base_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ca]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_Init
-</UL>
-
-<P><STRONG><a name="[ca]"></a>HAL_TIM_Base_Init</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = HAL_TIM_Base_Init
-</UL>
-<BR>[Calls]<UL><LI><a href="#[11f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspInit
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
-</UL>
-<BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread_periph_init
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread_periph_init
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEYPAD_thread_periph_init
-</UL>
-
-<P><STRONG><a name="[122]"></a>HAL_TIM_Base_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[121]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_DeInit
-</UL>
-
-<P><STRONG><a name="[121]"></a>HAL_TIM_Base_DeInit</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[122]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Base_MspDeInit
-</UL>
-
-<P><STRONG><a name="[218]"></a>HAL_TIM_Base_Start</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-
-<P><STRONG><a name="[219]"></a>HAL_TIM_Base_Stop</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-
-<P><STRONG><a name="[cb]"></a>HAL_TIM_Base_Start_IT</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread_periph_init
-<LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread_periph_init
-<LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEYPAD_thread_periph_init
-</UL>
-
-<P><STRONG><a name="[21a]"></a>HAL_TIM_Base_Stop_IT</STRONG> (Thumb, 56 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-
-<P><STRONG><a name="[123]"></a>HAL_TIM_ErrorCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[71]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_DMAError
-</UL>
-
-<P><STRONG><a name="[71]"></a>TIM_DMAError</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIM_DMAError
-</UL>
-<BR>[Calls]<UL><LI><a href="#[123]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_ErrorCallback
-</UL>
-<BR>[Address Reference Count : 2]<UL><LI> stm32f4xx_hal_tim.o(.text)
-<LI> stm32f4xx_hal_tim_ex.o(.text)
-</UL>
-<P><STRONG><a name="[124]"></a>HAL_TIM_Base_Start_DMA</STRONG> (Thumb, 98 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
-</UL>
-
-<P><STRONG><a name="[21b]"></a>HAL_TIM_Base_Stop_DMA</STRONG> (Thumb, 62 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-
-<P><STRONG><a name="[126]"></a>HAL_TIM_OC_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[125]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Init
-</UL>
-
-<P><STRONG><a name="[125]"></a>HAL_TIM_OC_Init</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[126]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_MspInit
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
-</UL>
-
-<P><STRONG><a name="[128]"></a>HAL_TIM_OC_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[127]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_DeInit
-</UL>
-
-<P><STRONG><a name="[127]"></a>HAL_TIM_OC_DeInit</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[128]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_MspDeInit
-</UL>
-
-<P><STRONG><a name="[12a]"></a>TIM_CCxChannelCmd</STRONG> (Thumb, 28 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = TIM_CCxChannelCmd
-</UL>
-<BR>[Called By]<UL><LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start
-<LI><a href="#[17c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Stop_DMA
-<LI><a href="#[17b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Start_DMA
-<LI><a href="#[17a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Stop_IT
-<LI><a href="#[179]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Start_IT
-<LI><a href="#[178]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Stop
-<LI><a href="#[177]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Start
-<LI><a href="#[156]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Stop_DMA
-<LI><a href="#[155]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Start_DMA
-<LI><a href="#[154]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Stop_IT
-<LI><a href="#[153]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Start_IT
-<LI><a href="#[152]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Stop
-<LI><a href="#[151]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Start
-<LI><a href="#[14c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_Stop_IT
-<LI><a href="#[14b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_Start_IT
-<LI><a href="#[14a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_Stop
-<LI><a href="#[149]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_Start
-<LI><a href="#[144]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Stop_DMA
-<LI><a href="#[143]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Start_DMA
-<LI><a href="#[141]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Stop_IT
-<LI><a href="#[140]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Start_IT
-<LI><a href="#[13f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Stop
-<LI><a href="#[13e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Start
-<LI><a href="#[139]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Stop_DMA
-<LI><a href="#[138]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start_DMA
-<LI><a href="#[137]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Stop_IT
-<LI><a href="#[136]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Start_IT
-<LI><a href="#[135]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Stop
-<LI><a href="#[130]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Stop_DMA
-<LI><a href="#[12f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Start_DMA
-<LI><a href="#[12d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Stop_IT
-<LI><a href="#[12c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Start_IT
-<LI><a href="#[12b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Stop
-<LI><a href="#[129]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_Start
-</UL>
-
-<P><STRONG><a name="[129]"></a>HAL_TIM_OC_Start</STRONG> (Thumb, 68 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[12b]"></a>HAL_TIM_OC_Stop</STRONG> (Thumb, 170 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[12c]"></a>HAL_TIM_OC_Start_IT</STRONG> (Thumb, 144 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[12d]"></a>HAL_TIM_OC_Stop_IT</STRONG> (Thumb, 196 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[12e]"></a>HAL_TIM_PWM_PulseFinishedCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
-<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_DMADelayPulseCplt
-</UL>
-
-<P><STRONG><a name="[72]"></a>TIM_DMADelayPulseCplt</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIM_DMADelayPulseCplt
-</UL>
-<BR>[Calls]<UL><LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_PulseFinishedCallback
-</UL>
-<BR>[Address Reference Count : 2]<UL><LI> stm32f4xx_hal_tim.o(.text)
-<LI> stm32f4xx_hal_tim_ex.o(.text)
-</UL>
-<P><STRONG><a name="[12f]"></a>HAL_TIM_OC_Start_DMA</STRONG> (Thumb, 312 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
-</UL>
-
-<P><STRONG><a name="[130]"></a>HAL_TIM_OC_Stop_DMA</STRONG> (Thumb, 202 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[132]"></a>HAL_TIM_PWM_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[131]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_Init
-</UL>
-
-<P><STRONG><a name="[131]"></a>HAL_TIM_PWM_Init</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[132]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_MspInit
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
-</UL>
-
-<P><STRONG><a name="[134]"></a>HAL_TIM_PWM_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[133]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_DeInit
-</UL>
-
-<P><STRONG><a name="[133]"></a>HAL_TIM_PWM_DeInit</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[134]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_MspDeInit
-</UL>
-
-<P><STRONG><a name="[cc]"></a>HAL_TIM_PWM_Start</STRONG> (Thumb, 78 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = HAL_TIM_PWM_Start &rArr; TIM_CCxChannelCmd
-</UL>
-<BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEYPAD_thread_periph_init
-</UL>
-
-<P><STRONG><a name="[135]"></a>HAL_TIM_PWM_Stop</STRONG> (Thumb, 126 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[136]"></a>HAL_TIM_PWM_Start_IT</STRONG> (Thumb, 144 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[137]"></a>HAL_TIM_PWM_Stop_IT</STRONG> (Thumb, 196 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[138]"></a>HAL_TIM_PWM_Start_DMA</STRONG> (Thumb, 312 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
-</UL>
-
-<P><STRONG><a name="[139]"></a>HAL_TIM_PWM_Stop_DMA</STRONG> (Thumb, 202 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[13b]"></a>HAL_TIM_IC_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[13a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_Init
-</UL>
-
-<P><STRONG><a name="[13a]"></a>HAL_TIM_IC_Init</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[13b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_MspInit
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
-</UL>
-
-<P><STRONG><a name="[13d]"></a>HAL_TIM_IC_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[13c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_DeInit
-</UL>
-
-<P><STRONG><a name="[13c]"></a>HAL_TIM_IC_DeInit</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[13d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_MspDeInit
-</UL>
-
-<P><STRONG><a name="[13e]"></a>HAL_TIM_IC_Start</STRONG> (Thumb, 32 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[13f]"></a>HAL_TIM_IC_Stop</STRONG> (Thumb, 58 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[140]"></a>HAL_TIM_IC_Start_IT</STRONG> (Thumb, 108 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[141]"></a>HAL_TIM_IC_Stop_IT</STRONG> (Thumb, 134 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[142]"></a>HAL_TIM_IC_CaptureCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
-<LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_DMACaptureCplt
-</UL>
-
-<P><STRONG><a name="[75]"></a>TIM_DMACaptureCplt</STRONG> (Thumb, 70 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIM_DMACaptureCplt
-</UL>
-<BR>[Calls]<UL><LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_CaptureCallback
-</UL>
-<BR>[Address Reference Count : 2]<UL><LI> stm32f4xx_hal_tim.o(.text)
-<LI> stm32f4xx_hal_tim_ex.o(.text)
-</UL>
-<P><STRONG><a name="[143]"></a>HAL_TIM_IC_Start_DMA</STRONG> (Thumb, 276 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
-</UL>
-
-<P><STRONG><a name="[144]"></a>HAL_TIM_IC_Stop_DMA</STRONG> (Thumb, 140 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[146]"></a>HAL_TIM_OnePulse_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[145]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_Init
-</UL>
-
-<P><STRONG><a name="[145]"></a>HAL_TIM_OnePulse_Init</STRONG> (Thumb, 76 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[146]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_MspInit
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
-</UL>
-
-<P><STRONG><a name="[148]"></a>HAL_TIM_OnePulse_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[147]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_DeInit
-</UL>
-
-<P><STRONG><a name="[147]"></a>HAL_TIM_OnePulse_DeInit</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[148]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_MspDeInit
-</UL>
-
-<P><STRONG><a name="[149]"></a>HAL_TIM_OnePulse_Start</STRONG> (Thumb, 66 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[14a]"></a>HAL_TIM_OnePulse_Stop</STRONG> (Thumb, 130 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[14b]"></a>HAL_TIM_OnePulse_Start_IT</STRONG> (Thumb, 90 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[14c]"></a>HAL_TIM_OnePulse_Stop_IT</STRONG> (Thumb, 154 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[14e]"></a>HAL_TIM_Encoder_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[14d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_Init
-</UL>
-
-<P><STRONG><a name="[14d]"></a>HAL_TIM_Encoder_Init</STRONG> (Thumb, 180 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[14e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_MspInit
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
-</UL>
-
-<P><STRONG><a name="[150]"></a>HAL_TIM_Encoder_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[14f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_DeInit
-</UL>
-
-<P><STRONG><a name="[14f]"></a>HAL_TIM_Encoder_DeInit</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[150]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_Encoder_MspDeInit
-</UL>
-
-<P><STRONG><a name="[151]"></a>HAL_TIM_Encoder_Start</STRONG> (Thumb, 78 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[152]"></a>HAL_TIM_Encoder_Stop</STRONG> (Thumb, 104 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[153]"></a>HAL_TIM_Encoder_Start_IT</STRONG> (Thumb, 126 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[154]"></a>HAL_TIM_Encoder_Stop_IT</STRONG> (Thumb, 160 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[155]"></a>HAL_TIM_Encoder_Start_DMA</STRONG> (Thumb, 328 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
-</UL>
-
-<P><STRONG><a name="[156]"></a>HAL_TIM_Encoder_Stop_DMA</STRONG> (Thumb, 152 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[159]"></a>HAL_TIM_TriggerCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
-<LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_DMATriggerCplt
-</UL>
-
-<P><STRONG><a name="[157]"></a>HAL_TIM_OC_DelayElapsedCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
-</UL>
-
-<P><STRONG><a name="[9d]"></a>HAL_TIM_IRQHandler</STRONG> (Thumb, 406 bytes, Stack size 8 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = HAL_TIM_IRQHandler &rArr; HAL_TIM_PeriodElapsedCallback &rArr; osSignalSet &rArr; isrSignalSet &rArr; isr_evt_set &rArr; rt_psq_enq
-</UL>
-<BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
-<LI><a href="#[157]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_DelayElapsedCallback
-<LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_TriggerCallback
-<LI><a href="#[142]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_CaptureCallback
-<LI><a href="#[12e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_PulseFinishedCallback
-<LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_CommutationCallback
-<LI><a href="#[158]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_BreakCallback
-</UL>
-<BR>[Called By]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM3_IRQHandler
-<LI><a href="#[27]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM2_IRQHandler
-<LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM4_IRQHandler
-</UL>
-
-<P><STRONG><a name="[15d]"></a>TIM_OC2_SetConfig</STRONG> (Thumb, 112 bytes, Stack size 12 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = TIM_OC2_SetConfig
-</UL>
-<BR>[Called By]<UL><LI><a href="#[c9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PWM_ConfigChannel
-<LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Init
-<LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_ConfigChannel
-<LI><a href="#[15b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OC_ConfigChannel
-</UL>
-
-<P><STRONG><a name="[15b]"></a>HAL_TIM_OC_ConfigChannel</STRONG> (Thumb, 116 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC2_SetConfig
-<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC1_SetConfig
-<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC3_SetConfig
-<LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC4_SetConfig
-</UL>
-
-<P><STRONG><a name="[161]"></a>TIM_TI1_SetConfig</STRONG> (Thumb, 122 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Init
-<LI><a href="#[165]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_OnePulse_ConfigChannel
-<LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_ConfigChannel
-</UL>
-
-<P><STRONG><a name="[160]"></a>HAL_TIM_IC_ConfigChannel</STRONG> (Thumb, 224 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI1_SetConfig
-<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI2_SetConfig
-<LI><a href="#[163]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI3_SetConfig
-<LI><a href="#[164]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI4_SetConfig
-</UL>
-
-<P><STRONG><a name="[c9]"></a>HAL_TIM_PWM_ConfigChannel</STRONG> (Thumb, 294 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 28<LI>Call Chain = HAL_TIM_PWM_ConfigChannel &rArr; TIM_OC2_SetConfig
-</UL>
-<BR>[Calls]<UL><LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC2_SetConfig
-<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC1_SetConfig
-<LI><a href="#[15e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC3_SetConfig
-<LI><a href="#[15f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC4_SetConfig
-</UL>
-<BR>[Called By]<UL><LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEYPAD_thread_periph_init
-</UL>
-
-<P><STRONG><a name="[165]"></a>HAL_TIM_OnePulse_ConfigChannel</STRONG> (Thumb, 286 bytes, Stack size 48 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI1_SetConfig
-<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC2_SetConfig
-<LI><a href="#[162]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI2_SetConfig
-<LI><a href="#[15c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC1_SetConfig
-</UL>
-
-<P><STRONG><a name="[166]"></a>HAL_TIM_DMABurst_WriteStart</STRONG> (Thumb, 366 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
-</UL>
-
-<P><STRONG><a name="[167]"></a>HAL_TIM_DMABurst_WriteStop</STRONG> (Thumb, 128 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
-</UL>
-
-<P><STRONG><a name="[168]"></a>HAL_TIM_DMABurst_ReadStart</STRONG> (Thumb, 366 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
-</UL>
-
-<P><STRONG><a name="[169]"></a>HAL_TIM_DMABurst_ReadStop</STRONG> (Thumb, 128 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[f4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Abort
-</UL>
-
-<P><STRONG><a name="[21c]"></a>HAL_TIM_GenerateEvent</STRONG> (Thumb, 54 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-
-<P><STRONG><a name="[16a]"></a>HAL_TIM_ConfigOCrefClear</STRONG> (Thumb, 252 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ETR_SetConfig
-</UL>
-
-<P><STRONG><a name="[16c]"></a>HAL_TIM_ConfigClockSource</STRONG> (Thumb, 306 bytes, Stack size 24 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[16f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI2_ConfigInputStage
-<LI><a href="#[16d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI1_ConfigInputStage
-<LI><a href="#[16e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ITRx_SetConfig
-<LI><a href="#[16b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_ETR_SetConfig
-</UL>
-
-<P><STRONG><a name="[21d]"></a>HAL_TIM_ConfigTI1Input</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-
-<P><STRONG><a name="[171]"></a>HAL_TIM_SlaveConfigSynchronization</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SlaveTimer_SetConfig
-</UL>
-
-<P><STRONG><a name="[172]"></a>HAL_TIM_SlaveConfigSynchronization_IT</STRONG> (Thumb, 86 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[170]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SlaveTimer_SetConfig
-</UL>
-
-<P><STRONG><a name="[21e]"></a>HAL_TIM_ReadCapturedValue</STRONG> (Thumb, 84 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-
-<P><STRONG><a name="[21f]"></a>HAL_TIM_Base_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-
-<P><STRONG><a name="[220]"></a>HAL_TIM_OC_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-
-<P><STRONG><a name="[221]"></a>HAL_TIM_PWM_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-
-<P><STRONG><a name="[222]"></a>HAL_TIM_IC_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-
-<P><STRONG><a name="[223]"></a>HAL_TIM_OnePulse_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-
-<P><STRONG><a name="[224]"></a>HAL_TIM_Encoder_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_tim.o(.text), UNUSED)
-
-<P><STRONG><a name="[174]"></a>HAL_TIMEx_HallSensor_MspInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[173]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_Init
-</UL>
-
-<P><STRONG><a name="[173]"></a>HAL_TIMEx_HallSensor_Init</STRONG> (Thumb, 196 bytes, Stack size 40 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[174]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_MspInit
-<LI><a href="#[161]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_TI1_SetConfig
-<LI><a href="#[15d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_OC2_SetConfig
-<LI><a href="#[120]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_Base_SetConfig
-</UL>
-
-<P><STRONG><a name="[176]"></a>HAL_TIMEx_HallSensor_MspDeInit</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[175]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_DeInit
-</UL>
-
-<P><STRONG><a name="[175]"></a>HAL_TIMEx_HallSensor_DeInit</STRONG> (Thumb, 70 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[176]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_HallSensor_MspDeInit
-</UL>
-
-<P><STRONG><a name="[177]"></a>HAL_TIMEx_HallSensor_Start</STRONG> (Thumb, 30 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[178]"></a>HAL_TIMEx_HallSensor_Stop</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[179]"></a>HAL_TIMEx_HallSensor_Start_IT</STRONG> (Thumb, 42 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[17a]"></a>HAL_TIMEx_HallSensor_Stop_IT</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[17b]"></a>HAL_TIMEx_HallSensor_Start_DMA</STRONG> (Thumb, 106 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
-</UL>
-
-<P><STRONG><a name="[17c]"></a>HAL_TIMEx_HallSensor_Stop_DMA</STRONG> (Thumb, 68 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[12a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxChannelCmd
-</UL>
-
-<P><STRONG><a name="[17d]"></a>HAL_TIMEx_OCN_Start</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
-</UL>
-
-<P><STRONG><a name="[17f]"></a>HAL_TIMEx_OCN_Stop</STRONG> (Thumb, 96 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
-</UL>
-
-<P><STRONG><a name="[180]"></a>HAL_TIMEx_OCN_Start_IT</STRONG> (Thumb, 132 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
-</UL>
-
-<P><STRONG><a name="[181]"></a>HAL_TIMEx_OCN_Stop_IT</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
-</UL>
-
-<P><STRONG><a name="[182]"></a>HAL_TIMEx_OCN_Start_DMA</STRONG> (Thumb, 272 bytes, Stack size 24 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
-</UL>
-
-<P><STRONG><a name="[183]"></a>HAL_TIMEx_OCN_Stop_DMA</STRONG> (Thumb, 192 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
-</UL>
-
-<P><STRONG><a name="[184]"></a>HAL_TIMEx_PWMN_Start</STRONG> (Thumb, 44 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
-</UL>
-
-<P><STRONG><a name="[185]"></a>HAL_TIMEx_PWMN_Stop</STRONG> (Thumb, 96 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
-</UL>
-
-<P><STRONG><a name="[186]"></a>HAL_TIMEx_PWMN_Start_IT</STRONG> (Thumb, 132 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
-</UL>
-
-<P><STRONG><a name="[187]"></a>HAL_TIMEx_PWMN_Stop_IT</STRONG> (Thumb, 196 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
-</UL>
-
-<P><STRONG><a name="[188]"></a>HAL_TIMEx_PWMN_Start_DMA</STRONG> (Thumb, 272 bytes, Stack size 24 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
-</UL>
-
-<P><STRONG><a name="[189]"></a>HAL_TIMEx_PWMN_Stop_DMA</STRONG> (Thumb, 178 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
-</UL>
-
-<P><STRONG><a name="[18a]"></a>HAL_TIMEx_OnePulseN_Start</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
-</UL>
-
-<P><STRONG><a name="[18b]"></a>HAL_TIMEx_OnePulseN_Stop</STRONG> (Thumb, 96 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
-</UL>
-
-<P><STRONG><a name="[18c]"></a>HAL_TIMEx_OnePulseN_Start_IT</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
-</UL>
-
-<P><STRONG><a name="[18d]"></a>HAL_TIMEx_OnePulseN_Stop_IT</STRONG> (Thumb, 120 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-<BR><BR>[Calls]<UL><LI><a href="#[17e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_CCxNChannelCmd
-</UL>
-
-<P><STRONG><a name="[225]"></a>HAL_TIMEx_ConfigCommutationEvent</STRONG> (Thumb, 110 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-
-<P><STRONG><a name="[226]"></a>HAL_TIMEx_ConfigCommutationEvent_IT</STRONG> (Thumb, 122 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-
-<P><STRONG><a name="[15a]"></a>HAL_TIMEx_CommutationCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim_ex.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
-<LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIMEx_DMACommutationCplt
-</UL>
-
-<P><STRONG><a name="[73]"></a>TIMEx_DMACommutationCplt</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, stm32f4xx_hal_tim_ex.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIMEx_DMACommutationCplt
-</UL>
-<BR>[Calls]<UL><LI><a href="#[15a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIMEx_CommutationCallback
-</UL>
-<BR>[Address Reference Count : 2]<UL><LI> stm32f4xx_hal_tim.o(.text)
-<LI> stm32f4xx_hal_tim_ex.o(.text)
-</UL>
-<P><STRONG><a name="[227]"></a>HAL_TIMEx_ConfigCommutationEvent_DMA</STRONG> (Thumb, 146 bytes, Stack size 8 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-
-<P><STRONG><a name="[228]"></a>HAL_TIMEx_MasterConfigSynchronization</STRONG> (Thumb, 98 bytes, Stack size 0 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-
-<P><STRONG><a name="[229]"></a>HAL_TIMEx_ConfigBreakDeadTime</STRONG> (Thumb, 80 bytes, Stack size 0 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-
-<P><STRONG><a name="[22a]"></a>HAL_TIMEx_RemapConfig</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
-
-<P><STRONG><a name="[158]"></a>HAL_TIMEx_BreakCallback</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, stm32f4xx_hal_tim_ex.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IRQHandler
-</UL>
-
-<P><STRONG><a name="[22b]"></a>HAL_TIMEx_HallSensor_GetState</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f4xx_hal_tim_ex.o(.text), UNUSED)
+<P><STRONG><a name="[22b]"></a>SystemCoreClockUpdate</STRONG> (Thumb, 174 bytes, Stack size 16 bytes, system_stm32f4xx.o(.text), UNUSED)
 
 <P><STRONG><a name="[ae]"></a>arm_fir_f32</STRONG> (Thumb, 1330 bytes, Stack size 80 bytes, arm_fir_f32.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 80<LI>Call Chain = arm_fir_f32
@@ -2421,8 +2421,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[a8]"></a>osSignalWait</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, rt_cmsis.o(i.osSignalWait))
-<BR><BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread
-<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread
+<BR><BR>[Called By]<UL><LI><a href="#[86]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TEMP_thread
+<LI><a href="#[85]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SEG_thread
 <LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEYPAD_thread
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ACCEL_thread
 </UL>
@@ -2959,42 +2959,42 @@ Local Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[e5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_Init
 </UL>
 
-<P><STRONG><a name="[62]"></a>ADC_DMAError</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, stm32f4xx_hal_adc.o(.text))
+<P><STRONG><a name="[60]"></a>ADC_DMAError</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, stm32f4xx_hal_adc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ADC_DMAError
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ErrorCallback
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f4xx_hal_adc.o(.text)
 </UL>
-<P><STRONG><a name="[61]"></a>ADC_DMAHalfConvCplt</STRONG> (Thumb, 14 bytes, Stack size 16 bytes, stm32f4xx_hal_adc.o(.text))
+<P><STRONG><a name="[5f]"></a>ADC_DMAHalfConvCplt</STRONG> (Thumb, 14 bytes, Stack size 16 bytes, stm32f4xx_hal_adc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ADC_DMAHalfConvCplt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConvHalfCpltCallback
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f4xx_hal_adc.o(.text)
 </UL>
-<P><STRONG><a name="[60]"></a>ADC_DMAConvCplt</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, stm32f4xx_hal_adc.o(.text))
+<P><STRONG><a name="[5e]"></a>ADC_DMAConvCplt</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, stm32f4xx_hal_adc.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ADC_DMAConvCplt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConvCpltCallback
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f4xx_hal_adc.o(.text)
 </UL>
-<P><STRONG><a name="[65]"></a>ADC_MultiModeDMAError</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, stm32f4xx_hal_adc_ex.o(.text))
+<P><STRONG><a name="[63]"></a>ADC_MultiModeDMAError</STRONG> (Thumb, 28 bytes, Stack size 16 bytes, stm32f4xx_hal_adc_ex.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ADC_MultiModeDMAError
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ef]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ErrorCallback
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f4xx_hal_adc_ex.o(.text)
 </UL>
-<P><STRONG><a name="[64]"></a>ADC_MultiModeDMAHalfConvCplt</STRONG> (Thumb, 14 bytes, Stack size 16 bytes, stm32f4xx_hal_adc_ex.o(.text))
+<P><STRONG><a name="[62]"></a>ADC_MultiModeDMAHalfConvCplt</STRONG> (Thumb, 14 bytes, Stack size 16 bytes, stm32f4xx_hal_adc_ex.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ADC_MultiModeDMAHalfConvCplt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConvHalfCpltCallback
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f4xx_hal_adc_ex.o(.text)
 </UL>
-<P><STRONG><a name="[63]"></a>ADC_MultiModeDMAConvCplt</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, stm32f4xx_hal_adc_ex.o(.text))
+<P><STRONG><a name="[61]"></a>ADC_MultiModeDMAConvCplt</STRONG> (Thumb, 36 bytes, Stack size 16 bytes, stm32f4xx_hal_adc_ex.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = ADC_MultiModeDMAConvCplt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ec]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_ADC_ConvCpltCallback
@@ -3004,8 +3004,8 @@ Local Symbols
 <P><STRONG><a name="[f9]"></a>__NVIC_SetPriority</STRONG> (Thumb, 32 bytes, Stack size 8 bytes, stm32f4xx_hal_cortex.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = __NVIC_SetPriority
 </UL>
-<BR>[Called By]<UL><LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
-<LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
+<BR>[Called By]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SYSTICK_Config
+<LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_NVIC_SetPriority
 </UL>
 
 <P><STRONG><a name="[f8]"></a>__NVIC_GetPriorityGrouping</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, stm32f4xx_hal_cortex.o(.text))
@@ -3019,8 +3019,8 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[101]"></a>DMA_SetConfig</STRONG> (Thumb, 44 bytes, Stack size 12 bytes, stm32f4xx_hal_dma.o(.text), UNUSED)
-<BR><BR>[Called By]<UL><LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start
-<LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+<BR><BR>[Called By]<UL><LI><a href="#[f2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start_IT
+<LI><a href="#[100]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_DMA_Start
 </UL>
 
 <P><STRONG><a name="[10a]"></a>SPI_WaitOnFlagUntilTimeout</STRONG> (Thumb, 276 bytes, Stack size 24 bytes, stm32f4xx_hal_spi.o(.text))
@@ -3031,9 +3031,9 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[10d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Receive
 <LI><a href="#[10c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TransmitReceive
 <LI><a href="#[10b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_Transmit
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAReceiveCplt
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAReceiveCplt
 <LI><a href="#[118]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAEndTransmitReceive
-<LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitCplt
+<LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitCplt
 <LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_RxCloseIRQHandler
 <LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_TxCloseIRQHandler
 </UL>
@@ -3046,10 +3046,10 @@ Local Symbols
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_ErrorCallback
 <LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_TxISR
+<BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_TxISR
 </UL>
 
-<P><STRONG><a name="[66]"></a>SPI_TxISR</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text))
+<P><STRONG><a name="[64]"></a>SPI_TxISR</STRONG> (Thumb, 74 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = SPI_TxISR &rArr; SPI_TxCloseIRQHandler &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_TxCloseIRQHandler
@@ -3064,32 +3064,32 @@ Local Symbols
 <LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_ErrorCallback
 <LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_RxISR
-<LI><a href="#[67]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_2LinesRxISR
+<BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_RxISR
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_2LinesRxISR
 </UL>
 
-<P><STRONG><a name="[67]"></a>SPI_2LinesRxISR</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text))
+<P><STRONG><a name="[65]"></a>SPI_2LinesRxISR</STRONG> (Thumb, 56 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = SPI_2LinesRxISR &rArr; SPI_RxCloseIRQHandler &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_RxCloseIRQHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f4xx_hal_spi.o(.text)
 </UL>
-<P><STRONG><a name="[68]"></a>SPI_RxISR</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text))
+<P><STRONG><a name="[66]"></a>SPI_RxISR</STRONG> (Thumb, 82 bytes, Stack size 8 bytes, stm32f4xx_hal_spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = SPI_RxISR &rArr; SPI_RxCloseIRQHandler &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[112]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_RxCloseIRQHandler
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f4xx_hal_spi.o(.text)
 </UL>
-<P><STRONG><a name="[6b]"></a>SPI_DMAError</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text))
+<P><STRONG><a name="[69]"></a>SPI_DMAError</STRONG> (Thumb, 34 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SPI_DMAError
 </UL>
 <BR>[Calls]<UL><LI><a href="#[111]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_ErrorCallback
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f4xx_hal_spi.o(.text)
 </UL>
-<P><STRONG><a name="[6a]"></a>SPI_DMATransmitCplt</STRONG> (Thumb, 142 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text))
+<P><STRONG><a name="[68]"></a>SPI_DMATransmitCplt</STRONG> (Thumb, 142 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 40<LI>Call Chain = SPI_DMATransmitCplt &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[110]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TxCpltCallback
@@ -3098,7 +3098,7 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f4xx_hal_spi.o(.text)
 </UL>
-<P><STRONG><a name="[69]"></a>SPI_DMAHalfTransmitCplt</STRONG> (Thumb, 14 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text))
+<P><STRONG><a name="[67]"></a>SPI_DMAHalfTransmitCplt</STRONG> (Thumb, 14 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SPI_DMAHalfTransmitCplt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[116]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TxHalfCpltCallback
@@ -3110,11 +3110,11 @@ Local Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_WaitOnFlagUntilTimeout
 </UL>
-<BR>[Called By]<UL><LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitReceiveCplt
-<LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAReceiveCplt
+<BR>[Called By]<UL><LI><a href="#[6d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMATransmitReceiveCplt
+<LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SPI_DMAReceiveCplt
 </UL>
 
-<P><STRONG><a name="[6d]"></a>SPI_DMAReceiveCplt</STRONG> (Thumb, 214 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text))
+<P><STRONG><a name="[6b]"></a>SPI_DMAReceiveCplt</STRONG> (Thumb, 214 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = SPI_DMAReceiveCplt &rArr; SPI_DMAEndTransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[113]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_RxCpltCallback
@@ -3124,14 +3124,14 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f4xx_hal_spi.o(.text)
 </UL>
-<P><STRONG><a name="[6c]"></a>SPI_DMAHalfReceiveCplt</STRONG> (Thumb, 14 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text))
+<P><STRONG><a name="[6a]"></a>SPI_DMAHalfReceiveCplt</STRONG> (Thumb, 14 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SPI_DMAHalfReceiveCplt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[119]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_RxHalfCpltCallback
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f4xx_hal_spi.o(.text)
 </UL>
-<P><STRONG><a name="[6f]"></a>SPI_DMATransmitReceiveCplt</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text))
+<P><STRONG><a name="[6d]"></a>SPI_DMATransmitReceiveCplt</STRONG> (Thumb, 56 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 56<LI>Call Chain = SPI_DMATransmitReceiveCplt &rArr; SPI_DMAEndTransmitReceive &rArr; SPI_WaitOnFlagUntilTimeout
 </UL>
 <BR>[Calls]<UL><LI><a href="#[10f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TxRxCpltCallback
@@ -3140,14 +3140,14 @@ Local Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f4xx_hal_spi.o(.text)
 </UL>
-<P><STRONG><a name="[6e]"></a>SPI_DMAHalfTransmitReceiveCplt</STRONG> (Thumb, 14 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text))
+<P><STRONG><a name="[6c]"></a>SPI_DMAHalfTransmitReceiveCplt</STRONG> (Thumb, 14 bytes, Stack size 16 bytes, stm32f4xx_hal_spi.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = SPI_DMAHalfTransmitReceiveCplt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[11a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_SPI_TxRxHalfCpltCallback
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> stm32f4xx_hal_spi.o(.text)
 </UL>
-<P><STRONG><a name="[70]"></a>TIM_DMAPeriodElapsedCplt</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text))
+<P><STRONG><a name="[6e]"></a>TIM_DMAPeriodElapsedCplt</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 64<LI>Call Chain = TIM_DMAPeriodElapsedCplt &rArr; HAL_TIM_PeriodElapsedCallback &rArr; osSignalSet &rArr; isrSignalSet &rArr; isr_evt_set &rArr; rt_psq_enq
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_PeriodElapsedCallback
@@ -3189,7 +3189,7 @@ Local Symbols
 <LI><a href="#[160]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_IC_ConfigChannel
 </UL>
 
-<P><STRONG><a name="[74]"></a>TIM_DMATriggerCplt</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text))
+<P><STRONG><a name="[72]"></a>TIM_DMATriggerCplt</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, stm32f4xx_hal_tim.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = TIM_DMATriggerCplt
 </UL>
 <BR>[Calls]<UL><LI><a href="#[159]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;HAL_TIM_TriggerCallback

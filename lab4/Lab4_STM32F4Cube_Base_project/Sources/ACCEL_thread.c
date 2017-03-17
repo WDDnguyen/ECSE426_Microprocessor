@@ -101,31 +101,11 @@ void ACCEL_thread(void const *args) {
 		osSignalWait(0x00000001, osWaitForever);
 		float32_t coordinate[3];
 	LIS3DSH_ReadACC(coordinate);
-	
-	
-	/*printf("X value : %f ,",coordinate[0]);
-	printf("Y value : %f ,",coordinate[1]);
-	printf("Z value : %f\n",coordinate[2]);
-	*/		
+		
 	// might need to change to 0.981 + 0.372, 0.9792 + 0.38
 	xCalibrated = coordinate[0]* 0.991 + 0.372;
 	yCalibrated = coordinate[1]* 0.987	+ 0.38;
 	zCalibrated = coordinate[2] * 0.9792 + 0.38;			
-	
-		
-	/*xCalibrated = coordinate[0]* 0.846 + 0.372;
-	yCalibrated = coordinate[1]* 0.846	+ 0.38;
-	zCalibrated = coordinate[2] * 0.846 + 0.38;			
-		*/
-	//printf("X value : %f ,",coordinate[0]/gravity);
-	//printf("Y value : %f ,",coordinate[1]/gravity);
-	//printf("Z value : %f\n",coordinate[2]/gravity);
-	/*
-	printf("NOT FILTERED: %f,", xCalibrated);
-	printf("%f,", yCalibrated);
-	printf("%f\n", zCalibrated);
-		*/
-		
 		
 	if (invalidCount == 0){
 			

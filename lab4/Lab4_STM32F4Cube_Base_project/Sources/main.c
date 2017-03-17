@@ -94,8 +94,6 @@ int main (void) {
 	start_TEMP_thread(NULL);
 	start_SEG_thread(NULL);
 	
-	//initializeLED_IO();                       /* Initialize LED GPIO Buttons    */
-  //start_Thread_LED();                       /* Create LED thread              */
 	/* User codes ends here*/
   
 	osKernelStart();                          /* start thread execution         */
