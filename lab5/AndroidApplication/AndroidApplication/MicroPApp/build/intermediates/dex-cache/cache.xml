@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\William Nguyen\.gradle\caches\modules-2\files-2.1\com.amazonaws\aws-android-sdk-core\2.2.22\c6789de00db9d1f93faec881fa0c1f5960fb8a15\aws-android-sdk-core-2.2.22.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c6789de00db9d1f93faec881fa0c1f5960fb8a15">
+        <dex dex="C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\build\intermediates\transforms\dex\debug\folders\1000\10\aws-android-sdk-core-2.2.22_a73260d4ecf12b67bb35ad9bc686da100399bcb9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_902979ecdcf49597d47c0311072be671040bf735\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="fc031fbd6038da53fd953fa9fc58ec1ce0e0a37a">
+        <dex dex="C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_6670e302a75cd4022075847d74fe58c6e714bef7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\William Nguyen\.gradle\caches\modules-2\files-2.1\com.amazonaws\aws-android-sdk-s3\2.2.22\40fe82092e0ae3ca549b132a1e7e876807525176\aws-android-sdk-s3-2.2.22.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="40fe82092e0ae3ca549b132a1e7e876807525176">
+        <dex dex="C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\build\intermediates\transforms\dex\debug\folders\1000\10\aws-android-sdk-s3-2.2.22_36396c2c53a2f756fad17b9a9b6447f0f08b1301\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Program Files\Android\Android Studio\gradle\m2repository\com\google\code\gson\gson\2.2.4\gson-2.2.4.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.0"
+        sha1="a60a5e993c98c864010053cb901b7eab25306568">
+        <dex dex="C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\build\intermediates\transforms\dex\debug\folders\1000\10\gson-2.2.4_313aff129984a0a45e086871ec03bfcc02e7284e\classes.dex" />
+    </item>
+
+</items>

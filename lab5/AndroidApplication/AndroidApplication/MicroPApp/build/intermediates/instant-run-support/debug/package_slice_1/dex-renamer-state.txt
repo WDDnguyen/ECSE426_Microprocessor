@@ -1,0 +1,4 @@
+#Tue Apr 04 22:54:16 EDT 2017
+base.0=C\:\\Users\\William Nguyen\\Desktop\\Git Repositories\\ECSE426FinalProject\\ECSE426_Final_Project\\S3TransferUtilitySample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_1
+renamed.0=classes.dex
+file.0=C\:\\Users\\William Nguyen\\Desktop\\Git Repositories\\ECSE426FinalProject\\ECSE426_Final_Project\\S3TransferUtilitySample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_1\\classes.dex

@@ -1,0 +1,10 @@
+#Tue Apr 04 22:54:15 EDT 2017
+renamed.2=classes3.dex
+renamed.1=classes.dex
+renamed.0=classes2.dex
+base.2=C\:\\Users\\William Nguyen\\Desktop\\Git Repositories\\ECSE426FinalProject\\ECSE426_Final_Project\\S3TransferUtilitySample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\gson-2.2.4_313aff129984a0a45e086871ec03bfcc02e7284e
+base.1=C\:\\Users\\William Nguyen\\Desktop\\Git Repositories\\ECSE426FinalProject\\ECSE426_Final_Project\\S3TransferUtilitySample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\aws-android-sdk-core-2.2.22_a73260d4ecf12b67bb35ad9bc686da100399bcb9
+base.0=C\:\\Users\\William Nguyen\\Desktop\\Git Repositories\\ECSE426FinalProject\\ECSE426_Final_Project\\S3TransferUtilitySample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\aws-android-sdk-s3-2.2.22_36396c2c53a2f756fad17b9a9b6447f0f08b1301
+file.2=C\:\\Users\\William Nguyen\\Desktop\\Git Repositories\\ECSE426FinalProject\\ECSE426_Final_Project\\S3TransferUtilitySample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\gson-2.2.4_313aff129984a0a45e086871ec03bfcc02e7284e\\classes.dex
+file.1=C\:\\Users\\William Nguyen\\Desktop\\Git Repositories\\ECSE426FinalProject\\ECSE426_Final_Project\\S3TransferUtilitySample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\aws-android-sdk-core-2.2.22_a73260d4ecf12b67bb35ad9bc686da100399bcb9\\classes.dex
+file.0=C\:\\Users\\William Nguyen\\Desktop\\Git Repositories\\ECSE426FinalProject\\ECSE426_Final_Project\\S3TransferUtilitySample\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10\\aws-android-sdk-s3-2.2.22_36396c2c53a2f756fad17b9a9b6447f0f08b1301\\classes.dex

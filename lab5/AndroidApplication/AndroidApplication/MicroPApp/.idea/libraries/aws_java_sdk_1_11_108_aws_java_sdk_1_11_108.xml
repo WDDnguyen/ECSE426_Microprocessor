@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="aws-java-sdk-1.11.108.aws-java-sdk-1.11.108">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/aws-java-sdk-1.11.108/aws-java-sdk-1.11.108.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

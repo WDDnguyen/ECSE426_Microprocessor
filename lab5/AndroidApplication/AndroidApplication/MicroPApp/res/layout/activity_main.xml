@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    android:orientation="vertical"
+    android:weightSum="1">
+
+    <Button
+        android:id="@+id/pitchButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pitch" />
+
+    <Button
+        android:id="@+id/rollButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Roll" />
+
+    <TextView
+        android:id="@+id/dataDownloaded"
+        android:layout_width="313dp"
+        android:layout_height="wrap_content"
+        android:text="data downloaded : " />
+
+    <TextView
+        android:id="@+id/dataUploaded"
+        android:layout_width="313dp"
+        android:layout_height="wrap_content"
+        android:text="data Uploaded : " />
+
+    M<TextView
+        android:id="@+id/deviceAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Device address : "
+    android:layout_weight="0.05" />
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="State : Disconnected"
+        android:layout_weight="0.06" />
+
+    <TextView
+        android:id="@+id/deviceData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Data : No data"
+        android:layout_weight="0.09" />
+
+    <ExpandableListView
+        android:id="@+id/gatt_services_list"
+        android:layout_width="wrap_content"
+        android:layout_height="162dp"
+        android:layout_weight="0.48" />
+</LinearLayout>

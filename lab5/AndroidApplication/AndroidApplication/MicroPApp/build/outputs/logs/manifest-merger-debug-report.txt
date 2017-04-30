@@ -1,0 +1,95 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:1:1-37:12
+	package
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:2:5-51
+	android:versionName
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:4:5-30
+		INJECTED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml
+		INJECTED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml
+	android:versionCode
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:3:5-28
+		INJECTED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml
+		INJECTED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:1:11-69
+uses-sdk
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:6:5-8:41
+	android:targetSdkVersion
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:8:9-38
+		INJECTED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml
+		INJECTED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:7:9-35
+		INJECTED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml
+		INJECTED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:10:5-67
+	android:name
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:10:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:11:5-79
+	android:name
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:11:22-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:13:5-80
+	android:name
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:13:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:14:5-81
+	android:name
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:14:22-78
+uses-permission#android.permission.BLUETOOTH
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:16:5-67
+	android:name
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:16:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:17:5-73
+	android:name
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:17:22-71
+uses-feature#android.hardware.bluetooth_le
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:18:5-89
+	android:required
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:18:64-87
+	android:name
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:18:19-63
+application
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:20:5-35:19
+	android:label
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:23:9-41
+	android:allowBackup
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:21:9-35
+	android:icon
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:22:9-45
+	android:theme
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:24:9-56
+activity#com.amazonaws.demo.s3transferutility.DeviceScanActivity
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:26:9-31:20
+	android:name
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:26:19-53
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:27:13-30:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:28:17-69
+	android:name
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:28:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:29:17-77
+	android:name
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:29:27-74
+activity#com.amazonaws.demo.s3transferutility.MainActivity
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:32:9-49
+	android:name
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:32:19-47
+service#com.amazonaws.mobileconnectors.s3.transferutility.TransferService
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:33:9-124
+	android:enabled
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:33:99-121
+	android:name
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:33:18-98
+service#com.amazonaws.demo.s3transferutility.BluetoothLeService
+ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:34:9-77
+	android:enabled
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:34:53-75
+	android:name
+		ADDED from C:\Users\William Nguyen\Desktop\Git Repositories\ECSE426FinalProject\ECSE426_Final_Project\S3TransferUtilitySample\AndroidManifest.xml:34:18-52
