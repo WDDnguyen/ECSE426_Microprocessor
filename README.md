@@ -9,7 +9,9 @@ Used STM32F407 board for all laboratories and Keil to test and debug code.<br>
 - Lab4 : Created a multi threading program to use the various components from previous laboratories <br> 
 - Final Project : Used STM32f407 board to acquire Accelerometer values. STM32f401RE Nucleo Board for UART connection and IDB04A1 BLE board to broadcast Nucleo device. Android Application used to connect with Nucleo board through BLE connection using GATT attributes and send data to/from Amazon Web Services.
 
-![alt text](https://github.com/WDDnguyen/ECSE426_Microprocessor/final_project_topology.png)
+<p align="center">
+  <img src="final_project_topology" width="350"/>
+</p>
 
 
 
