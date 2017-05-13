@@ -10,7 +10,7 @@ Used STM32F407 board for all laboratories and Keil to test and debug code.<br>
 - Final Project : Used STM32f407 board to acquire Accelerometer values. STM32f401RE Nucleo Board for UART connection and IDB04A1 BLE board to broadcast Nucleo device. Android Application used to connect with Nucleo board through BLE connection using GATT attributes and send data to/from Amazon Web Services.
 
 <p align="center">
-  <img src="final_project_topology" width="350"/>
+  <img src="final_project_topology.png" width="350"/>
 </p>
 
 
